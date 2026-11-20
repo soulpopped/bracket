@@ -11,5 +11,13 @@ except Exception:
     pass
 for k, v in D.items():
     old[k] = {'n': v['n'], 'c': v.get('c', ''), 't': v['t']}
+# corrections: songs that ended up on a list after its matchup
+try:
+    fixes = json.load(open(sys.argv[3] if len(sys.argv) > 3 else 'source/overrides.json')).get('songFixes', {})
+except Exception:
+    fixes = {}
+for pid, f in fixes.items():
+    if pid in old:
+        old[pid]['t'] = [t for t in old[pid]['t'] if t[1] not in f.get('remove', []) and t[0] not in f.get('remove', [])]
 json.dump(old, open(out, 'w'), ensure_ascii=False, separators=(',', ':'))
 print(len(old), 'playlists', sum(len(v['t']) for v in old.values()), 'tracks')

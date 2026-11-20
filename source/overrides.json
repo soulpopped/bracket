@@ -166,5 +166,13 @@
     "No year 1 or year 2 draft boards in the sheet; Joey may look for them.",
     "Asterisk = a list's maker voted against it; double = both makers voted against their own lists.",
     "Year 4: Frank Zappa (Matt) was swapped for Sepultura after the draft; not noted on the board."
-  ]
+  ],
+  "songFixes": {
+    "2danE4jYwYir7pL52XXmph": {
+      "remove": [
+        "God Am"
+      ],
+      "why": "Alice in Chains song added to the Dead list after the matchup; the list was 2 songs (Tom, Nov 20)"
+    }
+  }
 }

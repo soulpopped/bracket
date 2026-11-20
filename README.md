@@ -22,6 +22,6 @@ The Google Sheet is the source of truth. At each Monday/Thursday check-in:
 1. Dump the current year's Schedule tab with the Sheets connector (`includeGridData`, fields `formattedValue`, `hyperlink`, `note`, `textFormatRuns`, `effectiveFormat.textFormat.foregroundColorStyle`) and re-run `tools/parse.py` to refresh `source/matches.json`.
 2. Add Joey's corrections and who voted for whom to `source/overrides.json` (`votes`: `{ "<match id>": { "Joey": 0, "Bob": 1, ... } }`, side index 0 or 1).
 3. Read any new playlists (Spotify embed pages, through the Claude app's browser on Joey's Mac) and merge them with `tools/songs.py`.
-4. `python3 tools/build.py source data`, check its summary line (no missing seeds, drafters or winners), run `python3 tests/shots.py http://127.0.0.1:8765 /tmp/shots`, commit, push. Cloudflare deploys `main` in about a minute.
+4. `python3 tools/songs.py <new tracks file> data/songs.json` also applies `songFixes` in overrides.json (songs added to a list after its matchup). Then `python3 tools/build.py source data`, check its summary line (no missing seeds, drafters or winners), run `python3 tests/shots.py http://127.0.0.1:8765 /tmp/shots`, commit, push. Cloudflare deploys `main` in about a minute.
 
 Colors in the sheet: purple Joey, blue Bob, orange Matt, red Tom, gray eliminated. Votes in the sheet list the winner's count first. `*` means a list's maker voted against it, `**` means both makers did.
