@@ -321,18 +321,18 @@ function weekCard(m) {
   </a>`;
 }
 function nowCard(m) {
-  const lists = m.sides.map((s) => sidePls(s)[0]).filter(Boolean);
-  return `<div class="mcard" style="background:#45444C;padding:16px;gap:12px">
-    <a href="#/match/${m.id}" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px">
-      <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]} · votes not in yet</span>
-      <span class="vs" style="gap:12px">
-        ${m.sides.map((s, i) => `<span style="display:flex;flex-direction:column;gap:4px;${i ? 'align-items:flex-end;text-align:right;grid-column:3' : ''}">
-          <span style="font-size:34px;line-height:1">${esc(s.artists.map((a) => a.emoji).join(''))}</span>
-          <span class="small" style="color:#C9C6BD">${i ? '' : '(' + (sideSeed(s) || '') + ') · '}${dot(sideOwner(s), 'sm')} ${esc(sideOwner(s) || '')}${i ? ' · (' + (sideSeed(s) || '') + ')' : ''}</span>
-          <span style="font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,34px);line-height:1.05">${esc(sideName(s))}</span></span>`).join('<span class="small" style="color:#C9C6BD;grid-column:2;grid-row:1;align-self:center">vs</span>')}
-      </span>
-    </a>
-    ${lists.length ? `<span style="display:flex;gap:8px;flex-wrap:wrap">${m.sides.map((s) => sidePls(s)[0] ? `<a class="btn light" style="min-height:40px" href="https://open.spotify.com/playlist/${sidePls(s)[0]}" target="_blank" rel="noopener">${esc(sideName(s))} on Spotify</a>` : '').join('')}</span>` : ''}
+  const side = (s) => {
+    const pid = sidePls(s)[0];
+    return `<div class="now-side">
+      <span class="now-emoji">${esc(s.artists.map((a) => a.emoji).join(''))}</span>
+      <a class="now-name" href="#/match/${m.id}">${esc(sideName(s))}</a>
+      <span class="small" style="color:#C9C6BD">(${sideSeed(s) || ''}) · ${dot(sideOwner(s), 'sm')} ${esc(sideOwner(s) || '')}</span>
+      ${pid ? `<a class="now-listen small" href="https://open.spotify.com/playlist/${pid}" target="_blank" rel="noopener">Listen ${svg('ext', 12)}</a>` : ''}
+    </div>`;
+  };
+  return `<div class="now">
+    <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]} · votes not in yet</span>
+    <div class="now-row">${side(m.sides[0])}<span class="now-vs">vs</span>${side(m.sides[1])}</div>
   </div>`;
 }
 function drafterCards() {
