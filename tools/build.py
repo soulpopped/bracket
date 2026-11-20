@@ -147,7 +147,9 @@ def build_year(year):
             if k and n and (k.startswith(n[:7]) or n.startswith(k[:7])):
                 return v
         return None
-    links_extra = {(l['year'], norm(l['artist']), l['date']): l['url'] for l in O['links']}
+    links_extra = {}
+    for l in O['links']:
+        links_extra[(l['year'], norm(l['artist']), l['date'])] = l['url'] if isinstance(l['url'], list) else [l['url']]
     out = []
     counters = {}
     for m in rows:
@@ -165,18 +167,24 @@ def build_year(year):
             links = m.get('l' + k, [])
             lk = (year, norm(raw), m['date'])
             if lk in links_extra:
-                links = [links_extra[lk]]
-            pl = None; url = None
+                links = links_extra[lk]
+            pls = []; url = None
             for u in links:
                 mm = re.search(r'playlist/(\w{22})', u)
-                if mm: pl = mm.group(1); url = u.split('?')[0]; break
-                if 'spotify.link' in u or 'music.youtube' in u: url = u
+                if mm and mm.group(1) not in pls: pls.append(mm.group(1))
+                elif 'spotify.link' in u or 'music.youtube' in u: url = url or u
             arts = []
-            for n in names:
+            for j, n in enumerate(names):
                 i = look(n)
-                arts.append({'name': n, 'owner': own.get(norm(n)) or (own.get(norm(raw)) if len(names) == 1 else None),
-                             'seed': i['seed'] if i else None, 'emoji': i['emoji'] if i else '', 'region': i['region'] if i else None})
-            sides.append({'artists': arts, 'playlist': pl, 'url': url, 'raw': m['a' + k]})
+                a = {'name': n, 'owner': own.get(norm(n)) or (own.get(norm(raw)) if len(names) == 1 else None),
+                     'seed': i['seed'] if i else None, 'emoji': i['emoji'] if i else '', 'region': i['region'] if i else None}
+                if len(names) > 1 and len(pls) == len(names):
+                    a['playlist'] = pls[j]
+                arts.append(a)
+            side = {'artists': arts, 'playlist': pls[0] if pls else None, 'url': url, 'raw': m['a' + k]}
+            if len(pls) > 1:
+                side['playlists'] = pls
+            sides.append(side)
         rec = {'year': year, 'round': rc, 'date': date, 'sides': sides, 'row': m['row']}
         if year == 1:
             res = m.get('result', '')

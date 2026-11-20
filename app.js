@@ -33,6 +33,8 @@ const sideName = (side) => side.artists.map((a) => a.name || 'TBD').join(' / ');
 const sideOwner = (side) => side.artists[0] && side.artists[0].owner;
 const sideSeed = (side) => side.artists[0] && side.artists[0].seed;
 const artistLink = (a, cls) => a.name ? `<a href="#/artist/${slug(a.name)}" class="${cls || ''}">${esc(a.name)}</a>` : '<span class="faint">TBD</span>';
+const sidePls = (side) => side.playlists || (side.playlist ? [side.playlist] : []);
+const artistPl = (side, a) => a.playlist || (side.artists.length === 1 ? side.playlist : null);
 const plUrl = (side) => side.playlist ? `https://open.spotify.com/playlist/${side.playlist}` : side.url;
 const ICON = {
   home: '<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
@@ -68,7 +70,7 @@ function buildIndex() {
       m.year = yr.n;
       matchById[m.id] = m;
       m.sides.forEach((s, si) => {
-        if (s.playlist) (playlistUse[s.playlist] = playlistUse[s.playlist] || []).push({ m, si });
+        for (const pid of sidePls(s)) (playlistUse[pid] = playlistUse[pid] || []).push({ m, si, name: (s.artists.find((a) => artistPl(s, a) === pid) || s.artists[0]).name });
         for (const a of s.artists) {
           if (!a.name) continue;
           const k = slug(a.name);
@@ -130,7 +132,7 @@ function songsFor(pid) { return (SONGS[pid] && SONGS[pid].t) || null; }
 function plMinutes(pid) { const t = songsFor(pid); return t ? t.reduce((a, x) => a + x[3], 0) : null; }
 
 /* ---------- shell ---------- */
-const TABS = [['#/', 'Home', 'home'], ['#/year', 'Years', 'years'], ['#/people', 'Drafters', 'people'], ['#/records', 'Records', 'records'], ['#/search', 'Search', 'search']];
+const TABS = [['#/', 'Home', 'home'], ['#/year', 'Years', 'years'], ['#/people', 'Drafters', 'people'], ['#/stats', 'Stats', 'records'], ['#/search', 'Search', 'search']];
 function shell(active) {
   $('#nav').innerHTML = TABS.map(([h, t]) => `<a href="${h}" class="${active === t ? 'on' : ''}">${t}</a>`).join('');
   $('#tabbar').innerHTML = TABS.map(([h, t, i]) => `<a href="${h}" class="${active === t ? 'on' : ''}">${svg(i)}${t}</a>`).join('');
@@ -149,7 +151,7 @@ function route() {
     else if (p[0] === 'match') { tab = 'Years'; html = pageMatch(decodeURIComponent(p[1])); title = 'Matchup'; }
     else if (p[0] === 'artist') { tab = ''; html = pageArtist(p[1]); title = (IDX.artists[p[1]] || {}).name || 'Artist'; }
     else if (p[0] === 'people') { tab = 'Drafters'; html = p[1] ? pagePerson(decodeURIComponent(p[1])) : pagePeople(); title = p[1] ? decodeURIComponent(p[1]) : 'Drafters'; }
-    else if (p[0] === 'records') { tab = 'Records'; html = pageRecords(); title = 'Records'; }
+    else if (p[0] === 'records' || p[0] === 'stats') { tab = 'Stats'; html = pageStats(); title = 'Stats'; }
     else if (p[0] === 'search') { tab = 'Search'; html = pageSearch(q.get('q') || '', q.get('f') || 'all'); title = 'Search'; }
     else html = notFound();
   } catch (e) { console.error(e); html = `<div class="card">Something went wrong drawing this page. <a href="#/">Go home</a></div>`; }
@@ -458,15 +460,23 @@ function pageMatch(id) {
   </section>
   ${notes.length ? `<div class="note">${notes.join('')}</div>` : ''}
   ${series}
-  <section class="grid2">${m.sides.map((s) => `
-    <div class="card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        ${s.playlist && SONGS[s.playlist] && SONGS[s.playlist].c ? `<img class="cover" src="${esc(SONGS[s.playlist].c)}" alt="" loading="lazy">` : ''}
-        <div style="flex:1;min-width:0"><h2 style="margin:0">${esc(sideName(s))}</h2>${s.playlist && SONGS[s.playlist] ? `<div class="tiny muted">“${esc(SONGS[s.playlist].n)}”</div>` : ''}</div>
-      </div>
-      ${s.playlist ? trackList(s.playlist) : (s.url ? '<p class="small muted" style="margin:0">This playlist is outside Spotify.</p>' : '<p class="small muted" style="margin:0">No playlist yet.</p>')}
-      ${plUrl(s) ? `<a class="btn" style="margin-top:10px;width:100%" href="${esc(plUrl(s))}" target="_blank" rel="noopener">Open in ${s.url && s.url.includes('youtube') ? 'YouTube Music' : 'Spotify'}</a>` : ''}
-    </div>`).join('')}
+  <section class="grid2">${m.sides.map((s) => {
+    const pls = sidePls(s);
+    const multi = pls.length > 1;
+    const blocks = pls.map((pid) => {
+      const who = (s.artists.find((a) => artistPl(s, a) === pid) || s.artists[0]).name;
+      const P = SONGS[pid];
+      return `<div style="${multi ? 'margin-top:12px' : ''}">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          ${P && P.c ? `<img class="cover" src="${esc(P.c)}" alt="" loading="lazy">` : ''}
+          <div style="flex:1;min-width:0"><h${multi ? 3 : 2} style="margin:0;font-size:${multi ? 17 : 19}px">${esc(multi ? who : sideName(s))}</h${multi ? 3 : 2}>${P ? `<div class="tiny muted">“${esc(P.n)}”</div>` : ''}</div>
+        </div>
+        ${trackList(pid)}
+        <a class="btn" style="margin-top:10px;width:100%" href="https://open.spotify.com/playlist/${pid}" target="_blank" rel="noopener">Open ${multi ? esc(who) + ' in' : 'in'} Spotify</a>
+      </div>`;
+    }).join('');
+    return `<div class="card">${multi ? `<h2>${esc(sideName(s))}</h2>` : ''}${blocks || `<h2>${esc(sideName(s))}</h2>${s.url ? `<p class="small muted">This playlist is outside Spotify.</p><a class="btn" style="width:100%" href="${esc(s.url)}" target="_blank" rel="noopener">Open in ${s.url.includes('youtube') ? 'YouTube Music' : 'Spotify'}</a>` : '<p class="small muted" style="margin:0">No playlist yet.</p>'}`}</div>`;
+  }).join('')}
   </section>
   <nav style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap" aria-label="More matchups">
     ${prev ? `<a class="btn light" href="#/match/${prev.id}">← ${esc(d(prev.date))}</a>` : '<span></span>'}
@@ -480,7 +490,7 @@ function pageArtist(s) {
   if (!A) return notFound();
   const yrs = Object.keys(A.years).map(Number).sort();
   const b = base(A.name);
-  const others = IDX.tracks.filter((t) => t.artists.some((n) => base(n) === b) && !(IDX.playlistUse[t.pl] || []).some(({ m, si }) => m.sides[si].artists.some((a) => base(a.name) === b)));
+  const others = IDX.tracks.filter((t) => t.artists.some((n) => base(n) === b) && !(IDX.playlistUse[t.pl] || []).some((u) => base(u.name) === b));
   const related = Object.values(IDX.artists).filter((x) => x !== A && base(x.name) === b);
   return `
   <section style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
@@ -502,10 +512,11 @@ function pageArtist(s) {
         const res = wi === null ? (m.winner === 'both' || m.winner === 'tie' ? 'Tie' : '') : (wi === si ? 'W' : 'L');
         const sc = m.votes && m.sides.length === 2 ? `${res} ${scoreFor(m, si)}-${scoreFor(m, 1 - si)}${'*'.repeat(m.stars || 0)}` : res;
         const side = m.sides[si];
-        return `<tr><td class="nowrap"><a href="#/match/${m.id}">${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''}</a></td><td class="nowrap muted">${esc(d(m.date))}</td><td>${opp.map((o) => o.artists.map((a) => (a.seed ? `(${a.seed}) ` : '') + artistLink(a)).join(' / ')).join(', ')}</td><td class="n nowrap">${esc(sc)}</td><td class="small">${side.playlist ? `${songsFor(side.playlist) ? songsFor(side.playlist).length + ' songs, ' + mins(plMinutes(side.playlist)) : ''} <a href="https://open.spotify.com/playlist/${side.playlist}" target="_blank" rel="noopener">Spotify</a>` : ''}</td></tr>`;
+        const apl = artistPl(side, side.artists.find((a) => base(a.name) === b) || side.artists[0]);
+        return `<tr><td class="nowrap"><a href="#/match/${m.id}">${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''}</a></td><td class="nowrap muted">${esc(d(m.date))}</td><td>${opp.map((o) => o.artists.map((a) => (a.seed ? `(${a.seed}) ` : '') + artistLink(a)).join(' / ')).join(', ')}</td><td class="n nowrap">${esc(sc)}</td><td class="small">${apl ? `${songsFor(apl) ? songsFor(apl).length + ' songs, ' + mins(plMinutes(apl)) : ''} <a href="https://open.spotify.com/playlist/${apl}" target="_blank" rel="noopener">Spotify</a>` : ''}</td></tr>`;
       }).join('')}
       </tbody></table></div>
-      ${Y.matches.filter(({ m, si }) => m.sides[si].playlist && songsFor(m.sides[si].playlist)).map(({ m, si }) => `<details style="margin-top:8px"><summary style="cursor:pointer;min-height:36px;display:flex;align-items:center" class="small"><strong>${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''} playlist</strong>&nbsp;<span class="muted">· ${songsFor(m.sides[si].playlist).length} songs</span></summary>${trackList(m.sides[si].playlist)}</details>`).join('')}
+      ${Y.matches.map(({ m, si }) => ({ m, pid: artistPl(m.sides[si], m.sides[si].artists.find((a) => base(a.name) === b) || m.sides[si].artists[0]) })).filter(({ pid }) => pid && songsFor(pid)).map(({ m, pid }) => `<details style="margin-top:8px"><summary style="cursor:pointer;min-height:36px;display:flex;align-items:center" class="small"><strong>${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''} playlist</strong>&nbsp;<span class="muted">· “${esc(SONGS[pid].n)}” · ${songsFor(pid).length} songs</span></summary>${trackList(pid)}</details>`).join('')}
     </section>`;
   }).join('')}
   <section class="card"><h2>Shows up on other lists</h2>
@@ -515,8 +526,7 @@ function pageArtist(s) {
 function listRef(pid) {
   const u = (IDX.playlistUse[pid] || [])[0];
   if (!u) return '';
-  const s = u.m.sides[u.si];
-  return `<a href="#/match/${u.m.id}">${esc(sideName(s))}</a> <span class="muted">Y${u.m.year} ${ROUND_NAME[u.m.round]}</span>`;
+  return `<a href="#/match/${u.m.id}">${esc(u.name)}</a> <span class="muted">Y${u.m.year} ${ROUND_NAME[u.m.round]}</span>`;
 }
 
 /* ---------- people ---------- */
@@ -574,13 +584,13 @@ function pagePerson(p) {
 }
 
 /* ---------- records ---------- */
-function pageRecords() {
+function recordsHtml() {
   const all = DATA.years.flatMap((y) => y.matches);
   const two = all.filter((m) => m.sides.length === 2 && winnerIdx(m) !== null);
   const upsets = two.map((m) => { const w = winnerIdx(m); return { m, ws: sideSeed(m.sides[w]), ls: sideSeed(m.sides[1 - w]) }; }).filter((x) => x.ws && x.ls && x.ws > x.ls && x.m.round !== 'PI').sort((a, b) => (b.ws - b.ls) - (a.ws - a.ls) || ROUNDS.indexOf(b.m.round) - ROUNDS.indexOf(a.m.round)).slice(0, 12);
   const close = all.filter((m) => m.tiebreak).sort((a, b) => Math.abs(a.tiebreak[0] - a.tiebreak[1]) - Math.abs(b.tiebreak[0] - b.tiebreak[1])).slice(0, 12);
   const pls = [];
-  for (const m of all) if (!(m.game > 1)) m.sides.forEach((s, si) => { if (s.playlist && songsFor(s.playlist)) pls.push({ m, si, n: songsFor(s.playlist).length, sec: plMinutes(s.playlist) }); });
+  for (const m of all) if (!(m.game > 1)) m.sides.forEach((s, si) => { for (const pid of sidePls(s)) if (songsFor(pid)) pls.push({ m, si, name: (s.artists.find((a) => artistPl(s, a) === pid) || s.artists[0]).name, n: songsFor(pid).length, sec: plMinutes(pid) }); });
   const longest = pls.slice().sort((a, b) => b.sec - a.sec).slice(0, 10);
   const shortest = pls.slice().sort((a, b) => a.sec - b.sec).slice(0, 10);
   const most = pls.slice().sort((a, b) => b.n - a.n).slice(0, 10);
@@ -591,16 +601,15 @@ function pageRecords() {
   for (const t of IDX.tracks) { const k = fold(t.title).replace(/\s*[-(].*$/, '') + '|' + base(t.artists[0]); const S = songCount[k] = songCount[k] || { t, lists: new Set() }; S.lists.add(t.pl); }
   const repeats = Object.values(songCount).filter((x) => x.lists.size > 1).sort((a, b) => b.lists.size - a.lists.size).slice(0, 15);
   const sweeps = DATA.years.map((y) => ({ y: y.n, n: y.matches.filter((m) => m.votes && Math.max(m.votes[0], m.votes[1]) === 4).length, of: y.matches.filter((m) => m.votes).length, stars: y.matches.filter((m) => m.stars).length }));
-  const plRow = (x, val) => `<tr><td><a href="#/match/${x.m.id}">${esc(sideName(x.m.sides[x.si]))}</a></td><td class="small muted nowrap">Y${x.m.year} ${ROUND_NAME[x.m.round]}</td><td class="n nowrap">${val}</td></tr>`;
+  const plRow = (x, val) => `<tr><td><a href="#/match/${x.m.id}">${esc(x.name)}</a></td><td class="small muted nowrap">Y${x.m.year} ${ROUND_NAME[x.m.round]}</td><td class="n nowrap">${val}</td></tr>`;
   const noSongs = !Object.keys(SONGS).length ? '<p class="small muted" style="margin:0">Appears once the track lists are loaded.</p>' : '';
   return `
-  <h1 style="font-weight:800;font-size:clamp(30px,5vw,44px)">Records</h1>
+  <h2 style="font-size:28px;font-weight:800;margin-top:8px">Records</h2>
   <div class="grid2">
     <section class="card"><h2>Champions</h2>${DATA.years.map((y) => { const A = y.champion && IDX.artists[slug(y.champion)]; const o = A && A.years[y.n].owner; return `<a class="row-link" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}">${dot(o)}<span style="flex:1"><strong>Year ${y.n}:</strong> ${A ? esc(A.name) + ' <span class="muted small">(' + esc(o) + ', ' + A.years[y.n].seed + ' seed)</span>' : '<span class="muted">in progress</span>'}</span>${chev()}</a>`; }).join('')}</section>
     <section class="card"><h2>Drafters</h2>${pagePeopleTable()}</section>
     <section class="card"><h2>Biggest upsets</h2><div class="scroll"><table class="t"><thead><tr><th>Winner</th><th>Over</th><th>When</th></tr></thead><tbody>${upsets.map((x) => { const w = winnerIdx(x.m); return `<tr><td><a href="#/match/${x.m.id}">(${x.ws}) ${esc(sideName(x.m.sides[w]))}</a></td><td>(${x.ls}) ${esc(sideName(x.m.sides[1 - w]))}</td><td class="small muted nowrap">Y${x.m.year} ${ROUND_NAME[x.m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
     <section class="card"><h2>Closest tiebreaks</h2><div class="scroll"><table class="t"><thead><tr><th>Matchup</th><th class="n">Ratings</th><th>When</th></tr></thead><tbody>${close.map((m) => { const w = winnerIdx(m); return `<tr><td><a href="#/match/${m.id}">${w !== null ? esc(sideName(m.sides[w])) + ' over ' + esc(sideName(m.sides[1 - w])) : esc(sideName(m.sides[0])) + ' / ' + esc(sideName(m.sides[1]))}</a></td><td class="n nowrap">${m.tiebreak[0].toFixed(3)} to ${m.tiebreak[1].toFixed(3)}</td><td class="small muted nowrap">Y${m.year} ${ROUND_NAME[m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
-    <section class="card"><h2>Sweeps and self-votes</h2><table class="t"><thead><tr><th>Year</th><th class="n">4-0 sweeps</th><th class="n">With * or **</th></tr></thead><tbody>${sweeps.map((s) => `<tr><td>Year ${s.y}</td><td class="n">${s.n} of ${s.of}</td><td class="n">${s.stars}</td></tr>`).join('')}</tbody></table><p class="tiny muted" style="margin:6px 0 0">* a list's maker voted against it. ** both makers did.</p></section>
     <section class="card"><h2>Playlist length by year</h2>${noSongs || byYear.map((x) => `<div style="padding:6px 0"><div class="small" style="display:flex;justify-content:space-between"><span>Year ${x.y}</span><span class="muted">${x.n ? mins(x.avg) + ' avg · ' + x.songs.toFixed(1) + ' songs' : 'not loaded'}</span></div><div class="bar"><span style="width:${100 * x.avg / maxAvg}%;background:var(--ink)"></span></div></div>`).join('')}</section>
     <p class="tiny muted" style="grid-column:1/-1;margin:0">Playlist records leave out the short best-of-3 lists from Year 2's final series.</p>
     <section class="card"><h2>Longest playlists</h2>${noSongs || `<table class="t"><tbody>${longest.map((x) => plRow(x, mins(x.sec))).join('')}</tbody></table>`}</section>
@@ -609,6 +618,111 @@ function pageRecords() {
     <section class="card"><h2>Fewest songs on a playlist</h2>${noSongs || `<table class="t"><tbody>${fewest.map((x) => plRow(x, x.n + ' songs')).join('')}</tbody></table>`}</section>
     <section class="card"><h2>Songs used more than once</h2>${noSongs || (repeats.length ? `<table class="t"><tbody>${repeats.map((r) => `<tr><td>${esc(r.t.title)}<br><span class="tiny muted">${esc(r.t.artists.join(', '))}</span></td><td class="n">${r.lists.size} lists</td></tr>`).join('')}</tbody></table>` : '<p class="small muted">None yet.</p>')}</section>
   </div>`;
+}
+
+
+/* ---------- stats ---------- */
+function pageStats() {
+  const uses = []; // one per playlist per matchup
+  for (const yr of DATA.years) for (const m of yr.matches) m.sides.forEach((s, si) => {
+    for (const pid of sidePls(s)) { const a = s.artists.find((x) => artistPl(s, x) === pid) || s.artists[0]; uses.push({ yr: yr.n, m, pid, name: a.name, owner: a.owner }); }
+  });
+  const uniq = {}; for (const u of uses) if (!uniq[u.pid]) uniq[u.pid] = u;
+  const lists = Object.values(uniq).filter((u) => songsFor(u.pid));
+  const tracks = lists.flatMap((u) => songsFor(u.pid).map((x) => ({ x, u })));
+  const secs = tracks.reduce((a, t) => a + t.x[3], 0);
+  const uniqSongs = new Set(tracks.map((t) => t.x[0])).size;
+  const credited = {};
+  for (const { x } of tracks) {
+    const names = x[2].split(/,\s*/).filter(Boolean);
+    for (const n of names) { const b = base(n); const C = credited[b] = credited[b] || { name: n, songs: 0, lists: new Set(), co: new Set() }; C.songs++; for (const o of names) if (base(o) !== b) C.co.add(o); }
+  }
+  for (const u of lists) for (const x of songsFor(u.pid)) for (const n of x[2].split(/,\s*/)) credited[base(n)].lists.add(u.pid);
+  // drafted vs used
+  const perYear = DATA.years.map((yr) => {
+    const used = Object.values(IDX.artists).filter((A) => A.years[yr.n]).length;
+    const swaps = yr.draft ? yr.draft.rows.flat().reduce((a, c) => a + ((c && c.old) ? c.old.length : 0), 0) : 0;
+    const unused = (yr.unused || []).length;
+    const L = lists.filter((u) => u.yr === yr.n);
+    const T = L.flatMap((u) => songsFor(u.pid));
+    const s = T.reduce((a, x) => a + x[3], 0);
+    return { y: yr.n, used, drafted: used + swaps + unused, swaps, unused, board: !!yr.draft, lists: L.length, songs: T.length, secs: s, avgList: L.length ? s / L.length : 0, avgSong: T.length ? s / T.length : 0 };
+  });
+  const tot = (k) => perYear.reduce((a, y) => a + y[k], 0);
+  const distinctUsed = Object.keys(IDX.artists).length;
+  const decidedM = DATA.years.flatMap((y) => y.matches).filter((m) => m.votes);
+  const votesCast = decidedM.reduce((a, m) => a + m.votes.reduce((x, v) => x + v, 0), 0);
+  const big = [
+    [tracks.length.toLocaleString(), 'songs on our playlists', `${uniqSongs.toLocaleString()} different songs`],
+    [(secs / 3600).toFixed(1), 'hours of music', `about ${(secs / 86400).toFixed(1)} days straight`],
+    [lists.length, 'playlists', `${(secs / 60 / Math.max(1, lists.length)).toFixed(0)} minutes on average`],
+    [tot('drafted'), 'artists drafted', `${tot('swaps')} swapped out, ${tot('unused')} never used`],
+    [tot('used'), 'artists used', `${distinctUsed} different names across 4 years`],
+    [Object.keys(credited).length, 'artists credited', 'features, covers and side projects included'],
+    [DATA.years.reduce((a, y) => a + y.matches.length, 0), 'matchups', `${votesCast} votes cast`],
+    [(secs / tracks.length / 60).toFixed(2).replace(/\.(\d\d)$/, (m0, d2) => ':' + String(Math.round(+('0.' + d2) * 60)).padStart(2, '0')), 'average song length', 'minutes:seconds'],
+  ];
+  // by drafter
+  const people = DATA.people.map((P) => {
+    const L = lists.filter((u) => u.owner === P.name);
+    const T = L.flatMap((u) => songsFor(u.pid));
+    const s = T.reduce((a, x) => a + x[3], 0);
+    const used = Object.values(IDX.artists).reduce((a, A) => a + Object.values(A.years).filter((Y) => Y.owner === P.name).length, 0);
+    const longest = L.slice().sort((a, b) => plMinutes(b.pid) - plMinutes(a.pid))[0];
+    return { P, used, lists: L.length, songs: T.length, secs: s, avg: L.length ? s / L.length : 0, longest };
+  });
+  const longSong = tracks.slice().sort((a, b) => b.x[3] - a.x[3]).slice(0, 5);
+  const shortSong = tracks.slice().sort((a, b) => a.x[3] - b.x[3]).slice(0, 5);
+  const count = (re) => tracks.filter((t) => re.test(t.x[1])).length;
+  const topCred = Object.values(credited).sort((a, b) => b.songs - a.songs).slice(0, 15);
+  const topCo = Object.values(credited).filter((c) => c.co.size).sort((a, b) => b.co.size - a.co.size).slice(0, 10);
+  // votes by year
+  const votesY = DATA.years.map((y) => { const M = y.matches.filter((m) => m.votes); return { y: y.n, n: M.length, sweep: M.filter((m) => m.votes[0] === 4 || m.votes[1] === 4).length, three: M.filter((m) => m.votes[0] === 3 && m.votes[1] === 1).length, tb: M.filter((m) => m.votes[0] === 2 && m.votes[1] === 2).length, ties: y.matches.filter((m) => m.winner === 'tie' || m.winner === 'both').length, one: M.filter((m) => m.stars === 1).length, two: M.filter((m) => m.stars === 2).length }; });
+  // seeds
+  const seed = {};
+  for (let s = 1; s <= 16; s++) seed[s] = { w: 0, l: 0, best: null, champs: 0 };
+  for (const y of DATA.years) for (const m of y.matches) {
+    if (m.round === 'PI' || m.sides.length !== 2 || m.game > 1) continue;
+    const wi = winnerIdx(m); if (wi === null) continue;
+    const ws = sideSeed(m.sides[wi]), ls = sideSeed(m.sides[1 - wi]);
+    if (ws && ls && ws !== ls) { seed[ws].w++; seed[ls].l++; }
+  }
+  for (const A of Object.values(IDX.artists)) for (const [y, Y] of Object.entries(A.years)) {
+    if (!Y.seed) continue; const S = seed[Y.seed];
+    const r = Y.champion ? 7 : ROUNDS.indexOf(Y.best);
+    if (S.best === null || r > S.best) S.best = r;
+    if (Y.champion) S.champs++;
+  }
+  const bestName = (r) => r === 7 ? 'Champion' : r === null ? '' : ROUND_NAME[ROUNDS[r]];
+  const cinderella = [];
+  for (const A of Object.values(IDX.artists)) for (const [y, Y] of Object.entries(A.years)) if (Y.seed >= 9 && (Y.champion || ROUNDS.indexOf(Y.best) >= ROUNDS.indexOf('S16'))) cinderella.push({ A, y: +y, Y });
+  cinderella.sort((a, b) => (b.Y.champion - a.Y.champion) || ROUNDS.indexOf(b.Y.best) - ROUNDS.indexOf(a.Y.best) || b.Y.seed - a.Y.seed);
+  const names = DATA.years.map((y) => ({ y: y.n, L: uses.filter((u) => u.yr === y.n && SONGS[u.pid]).filter((u, i, arr) => arr.findIndex((v) => v.pid === u.pid) === i) }));
+  const hm = (s) => { const h = Math.floor(s / 3600), m2 = Math.round((s % 3600) / 60); return h ? `${h}h ${m2}m` : `${m2}m`; };
+  return `
+  <h1 style="font-weight:800;font-size:clamp(30px,5vw,44px)">Stats</h1>
+  <section class="grid3">${big.map(([n, k, s]) => `<div class="card stat"><span class="big">${esc(n)}</span><span style="font-weight:600">${esc(k)}</span><span class="small muted">${esc(s)}</span></div>`).join('')}</section>
+  <section class="card"><h2>By year</h2><div class="scroll"><table class="t" style="min-width:760px"><thead><tr><th>Year</th><th class="n">Drafted</th><th class="n">Swaps</th><th class="n">Never used</th><th class="n">Used</th><th class="n">Playlists</th><th class="n">Songs</th><th class="n">Music</th><th class="n">Avg list</th><th class="n">Avg song</th></tr></thead><tbody>
+    ${perYear.map((y) => `<tr><td><a href="#/year/${y.y}">Year ${y.y}</a></td><td class="n">${y.drafted}</td><td class="n">${y.board ? y.swaps : '<span class="faint">n/a</span>'}</td><td class="n">${y.board ? y.unused : '<span class="faint">n/a</span>'}</td><td class="n">${y.used}</td><td class="n">${y.lists}</td><td class="n">${y.songs.toLocaleString()}</td><td class="n">${hm(y.secs)}</td><td class="n">${mins(y.avgList)}</td><td class="n">${mmss(Math.round(y.avgSong))}</td></tr>`).join('')}
+    <tr><td><strong>All</strong></td><td class="n"><strong>${tot('drafted')}</strong></td><td class="n"><strong>${tot('swaps')}</strong></td><td class="n"><strong>${tot('unused')}</strong></td><td class="n"><strong>${tot('used')}</strong></td><td class="n"><strong>${lists.length}</strong></td><td class="n"><strong>${tracks.length.toLocaleString()}</strong></td><td class="n"><strong>${hm(secs)}</strong></td><td class="n"><strong>${mins(secs / Math.max(1, lists.length))}</strong></td><td class="n"><strong>${mmss(Math.round(secs / Math.max(1, tracks.length)))}</strong></td></tr>
+  </tbody></table></div><p class="tiny muted" style="margin:6px 0 0">Drafted = artists used + picks swapped out + picks never used. Years 1 and 2 have no draft board, so their swaps aren't recorded. Playlists count each list once; Year 2's final series lists are included here.</p></section>
+  <section class="card"><h2>By drafter</h2><div class="scroll"><table class="t" style="min-width:640px"><thead><tr><th>Drafter</th><th class="n">Artists</th><th class="n">Playlists</th><th class="n">Songs</th><th class="n">Music</th><th class="n">Avg list</th><th>Longest list</th></tr></thead><tbody>
+    ${people.map((x) => `<tr><td><a href="#/people/${x.P.name}" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">${dot(x.P.name)}<strong>${x.P.name}</strong></a></td><td class="n">${x.used}</td><td class="n">${x.lists}</td><td class="n">${x.songs.toLocaleString()}</td><td class="n">${hm(x.secs)}</td><td class="n">${mins(x.avg)}</td><td class="small">${x.longest ? `<a href="#/match/${x.longest.m.id}">${esc(x.longest.name)}</a> <span class="muted">${mins(plMinutes(x.longest.pid))}</span>` : ''}</td></tr>`).join('')}
+  </tbody></table></div></section>
+  <div class="grid2">
+    <section class="card"><h2>Longest songs</h2><table class="t"><tbody>${longSong.map((t) => `<tr><td>${esc(t.x[1])}<br><span class="tiny muted">${esc(t.x[2])} · <a href="#/match/${t.u.m.id}">${esc(t.u.name)} Y${t.u.yr}</a></span></td><td class="n">${mmss(t.x[3])}</td></tr>`).join('')}</tbody></table></section>
+    <section class="card"><h2>Shortest songs</h2><table class="t"><tbody>${shortSong.map((t) => `<tr><td>${esc(t.x[1])}<br><span class="tiny muted">${esc(t.x[2])} · <a href="#/match/${t.u.m.id}">${esc(t.u.name)} Y${t.u.yr}</a></span></td><td class="n">${mmss(t.x[3])}</td></tr>`).join('')}</tbody></table></section>
+    <section class="card"><h2>Live, remastered, demos</h2><div class="grid3" style="gap:8px">${[['Live', count(/\blive\b/i)], ['Remasters', count(/remaster/i)], ['Demos', count(/\bdemo\b/i)], ['Remixes', count(/\bremix\b/i)], ['Covers of other artists', null], ['Edits and versions', count(/\b(edit|version)\b/i)]].filter((x) => x[1] !== null).map(([k, n]) => `<div class="stat"><span class="big" style="font-size:24px">${n}</span><span class="small muted">${k}</span></div>`).join('')}</div><p class="tiny muted" style="margin:6px 0 0">Going by Spotify's song titles.</p></section>
+    <section class="card"><h2>Votes by year</h2><div class="scroll"><table class="t"><thead><tr><th>Year</th><th class="n">4-0</th><th class="n">3-1</th><th class="n">2-2</th><th class="n">Ties</th><th class="n">*</th><th class="n">**</th></tr></thead><tbody>${votesY.map((v) => `<tr><td>Year ${v.y}</td><td class="n">${v.sweep}</td><td class="n">${v.three}</td><td class="n">${v.tb}</td><td class="n">${v.ties}</td><td class="n">${v.one}</td><td class="n">${v.two}</td></tr>`).join('')}</tbody></table></div><p class="tiny muted" style="margin:6px 0 0">2-2 goes to the average rating. * a list's maker voted against it. ** both makers did.</p></section>
+    <section class="card"><h2>Most credited artists</h2><p class="tiny muted" style="margin:0 0 6px">Every song they're credited on, features included.</p><table class="t"><tbody>${topCred.map((c, i) => `<tr><td class="muted n" style="width:28px">${i + 1}</td><td><a href="#/search?q=${encodeURIComponent(c.name)}&f=songs">${esc(c.name)}</a></td><td class="n">${c.songs} songs</td><td class="n small muted">${c.lists.size} lists</td></tr>`).join('')}</tbody></table></section>
+    <section class="card"><h2>Most collaborators</h2><p class="tiny muted" style="margin:0 0 6px">Different artists sharing a song credit with them.</p><table class="t"><tbody>${topCo.map((c) => `<tr><td><a href="#/search?q=${encodeURIComponent(c.name)}&f=songs">${esc(c.name)}</a><br><span class="tiny muted">${esc([...c.co].slice(0, 6).join(', '))}${c.co.size > 6 ? '…' : ''}</span></td><td class="n">${c.co.size}</td></tr>`).join('')}</tbody></table></section>
+    <section class="card"><h2>How each seed has done</h2><div class="scroll"><table class="t"><thead><tr><th class="n">Seed</th><th class="n">W</th><th class="n">L</th><th class="n">Win %</th><th>Best finish</th></tr></thead><tbody>${Object.entries(seed).map(([s, v]) => `<tr><td class="n"><strong>${s}</strong></td><td class="n">${v.w}</td><td class="n">${v.l}</td><td class="n">${v.w + v.l ? Math.round(100 * v.w / (v.w + v.l)) + '%' : ''}</td><td class="small">${bestName(v.best)}${v.champs > 1 ? ' ×' + v.champs : ''}</td></tr>`).join('')}</tbody></table></div><p class="tiny muted" style="margin:6px 0 0">Round 1 on; same-seed matchups don't count.</p></section>
+    <section class="card"><h2>Cinderella runs</h2><p class="tiny muted" style="margin:0 0 6px">9 seeds or lower who made the Sweet 16 or better.</p>${cinderella.map(({ A, y, Y }) => `<a class="row-link" href="#/artist/${A.slug}">${dot(Y.owner)}<span class="seed">${Y.seed}</span><span style="flex:1"><strong>${esc(A.name)}</strong> <span class="small muted">Year ${y}</span></span><span class="small">${Y.champion ? '<strong>Champion</strong>' : ROUND_NAME[Y.best]}</span></a>`).join('')}</section>
+  </div>
+  <section class="card"><h2>Playlist names</h2><p class="tiny muted" style="margin:0 0 8px">Every title we've given a list.</p>
+    ${names.map(({ y, L }) => `<details ${y === DATA.years[DATA.years.length - 1].n ? 'open' : ''} style="margin-top:6px"><summary style="cursor:pointer;min-height:36px;display:flex;align-items:center"><strong>Year ${y}</strong>&nbsp;<span class="small muted">${L.length} lists</span></summary><div style="display:flex;flex-wrap:wrap;gap:6px;padding:6px 0">${L.map((u) => `<a href="#/match/${u.m.id}" title="${esc(u.name)} · ${ROUND_NAME[u.m.round]}" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:5px 10px;font-size:13px">${dot(u.owner, 'sm')}${esc(SONGS[u.pid].n)}</a>`).join('')}</div></details>`).join('')}
+  </section>
+  ${recordsHtml()}`;
 }
 
 /* ---------- search ---------- */
