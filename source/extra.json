@@ -1,0 +1,620 @@
+{
+ "y4": {
+  "regions": [
+   {
+    "name": "Region 1",
+    "sub": "rock, folk, americana",
+    "slots": [
+     {
+      "seed": 1,
+      "name": "Fleetwood Mac",
+      "emoji": "🍔"
+     },
+     {
+      "seed": 16,
+      "name": "Todd Snider",
+      "emoji": "😏"
+     },
+     {
+      "seed": 8,
+      "name": "Bob Dylan (2000s)",
+      "emoji": "🪕"
+     },
+     {
+      "seed": 9,
+      "name": "Husker Dü",
+      "emoji": "🧨"
+     },
+     {
+      "seed": 5,
+      "name": "Van Morrison",
+      "emoji": "🚐"
+     },
+     {
+      "seed": 12,
+      "name": "Laura Nyro",
+      "emoji": "🗽"
+     },
+     {
+      "seed": 4,
+      "name": "Grateful Dead",
+      "emoji": "🥀"
+     },
+     {
+      "seed": 13,
+      "name": "Tall Dwarfs",
+      "emoji": "🧙🏻‍♂️"
+     },
+     {
+      "seed": 6,
+      "name": "Sheryl Crow",
+      "emoji": "🐦‍⬛"
+     },
+     {
+      "seed": 11,
+      "name": "Brandi Carlile",
+      "emoji": "🥃"
+     },
+     {
+      "seed": 3,
+      "name": "The Who",
+      "emoji": "🤔"
+     },
+     {
+      "seed": 14,
+      "name": "John Prine",
+      "emoji": "🚽"
+     },
+     {
+      "seed": 7,
+      "name": "Tom Waits",
+      "emoji": "⏳"
+     },
+     {
+      "seed": 10,
+      "name": "Joe Jackson",
+      "emoji": "👟"
+     },
+     {
+      "seed": 2,
+      "name": "Neil Young",
+      "emoji": "🍁"
+     },
+     {
+      "seed": 15,
+      "name": "Andy Shauf",
+      "emoji": "🦊"
+     }
+    ]
+   },
+   {
+    "name": "Region 2",
+    "sub": "pop, soul, R&B",
+    "slots": [
+     {
+      "seed": 1,
+      "name": "Michael Jackson",
+      "emoji": "🕴🏻"
+     },
+     {
+      "seed": 16,
+      "name": "Christopher Owens",
+      "emoji": "👯‍♀️"
+     },
+     {
+      "seed": 8,
+      "name": "Lee Scratch Perry",
+      "emoji": "彡"
+     },
+     {
+      "seed": 9,
+      "name": "Fountains of Wayne",
+      "emoji": "⛲"
+     },
+     {
+      "seed": 5,
+      "name": "Otis Redding",
+      "emoji": "⚓"
+     },
+     {
+      "seed": 12,
+      "name": "Ben Folds",
+      "emoji": "🎹"
+     },
+     {
+      "seed": 4,
+      "name": "New Order",
+      "emoji": "🆕"
+     },
+     {
+      "seed": 13,
+      "name": "Billy Woods",
+      "emoji": "🌲"
+     },
+     {
+      "seed": 6,
+      "name": "Erykah Badu",
+      "emoji": "👳🏿"
+     },
+     {
+      "seed": 11,
+      "name": "Lil Yachty",
+      "emoji": "⛵"
+     },
+     {
+      "seed": 3,
+      "name": "Tupac Shakur",
+      "emoji": "🖖🏿"
+     },
+     {
+      "seed": 14,
+      "name": "Weyes Blood",
+      "emoji": "🩸"
+     },
+     {
+      "seed": 7,
+      "name": "J Dilla",
+      "emoji": "🍩"
+     },
+     {
+      "seed": 10,
+      "name": "Run the Jewels",
+      "emoji": "💎"
+     },
+     {
+      "seed": 2,
+      "name": "Rihanna",
+      "emoji": "☂️"
+     },
+     {
+      "seed": 15,
+      "name": "Arthur Russell",
+      "emoji": "🎻"
+     }
+    ]
+   },
+   {
+    "name": "Region 3",
+    "sub": "alt, indie, post punk",
+    "slots": [
+     {
+      "seed": 1,
+      "name": "The Rolling Stones",
+      "emoji": "💋"
+     },
+     {
+      "seed": 16,
+      "name": "Lightning Bolt",
+      "emoji": "⚡"
+     },
+     {
+      "seed": 8,
+      "name": "Violent Femmes",
+      "emoji": "♀️"
+     },
+     {
+      "seed": 9,
+      "name": "Sturgill Simpson",
+      "emoji": "☁️"
+     },
+     {
+      "seed": 5,
+      "name": "Sepultura",
+      "emoji": "🪦"
+     },
+     {
+      "seed": 12,
+      "name": "Courtney Barnett",
+      "emoji": "🚜"
+     },
+     {
+      "seed": 4,
+      "name": "Al Green",
+      "emoji": "🟢"
+     },
+     {
+      "seed": 13,
+      "name": "Lungfish",
+      "emoji": "🫁"
+     },
+     {
+      "seed": 6,
+      "name": "Elliott Smith",
+      "emoji": "⚒️"
+     },
+     {
+      "seed": 11,
+      "name": "Ty Segall",
+      "emoji": "🐦"
+     },
+     {
+      "seed": 3,
+      "name": "Alice in Chains",
+      "emoji": "🔗"
+     },
+     {
+      "seed": 14,
+      "name": "The Men",
+      "emoji": "🧔🏻🧔🏻"
+     },
+     {
+      "seed": 7,
+      "name": "Ministry",
+      "emoji": "✝️"
+     },
+     {
+      "seed": 10,
+      "name": "Graham Coxon",
+      "emoji": "🎨"
+     },
+     {
+      "seed": 2,
+      "name": "The Beach Boys",
+      "emoji": "🏖️"
+     },
+     {
+      "seed": 15,
+      "name": "Shonen Knife",
+      "emoji": "🔪"
+     }
+    ]
+   },
+   {
+    "name": "Region 4",
+    "sub": "grab bag, electronic/experimental",
+    "slots": [
+     {
+      "seed": 1,
+      "name": "Beyonce",
+      "emoji": "🐝"
+     },
+     {
+      "seed": 16,
+      "name": "Clinic",
+      "emoji": "🏥"
+     },
+     {
+      "seed": 8,
+      "name": "Blur",
+      "emoji": "🌫️"
+     },
+     {
+      "seed": 9,
+      "name": "Animal Collective",
+      "emoji": "🐶"
+     },
+     {
+      "seed": 5,
+      "name": "Gorillaz",
+      "emoji": "🦍"
+     },
+     {
+      "seed": 12,
+      "name": "Gene Clark",
+      "emoji": "🧬"
+     },
+     {
+      "seed": 4,
+      "name": "Smashing Pumpkins",
+      "emoji": "🎃"
+     },
+     {
+      "seed": 13,
+      "name": "Anna von Hausswolff",
+      "emoji": "🕍"
+     },
+     {
+      "seed": 6,
+      "name": "George Michael",
+      "emoji": "👖"
+     },
+     {
+      "seed": 11,
+      "name": "Brockhampton",
+      "emoji": "🪨"
+     },
+     {
+      "seed": 3,
+      "name": "Marvin Gaye",
+      "emoji": "🎙️"
+     },
+     {
+      "seed": 14,
+      "name": "Wire",
+      "emoji": "🔌"
+     },
+     {
+      "seed": 7,
+      "name": "Todd Rundgren",
+      "emoji": "🐺"
+     },
+     {
+      "seed": 10,
+      "name": "Magnetic Fields",
+      "emoji": "🧲"
+     },
+     {
+      "seed": 2,
+      "name": "Pink Floyd",
+      "emoji": "🌈⃤—"
+     },
+     {
+      "seed": 15,
+      "name": "Phantogram",
+      "emoji": "👻"
+     }
+    ]
+   }
+  ],
+  "playin": null
+ },
+ "regionNames": {
+  "1": [
+   "",
+   "",
+   "",
+   ""
+  ],
+  "2": [
+   "",
+   "",
+   "",
+   ""
+  ],
+  "3": [
+   "",
+   "",
+   "",
+   ""
+  ],
+  "4": [
+   "rock, folk, americana",
+   "pop, soul, R&B",
+   "alt, indie, post punk",
+   "grab bag, electronic/experimental"
+  ]
+ },
+ "aliases": {
+  "1": {
+   "Maiden": "Iron Maiden",
+   "STP": "Stone Temple Pilots",
+   "70s Bob": "Bob Dylan (70s)",
+   "Bob Dylan": "Bob Dylan (70s)",
+   "PULP": "Pulp",
+   "Nilsson": "Harry Nilsson"
+  },
+  "2": {
+   "Vic": "Vic Chesnutt",
+   "Saul": "Saul Williams",
+   "Dylan 90s": "Bob Dylan (90s)"
+  },
+  "3": {
+   "Shintara Sakamoto": "Shintaro Sakamoto",
+   "Manic Street": "Manic Street Preachers",
+   "Camper Van": "Camper Van Beethoven",
+   "Tribe Called Quest": "A Tribe Called Quest"
+  },
+  "4": {}
+ },
+ "slashNames": [
+  "AC/DC"
+ ],
+ "winnerFix": {},
+ "matchFix": {},
+ "finalSeries": {
+  "1": {
+   "a": "Prince",
+   "b": "Ween",
+   "winner": "Ween",
+   "score": "4-3",
+   "note": "The final tied 2-2 on Apr 22, so it went to a best-of-7 of category matchups, three songs a game.",
+   "games": [
+    {
+     "date": "2024-04-24",
+     "winner": "Prince",
+     "votes": "3-1",
+     "cats": [
+      [
+       "Soundtrack",
+       "Mountains",
+       "I'll Miss You"
+      ],
+      [
+       "Best lyrics",
+       "The Ballad of Dorothy Parker",
+       "Exactly Where I'm At (Live)"
+      ],
+      [
+       "Instrumental",
+       "Arboretum",
+       "Love Come Down (9-11-01) - Ceasar Demos"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-25",
+     "winner": "Ween",
+     "votes": "3-1",
+     "cats": [
+      [
+       "Music video",
+       "Raspberry Beret",
+       "Transdermal Celebration"
+      ],
+      [
+       "Feature w/ other artist",
+       "Kate Bush - Why Should I Love You?",
+       "The Desert Sessions - Bring it Back Gentle"
+      ],
+      [
+       "First name as song title",
+       "Bambi",
+       "Kim Smoltz"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-26",
+     "winner": "Ween",
+     "votes": "4-0",
+     "cats": [
+      [
+       "90s",
+       "Willing and Able",
+       "What Deaner Was Talkin' About"
+      ],
+      [
+       "Opener",
+       "Let's Go Crazy",
+       "Little Birdy"
+      ],
+      [
+       "Side project",
+       "The Time - Jungle Love",
+       "Aaron Freeman - Covert Discretion"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-27",
+     "winner": "Prince",
+     "votes": "4-0",
+     "cats": [
+      [
+       "00s",
+       "1+1+1 is 3 - Live",
+       "Eulogy for David Anderson"
+      ],
+      [
+       "Closer",
+       "Purple Rain",
+       "She's Your Baby"
+      ],
+      [
+       "Sub-2:00",
+       "Sister",
+       "Up On Th' Hill"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-28",
+     "winner": "Prince",
+     "votes": "4-0",
+     "cats": [
+      [
+       "Cover by another band",
+       "D'Angelo - She's Always in My Hair",
+       "Elliott Smith & Mary Lou Lord - Birthday Boy"
+      ],
+      [
+       "Over 10:00",
+       "Baby I'm a Star - Live",
+       "Woman And Man"
+      ],
+      [
+       "Live",
+       "Motherless Child",
+       "She Fucks Me"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-29",
+     "winner": "Ween",
+     "votes": null,
+     "cats": [
+      [
+       "Best guitar solo song",
+       "Computer Blue",
+       "Monique the Freak"
+      ],
+      [
+       "Cover",
+       "Creep (Live at Coachella 2008)",
+       "Kashmir (Live at Red Rocks 2017)"
+      ],
+      [
+       "Non-album cut",
+       "17 Days",
+       "I Wuz' Nothing"
+      ]
+     ]
+    },
+    {
+     "date": "2024-04-30",
+     "winner": "Ween",
+     "votes": null,
+     "cats": [
+      [
+       "80s",
+       "I Would Die 4 U",
+       "David The Negro"
+      ],
+      [
+       "10s",
+       "BREAKFAST CAN WAIT",
+       "LMLYP (Live)"
+      ],
+      [
+       "Voice modulation",
+       "Shockadelica",
+       "Tried & True"
+      ]
+     ]
+    }
+   ]
+  }
+ },
+ "notes": {
+  "2": "Beastie Boys won the final 3-1 on the playlists (game 1), then Jimi Hendrix won the best-of-7 series 4-2. After this year, the series is only a tiebreaker for a 2-2 final."
+ },
+ "draftAlias": {
+  "Jon Spencer Blues Explosion": "John Spencer",
+  "Bowie": "David Bowie",
+  "Chris Knox / Tall Dwarfs": "Tall Dwarfs",
+  "REM": "R.E.M.",
+  "Talk Talk (revived)": "Talk Talk"
+ },
+ "draftFix": {
+  "4|Frank Zappa": {
+   "old": [
+    "Frank Zappa"
+   ],
+   "name": "Sepultura"
+  }
+ },
+ "umbrella": {
+  "Smog": "Bill Callahan",
+  "Super Furry Animals": "Gruff Rhys",
+  "Crowded House": "Neil Finn",
+  "Girls": "Christopher Owens",
+  "Chris Knox": "Tall Dwarfs",
+  "Songs: Ohia": "Jason Molina",
+  "Magnolia Electric Co.": "Jason Molina",
+  "Creedence Clearwater Revival": "CCR",
+  "Sly & The Family Stone": "Sly and the Family Stone",
+  "Rilo Kiley": "Jenny Lewis",
+  "Wings": "Paul McCartney",
+  "The Modern Lovers": "Jonathan Richman",
+  "Silver Jews": "David Berman",
+  "Purple Mountains": "David Berman",
+  "Sebadoh": "Lou Barlow",
+  "The Stooges": "Iggy Pop",
+  "Wham!": "George Michael",
+  "Sunflower Bean": "Julia Cumming",
+  "Jon Spencer Blues Explosion": "John Spencer",
+  "The Jon Spencer Blues Explosion": "John Spencer",
+  "Sun Kil Moon": "Mark Kozelek",
+  "Red House Painters": "Mark Kozelek",
+  "Richard & Linda Thompson": "Thompsons",
+  "Richard Thompson": "Thompsons",
+  "Linda Thompson": "Thompsons",
+  "Teddy Thompson": "Thompsons",
+  "Run The Jewels": "Run the Jewels",
+  "El-P": "Run the Jewels",
+  "Killer Mike": "Run the Jewels",
+  "Dinosaur Jr.": "J Mascis",
+  "The B-52's": "The B-52's"
+ }
+}

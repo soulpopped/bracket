@@ -1,0 +1,5080 @@
+{
+ "Schedule": [
+  {
+   "row": 3,
+   "round": "Championship",
+   "date": "Monday, April 22",
+   "a1": "Ween",
+   "a2": "Prince",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [],
+   "l2": [],
+   "result": "Ween (2-2) (4-3)",
+   "note": null
+  },
+  {
+   "row": 5,
+   "round": "Final Four",
+   "date": "Monday, April 8",
+   "a1": "Brian Eno",
+   "a2": "Ween",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [],
+   "l2": [],
+   "result": "Ween (3-1)*",
+   "note": null
+  },
+  {
+   "row": 6,
+   "round": "Final Four",
+   "date": "Thursday, April 11",
+   "a1": "Elvis Costello",
+   "a2": "Prince",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/3UOuGf3PyVar0dzuetkjHs?si=a03a9f45c6864c2b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/49wY18CUb0Ay1nJzq8BEcH?si=52ebb043ce2e4039"
+   ],
+   "result": "Prince (3-1)",
+   "note": null
+  },
+  {
+   "row": 8,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, March 25",
+   "a1": "Brian Eno",
+   "a2": "The Cure",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7FpFoXx2JprgSZdsF1zn4k?si=fead3828f6fa42e8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5Uk2X3YclNl25YSy931UMj?si=4e8aa7843c9a47db"
+   ],
+   "result": "Brian Eno (2-2, 8.525 to 8.500)",
+   "note": null
+  },
+  {
+   "row": 9,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, March 28",
+   "a1": "Bob Dylan (70s)",
+   "a2": "Elvis Costello",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/4GzDrHe2iSBgkaGU4DoC4X?si=671aa41fb3b24b61"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/17ibE9HM6aDtlMK0HtvLOF?si=5a81bc9861184f70"
+   ],
+   "result": "Elvis Costello (2-2, 8.750 to 8.575)",
+   "note": null
+  },
+  {
+   "row": 10,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, April 1",
+   "a1": "The Clash",
+   "a2": "Ween",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/72WIsIFAN71GVOAnffkYpt?si=d359ceac90394f61"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5S2EdMqrq0RfqQRXbMgbQb?si=cc756e427ec34568"
+   ],
+   "result": "Ween (4-0)*",
+   "note": null
+  },
+  {
+   "row": 11,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, April 4",
+   "a1": "Pulp",
+   "a2": "Prince",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [],
+   "l2": [
+    "https://open.spotify.com/playlist/1vO4gJMtvGGIDXH5xGi1CL?si=b25ead4bfa784054"
+   ],
+   "result": "Prince (3-2)* [Lindsay also voted]",
+   "note": null
+  },
+  {
+   "row": 13,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, February 26",
+   "a1": "Elvis Presley",
+   "a2": "Brian Eno",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/6GK4bHeVASrbyIvsa8rbOn?si=bc9a45260e1240b3"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/22wBxAf1JiXEWhM8RV5Ivv?si=4e1e29ad56c34747"
+   ],
+   "result": "Brian Eno (3-1)*",
+   "note": null
+  },
+  {
+   "row": 14,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, February 29",
+   "a1": "Bob Dylan (70s)",
+   "a2": "Soundgarden",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1Zp0jnzzNtsGhZ6Cm1NYGg?si=05237eb38665481b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/742EV7hkjnUaBnLCvUeuEk?si=43adef6dfb464b2d"
+   ],
+   "result": "Bob Dylan (4-0)*",
+   "note": null
+  },
+  {
+   "row": 15,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 4",
+   "a1": "Paul Simon",
+   "a2": "The Clash",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1NcGggrDkDyHlXya1dNxgr?si=c034a73c8cc54550"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1cq6DUucqlubMxnZ1A1BnR?si=e942e36439024c8c"
+   ],
+   "result": "The Clash (3-1)*",
+   "note": null
+  },
+  {
+   "row": 16,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 7",
+   "a1": "Pulp",
+   "a2": "The Replacements",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5Ou2L28y9bEAfkNnBIkMVd?si=c2b0afc557e04279"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6lp4uC8AR9N7kOkIx7pVel?si=dfb7bbbdec1849bd"
+   ],
+   "result": "Pulp (2-2) (9.175 to 9.05)",
+   "note": null
+  },
+  {
+   "row": 17,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 11",
+   "a1": "Tom Petty",
+   "a2": "The Cure",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/5nfNhuaCWylsGSql1xBhEx?si=19bda7d98d1945af"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5lJjyfLftD4daka1nwZs23?si=4f8e1fbcae6d4b80"
+   ],
+   "result": "The Cure (3-1)*",
+   "note": null
+  },
+  {
+   "row": 18,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 14",
+   "a1": "Stevie Wonder",
+   "a2": "Elvis Costello",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/3fRGNNz7BLwpJ7yRcjWq2b?si=6479948d71734a40"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6OB1oOxnshrsvd9tM5KQnO?si=b07a28ade87941a8"
+   ],
+   "result": "Elvis Costello (4-0)*",
+   "note": null
+  },
+  {
+   "row": 19,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 18",
+   "a1": "Bob Marley",
+   "a2": "Ween",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/5GB3AMJjPNWko1R6REKRoo?si=a00bb52d3511455e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4gabEE6Wi0H30Z3DS8iXAN?si=e2dad8fa5cc74660"
+   ],
+   "result": "Ween (4-0)*",
+   "note": null
+  },
+  {
+   "row": 20,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 21",
+   "a1": "James Brown",
+   "a2": "Prince",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/4eoehisbwl9JelIq9Ucelw?si=f2c4a5c741a2443f"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4Xn1ZYppEe2oeYAKB99tGg?si=dbad58e109d24514"
+   ],
+   "result": "Prince (4-0)*",
+   "note": null
+  },
+  {
+   "row": 22,
+   "round": "Round 2",
+   "date": "Monday, December 25",
+   "a1": "Bob Marley",
+   "a2": "Jonathan Richman",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6DUI90ZhHUhrgmZMOAD8N0?si=145fbd5c088647a9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1omEC2G28Kln2SrVB7P8zd?si=72b0072306564df6"
+   ],
+   "result": "Bob Marley (3-1)*",
+   "note": null
+  },
+  {
+   "row": 23,
+   "round": "Round 2",
+   "date": "Thursday, December 28",
+   "a1": "Pulp",
+   "a2": "AC/DC",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1Y67AU1yyZpuT8z1NK3XLj?si=5b136d6a6f5f4dcd"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0TQA2Ql7qXBJrndghE73cz?si=077a204013644a4d"
+   ],
+   "result": "Pulp (3-1)",
+   "note": null
+  },
+  {
+   "row": 24,
+   "round": "Round 2",
+   "date": "Monday, January 1",
+   "a1": "Harry Nilsson",
+   "a2": "Tom Petty",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/0FcRFIPKbxEvdTPygffj6y?si=e5cfec56a7b546cc"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/27m35FqATKR5xZfeMB2Lv6?si=b8c92091d9624e89"
+   ],
+   "result": "Tom Petty (2-2)* (8.9 to 8.62)",
+   "note": null
+  },
+  {
+   "row": 25,
+   "round": "Round 2",
+   "date": "Thursday, January 4",
+   "a1": "Lou Reed",
+   "a2": "Bob Dylan (70s)",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/2s7HjYGEyzbZaLTUawiYXS?si=3aa430190f624d8f"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0WAkfvOorz1hb4zdCKRXAq?si=93658cc1204243a8"
+   ],
+   "result": "70s Bob (2-2)* (8.56 to 8.04)",
+   "note": null
+  },
+  {
+   "row": 26,
+   "round": "Round 2",
+   "date": "Monday, January 15",
+   "a1": "Ween",
+   "a2": "Nina Simone",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/42AURCX5oP5Azy1rnxHljS?si=c109c1fa92ee4aba"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1ly4zAhDNRCyszxf0JZDY6?si=3e5adac82de2439c"
+   ],
+   "result": "Ween (3-1)*",
+   "note": null
+  },
+  {
+   "row": 27,
+   "round": "Round 2",
+   "date": "Thursday, January 18",
+   "a1": "The Kinks",
+   "a2": "James Brown",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/5F9wXhubfVlU8VwC7dvoWP?si=317e7a04ba4d4f5a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/129tcfUfw3X1uT7z4ovX0R?si=c8ba8e7e7f654475"
+   ],
+   "result": "James Brown (4-0)*",
+   "note": null
+  },
+  {
+   "row": 28,
+   "round": "Round 2",
+   "date": "Monday, January 22",
+   "a1": "Lana Del Rey",
+   "a2": "The Cure",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1MoBXgWID3TNVCCJGzcMfd?si=4a9d4e2af45d45ff"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5rEndF5nqc1zjzD0UOnLb2?si=19a6691a5b6a46c2"
+   ],
+   "result": "The Cure (3-1)",
+   "note": null
+  },
+  {
+   "row": 29,
+   "round": "Round 2",
+   "date": "Thursday, January 25",
+   "a1": "Stevie Wonder",
+   "a2": "Pavement",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/18avo4F16rRFp5A7LA8nme?si=68c7ed30e9484ae8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4YWAx4owGMjDgXpuTA1hsI?si=e3e3508321b54c6b"
+   ],
+   "result": "Stevie Wonder (4-0)*",
+   "note": null
+  },
+  {
+   "row": 30,
+   "round": "Round 2",
+   "date": "Monday, January 29",
+   "a1": "Maiden/STP",
+   "a2": "Paul Simon",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/5IQ6tCNZI37jevRL6lNzFK?si=b091b195bcb94938",
+    "https://open.spotify.com/playlist/6N1W3tBCR14RRAd4hII8Ce?si=d6463c0f8d49461a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3dtVmcfiytTY8XlspEcnNj?si=4373298504fd44c6"
+   ],
+   "result": "Paul Simon (3-1-0)*",
+   "note": null
+  },
+  {
+   "row": 31,
+   "round": "Round 2",
+   "date": "Thursday, February 1",
+   "a1": "Sonic Youth",
+   "a2": "Prince",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/4PiFglV0koril8xSqrBhAz?si=f4e05d38e9b84f7b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2ZLthToBHrKkyl4OOCiVHK?si=3176dc4680654803"
+   ],
+   "result": "Prince (3-1)*",
+   "note": null
+  },
+  {
+   "row": 32,
+   "round": "Round 2",
+   "date": "Monday, February 5",
+   "a1": "Elvis Presley",
+   "a2": "The Pretenders",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7iJtMIo4i4oPe9uu7B3jBy?si=d6404dc0295e46dc"
+   ],
+   "l2": [
+    "https://www.unsupervisednerds.com/reads-full/2021/1/20/the-tommy-westphall-universe"
+   ],
+   "result": "Elvis Presley (3-1)",
+   "note": null
+  },
+  {
+   "row": 33,
+   "round": "Round 2",
+   "date": "Thursday, February 8",
+   "a1": "Tears for Fears",
+   "a2": "Elvis Costello",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/0xv76W9r7eWxVWJ7rhGkqP?si=be9786bb88424ae5"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0XmO6ItyibpERYGM0CgAmu?si=6aec4aba1c7f48b1"
+   ],
+   "result": "Elvis Costello (3-1)",
+   "note": null
+  },
+  {
+   "row": 34,
+   "round": "Round 2",
+   "date": "Monday, February 12",
+   "a1": "Pixies",
+   "a2": "The Clash",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1f8tJKk8WG8x96YV3RgIAa?si=005cf855b8074ce0"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6ameoskJNcMoUGru69TJ5r?si=4d0ce898f29f424b"
+   ],
+   "result": "The Clash (2-2, 8.675 to 8.6)",
+   "note": null
+  },
+  {
+   "row": 35,
+   "round": "Round 2",
+   "date": "Thursday, February 15",
+   "a1": "Lambchop",
+   "a2": "The Replacements",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1e4jBz2iblthAlGgTl0iHa?si=e04f7662fdc441ea"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/56eXKSghRRJLm66EB9WMXl?si=aaa9bd45c9474c37"
+   ],
+   "result": "The Replacements (2-2, 9.00 to 8.94)",
+   "note": null
+  },
+  {
+   "row": 36,
+   "round": "Round 2",
+   "date": "Monday, February 19",
+   "a1": "Brian Eno",
+   "a2": "Built to Spill",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/42nPejsQ5GuykF2HYHKePf?si=149e04a365ef47fa"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5QJdutTiTx5w6DH1LFooRk?si=1ecc2a43c095473f"
+   ],
+   "result": "Brian Eno (2-2, 8.675 to 8.425)",
+   "note": null
+  },
+  {
+   "row": 37,
+   "round": "Round 2",
+   "date": "Thursday, February 22",
+   "a1": "Soundgarden",
+   "a2": "Chuck Berry",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/79ezdei6JoPLHrr7z3iRfC?si=4d76ed4916ef4f62"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3hi4z2wJ05Acq1l0ys4N6D?si=35007f6430614d54"
+   ],
+   "result": "Soundgarden (2-2, 8.00 to 7.975)",
+   "note": null
+  },
+  {
+   "row": 39,
+   "round": "Round 1",
+   "date": "Monday, September 4",
+   "a1": "Bob Marley",
+   "a2": "Prefab Sprout",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7gltatN6mT86PBmF1CxhZM?si=f3293840c37b40ca"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4JJ6c4I9e2WhUpeyQomfpQ?si=af7f48f4ab914891"
+   ],
+   "result": "Bob Marley (4-0)*",
+   "note": null
+  },
+  {
+   "row": 40,
+   "round": "Round 1",
+   "date": "Thursday, September 7",
+   "a1": "Iggy Pop",
+   "a2": "Jonathan Richman",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/5zT1SiASHhvYBGXkGCaIfS?si=60c09d38277248f7"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/70fekNkqXaRusRbfYHw4eP?si=98c060a21d0e4325"
+   ],
+   "result": "Jonathan Richman (3-1)",
+   "note": null
+  },
+  {
+   "row": 41,
+   "round": "Round 1",
+   "date": "Monday, September 11",
+   "a1": "Sonic Youth",
+   "a2": "Beck",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1b1yFpietORuL1n0jtk0I6?si=KJadnWhHR4aSP-BziEi2Yg"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/79jd2jSWa9y27eQUKCy3of?si=b2a435b292fa4fdd"
+   ],
+   "result": "Sonic Youth (3-1)",
+   "note": null
+  },
+  {
+   "row": 42,
+   "round": "Round 1",
+   "date": "Thursday, September 14",
+   "a1": "Prince",
+   "a2": "Lou Barlow",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/06ZRv4uQy6ZxoUZgSyngqb?si=e0842e66668545da"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1aVaWphTx00DymD7lNJBvV?si=c1daf39209374bd2"
+   ],
+   "result": "Prince (4-0)*",
+   "note": null
+  },
+  {
+   "row": 43,
+   "round": "Round 1",
+   "date": "Monday, September 18",
+   "a1": "The Allman Brothers",
+   "a2": "Brian Eno",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/60SO1Zh1LAyD5HfYpFdzPr?si=ba7185ca1b064c44"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4MjuTWQkNOkqq7K8yi6LA8?si=4c9dc93ee4ab4081"
+   ],
+   "result": "Brian Eno (2-2, 8.675 vs. 8.525)",
+   "note": null
+  },
+  {
+   "row": 44,
+   "round": "Round 1",
+   "date": "Thursday, September 21",
+   "a1": "Taylor Swift",
+   "a2": "Built to Spill",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://spotify.link/3IjtuTufgDb"
+   ],
+   "l2": [
+    "https://spotify.link/CXrl34jfgDb"
+   ],
+   "result": "Built to Spill (3-1)",
+   "note": null
+  },
+  {
+   "row": 45,
+   "round": "Round 1",
+   "date": "Monday, September 25",
+   "a1": "Lou Reed",
+   "a2": "Queens of the Stone Age",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://spotify.link/y5OPp7PomDb"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0ihxCHFcw4NAyTAAMQS8tT?si=56aa032f0b04496e"
+   ],
+   "result": "Lou Reed (2-2, 8.175 vs. 8.15)",
+   "note": null
+  },
+  {
+   "row": 46,
+   "round": "Round 1",
+   "date": "Thursday, September 28",
+   "a1": "Bob Dylan (70s)",
+   "a2": "Brian Jonestown Massacre",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0fcVM7gfUTmfb0HV7Nl0xQ?si=003660944ad44533"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0Gh3cPfQer1GlskkXzmFtL?si=9683f6a41adb489c"
+   ],
+   "result": "Bob Dylan (3-1)*",
+   "note": null
+  },
+  {
+   "row": 47,
+   "round": "Round 1",
+   "date": "Monday, October 2",
+   "a1": "Madonna",
+   "a2": "Lambchop",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/5cJf7vF1d3avV8abte9IEv?si=8c4f7dc54cab4e5a"
+   ],
+   "l2": [
+    "https://spotify.link/1EYRouyjzDb"
+   ],
+   "result": "Lambchop (3-1)**",
+   "note": null
+  },
+  {
+   "row": 48,
+   "round": "Round 1",
+   "date": "Thursday, October 5",
+   "a1": "The Replacements",
+   "a2": "My Morning Jacket",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5pccE5qJzrDwEH06wS8mlf?si=4984aef0346f4604"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0J6X35IwLA6gOElVYYQ6D7?si=16eaaed6bcce4229"
+   ],
+   "result": "The Replacements (2-2, 8.85 vs. 8.7)*",
+   "note": null
+  },
+  {
+   "row": 49,
+   "round": "Round 1",
+   "date": "Monday, October 9",
+   "a1": "Pixies",
+   "a2": "Björk",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7gNj9oN0CALgYc7gdo11E9?si=bcfa4da4a01d4119"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1EfH6aWlfxVNU3NnO235OZ?si=c257a73f7af04305"
+   ],
+   "result": "Pixies (2-2, 8.88 vs. 8.81)",
+   "note": null
+  },
+  {
+   "row": 50,
+   "round": "Round 1",
+   "date": "Thursday, October 12",
+   "a1": "The Clash",
+   "a2": "Broken Social Scene",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1EfH6aWlfxVNU3NnO235OZ?si=c00a2a2a0be84ed5"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5rLNOWCqCVsQLnOEg41i9Y?si=183a8b5036cd4b0f"
+   ],
+   "result": "The Clash (4-0)*",
+   "note": null
+  },
+  {
+   "row": 51,
+   "round": "Round 1",
+   "date": "Monday, October 16",
+   "a1": "Harry Nilsson",
+   "a2": "Faith No More",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0xTBjHkaO5YjLYLJWNdgN3?si=2680f8c0b67249f7"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1hteShbfbyjFg8UMnx4a7D?si=bfb9782fb4f94841"
+   ],
+   "result": "Nilsson (2-2)* (8.3 vs. 8.175)",
+   "note": null
+  },
+  {
+   "row": 52,
+   "round": "Round 1",
+   "date": "Thursday, October 19",
+   "a1": "Tom Petty",
+   "a2": "Belle and Sebastian",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7LNUtOH1jnA4G6mtrJJxlw?si=2822054297a84646"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/28qKLRMoEhGbc7IBB17UVn?si=fe41252f77a94b5d"
+   ],
+   "result": "Tom Petty (4-0)*",
+   "note": null
+  },
+  {
+   "row": 53,
+   "round": "Round 1",
+   "date": "Monday, October 23",
+   "a1": "Tears for Fears",
+   "a2": "They Might be Giants",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6l5jKpPPQmZ6XYiCfLNB6F?si=fc3c0b1302a54792"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3l9Inx9ajlRn3DhqVsfcHC?si=503a33a056f5487a"
+   ],
+   "result": "Tears for Fears (2-2)* (7.85 vs. 7.75)",
+   "note": null
+  },
+  {
+   "row": 54,
+   "round": "Round 1",
+   "date": "Thursday, October 26",
+   "a1": "Elvis Costello",
+   "a2": "Fishbone",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3ZFdfGBSb8rBKydeBrmmvo?si=8f45430b556b4344"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1Nmesii9uAt0xe3Lbwhw1e?si=d1b740059de24622"
+   ],
+   "result": "Elvis Costello (3-1)",
+   "note": null
+  },
+  {
+   "row": 55,
+   "round": "Round 1",
+   "date": "Monday, October 30",
+   "a1": "Iron Maiden",
+   "a2": "Stone Temple Pilots",
+   "c1": "orange",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/1LTgWRF0Hk82K3ekA0iEym?si=0da7e65483a34999"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1QN3Mt1bsqjjE8t1RDz9hl?si=719709f06aa54ad0"
+   ],
+   "result": "TIE | BOTH ADVANCE",
+   "note": null
+  },
+  {
+   "row": 56,
+   "round": "Round 1",
+   "date": "Thursday, November 2",
+   "a1": "Paul Simon",
+   "a2": "The Specials",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5A8IDhtP3bBCmq8gb8CXBB?si=0a4edb10cc9d4b18"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7hrujrg3ePGLhXvf4bEOmW?si=3de045070e1a4bf7"
+   ],
+   "result": "Paul Simon (2-2)* (8.675 vs. 8.525)",
+   "note": null
+  },
+  {
+   "row": 57,
+   "round": "Round 1",
+   "date": "Monday, November 6",
+   "a1": "Donovan",
+   "a2": "Pulp",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/5eQt4KbqLzwTJW2ml3KL7F?si=b7e3411002774971"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3hJBcypgKqr1YJXvOa9GsP?si=b96d79ef573742e1"
+   ],
+   "result": "Pulp (4-0)*",
+   "note": null
+  },
+  {
+   "row": 58,
+   "round": "Round 1",
+   "date": "Thursday, November 9",
+   "a1": "AC/DC",
+   "a2": "Blue Öyster Cult",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5ohLKPZd6MC9dl7Uc278k8?si=14b364bddaf54320"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2dVLILDn0ildYImJtSz772?si=0797b569bea7438e"
+   ],
+   "result": "AC/DC (3-1)*",
+   "note": null
+  },
+  {
+   "row": 59,
+   "round": "Round 1",
+   "date": "Monday, November 13",
+   "a1": "Wilco",
+   "a2": "Lana Del Rey",
+   "c1": "gray",
+   "c2": "rgb(0.40,0.31,0.65)",
+   "l1": [
+    "https://open.spotify.com/playlist/69witbuSjscg0zeuhwe5nD?si=54b3f96bc37b45e2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/58XzGTeGyk8Ra2ovDN7Q3B?si=6033334071b24628"
+   ],
+   "result": "Lana Del Rey (3-1)",
+   "note": null
+  },
+  {
+   "row": 60,
+   "round": "Round 1",
+   "date": "Thursday, November 16",
+   "a1": "The Cure",
+   "a2": "David Berman",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2QYcY5gFCptejavMPuUqdB?si=979ce561814944b1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7mZpq07DjJcTgnpb02Xs3Q?si=cc627fe9a3f04b8f"
+   ],
+   "result": "The Cure (4-0)*",
+   "note": null
+  },
+  {
+   "row": 61,
+   "round": "Round 1",
+   "date": "Monday, November 20",
+   "a1": "Stevie Wonder",
+   "a2": "Spiritualized",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7nXafnBa3RbXyrQc6igyAu?si=3053893cbac64b59"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3aM6d6b5Auu8slnvWhc4Iu?si=fa5d5847b00b49c9"
+   ],
+   "result": "Stevie Wonder (4-0)*",
+   "note": null
+  },
+  {
+   "row": 62,
+   "round": "Round 1",
+   "date": "Thursday, November 23",
+   "a1": "Pavement",
+   "a2": "Muse",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6I12CAq4JznsuVh3DJqcU3?si=53de2045d0084d06"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5C1vEga6paThhDhDvpSnbq?si=1c7c824072544b07"
+   ],
+   "result": "Pavement (3-1)",
+   "note": null
+  },
+  {
+   "row": 63,
+   "round": "Round 1",
+   "date": "Monday, November 27",
+   "a1": "Black Sabbath",
+   "a2": "Ween",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/5Pnkwn1vLIYtlsgO8NPA7O?si=8902ca825c784c6a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0EUVDvEfOSEA7mJfTipUSP?si=52ada8c81ece42d5"
+   ],
+   "result": "Ween (3-1)*",
+   "note": null
+  },
+  {
+   "row": 64,
+   "round": "Round 1",
+   "date": "Thursday, November 30",
+   "a1": "Nina Simone",
+   "a2": "MF Doom",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4njt7TsNLGPInD8rnIm4ZA?si=b47900b4a6ab4356"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5T4Y7njSNPTB4WaW68YLpB?si=5084aff1344c454a"
+   ],
+   "result": "Nina Simone (3-1)*",
+   "note": null
+  },
+  {
+   "row": 65,
+   "round": "Round 1",
+   "date": "Monday, December 4",
+   "a1": "The Kinks",
+   "a2": "The Roots",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4eHmiTi6Jy1yhFmYiFGrJL?si=05e9f8463ccc4cfc"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6UoUyrStqEg43q2I6VFxqS?si=86b56072921a4190"
+   ],
+   "result": "The Kinks (4-0)*",
+   "note": null
+  },
+  {
+   "row": 66,
+   "round": "Round 1",
+   "date": "Thursday, December 7",
+   "a1": "James Brown",
+   "a2": "Superchunk",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3IGk6K7HGs4IFep3HIluiG?si=bbea23df86a043cf"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2XDPhPuE7avKKtpn3gh9Fg?si=85ec48d31242436a"
+   ],
+   "result": "James Brown (4-0)*",
+   "note": null
+  },
+  {
+   "row": 67,
+   "round": "Round 1",
+   "date": "Monday, December 11",
+   "a1": "Elvis Presley",
+   "a2": "Jawbreaker",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/189F86Q1DrIjhveECaRSfY?si=df9cd24415de4bd2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3Bgw1H1ypTZ8WiMAvtZ7Sm?si=2a459b3728884a3b"
+   ],
+   "result": "Elvis Presley (3-1)*",
+   "note": null
+  },
+  {
+   "row": 68,
+   "round": "Round 1",
+   "date": "Thursday, December 14",
+   "a1": "The Pretenders",
+   "a2": "The Go-Go's",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1zgXhXNQAa1Fqe5ohLo3PN?si=cad7aadfe25d4cb4"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2xrNOgIzvP9nO90f6eeDP3?si=eb5acab60c1f456e"
+   ],
+   "result": "The Pretenders (3-1)*",
+   "note": null
+  },
+  {
+   "row": 69,
+   "round": "Round 1",
+   "date": "Monday, December 18",
+   "a1": "Soundgarden",
+   "a2": "Ghostface Killah",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7IqPPEhFbDX64xM4fuzdfI?si=0a39b85e33774029"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1BLHblseXhthCFEr5Ak4x8?si=de5c2f229edc4f37"
+   ],
+   "result": "Soundgarden (3-1)*",
+   "note": null
+  },
+  {
+   "row": 70,
+   "round": "Round 1",
+   "date": "Thursday, December 21",
+   "a1": "Chuck Berry",
+   "a2": "Sunny Day Real Estate",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5nFlHNvrWHiSm1zv1IR3DH?si=f5f7cfaeebc3453f"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3yvwzxb6AuTc3lPFpIAYZS?si=7d1d4752e28443db"
+   ],
+   "result": "Chuck Berry (3-1)*",
+   "note": null
+  },
+  {
+   "row": 72,
+   "round": "Play-In",
+   "date": "Monday, August 21",
+   "a1": "Prefab Sprout",
+   "a2": "Ted Leo",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6FgJSSYFImEOeTKYrPHZlU?si=de9784f952c941f1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2sPuZK2z2SyjiWsfDjN93V?si=7sPSAcItQFeQcdej_w3Wpw&pt=96ed8640bbb3b7368cc756cc627a1fba"
+   ],
+   "result": "Prefab Sprout (2-2, 7.9 vs. 7.6)",
+   "note": null
+  },
+  {
+   "row": 73,
+   "round": "Play-In",
+   "date": "Thursday, August 24",
+   "a1": "Jawbreaker",
+   "a2": "Blind Melon",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4lgRkVIsrFhaGAkszBydQK?si=ecda21affe9840a4"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6Wa16jtAQ8s34SpepVQq93?si=fcd37252250942d4"
+   ],
+   "result": "Jawbreaker (3-1)*",
+   "note": null
+  },
+  {
+   "row": 74,
+   "round": "Play-In",
+   "date": "Monday, August 28",
+   "a1": "Mountain Goats",
+   "a2": "Lambchop",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/3sy2qEdcfQIaAI9YTgcSsk?si=06f6e1a5df134be9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4sWYTIdRi0em8TGj2lYLzw?si=1641c3b4be324199"
+   ],
+   "result": "Lambchop (4-0)*",
+   "note": null
+  },
+  {
+   "row": 75,
+   "round": "Play-In",
+   "date": "Thursday, August 31",
+   "a1": "Spiritualized",
+   "a2": "Four Tet",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4aTGurgdTRg707ssTHuvPC?si=95a29330f0064ad9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1GacN3Luo4znZ6NbYBwcX5?si=tfjwz5i-RBGE_2dXWdOL6w&pt=baa5e63aad03828c9ec668d13dc2e8d1"
+   ],
+   "result": "Spiritualized (4-0)*",
+   "note": null
+  }
+ ],
+ "Schedule 2": [
+  {
+   "row": 3,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 24",
+   "a1": "Carly Rae Jepsen",
+   "a2": "Kendrick Lamar",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1qJfWYXxOkNvsp77aymjLt?si=3a20e4db871245ba"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/60k5jVB5D0sAopPQsNjFmm?si=331bb9ebe33d4428"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 4,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 27",
+   "a1": "Jason Molina",
+   "a2": "Bill Callahan",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4x9BIi6IN9GOjsjEGc8eYr?si=5f3baea852e44fe1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/67HfezDxxFwxxRwRQQ6nyw?si=e8f7be9faa924980"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  },
+  {
+   "row": 5,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 31",
+   "a1": "Roxy Music",
+   "a2": "Aretha Franklin",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/0Nmc4AimbvW5eCGCP2U9MY?si=9948e2f4d12f4d75"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/32w6JojaOVh0WXdl1f1m1f?si=3b9513e965c744fe"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 6,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, April 3",
+   "a1": "Fiona Apple",
+   "a2": "Beastie Boys",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/2dKW2WzziHuj5c183yw0vA?si=a45b40856ff340f9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2vcTkPe2uzMKlEXzD9n4LB?si=f425f397fe3d4346"
+   ],
+   "votes": "3-1 **",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 7,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, April 7",
+   "a1": "John Cale",
+   "a2": "Outkast",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/70FqPnBEJ8ofTfi93Qo3Ra?si=f2782464e0ec4652"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/36ej4H5zBrgtcGEiB8Od0i?si=1593436c3ebc4921"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 8,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, April 10",
+   "a1": "Mitski",
+   "a2": "Butthole Surfers",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4OfGdn8BkJtk6blCT0X5Hd?si=371c03effd77410e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5y4kvNSsBgTLlc8gXRZPBR?si=ae75345c26c343ef"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.050 to 7.975",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 9,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, April 14",
+   "a1": "Warren Zevon",
+   "a2": "Jimi Hendrix",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/4scrk0wi9DVISExEHlmRaV?si=55ba1a5c2b94413b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2OmMZr3Qpcg4D7EZGgoZLp?si=KKu_m3nYS3KMSliI_H9j5Q"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 10,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, April 17",
+   "a1": "Dinosaur Jr.",
+   "a2": "Father John Misty",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/33pv8IPPolVRJ2SeUGvGzs?si=9ceaae09d540443a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7l49jrstIzfTImnwQQ39Ys?si=7fedaa29baba4fc1"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 12,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, April 21",
+   "a1": "Kendrick Lamar",
+   "a2": "John Cale",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1PKes9k7lUVawJLaFsha8y?si=6c870f425cf94fc9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7MV9iOJO7Q7q9ja25owhe1?si=5816ad98b8054826"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 13,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, April 24",
+   "a1": "Mitski",
+   "a2": "Jason Molina",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4ceeZAR2ryMQC55pvgc9hT?si=c27ee855cf304c0d"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1VWMwuC95AsFm3l9ysDKIe?si=f81b3b56025b4f34"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.200 to 8.150",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 14,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, April 28",
+   "a1": "Jimi Hendrix",
+   "a2": "Aretha Franklin",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3VtgxkOw6emxK10kjlBiQL?si=5894d86c1afa4824"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0JAf7W9skHqu73SRsu5KfA?si=c145a75eff31428e"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 15,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, May 1",
+   "a1": "Beastie Boys",
+   "a2": "Father John Misty",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7kGEOKLtYUdpzoLuQR1SV9?si=bdab8ab09e344906"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1p9AcsChJQZHbgb7i2J6tK?si=5b54e97b1cf64630"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 17,
+   "round": "Final Four",
+   "date": "Monday, May 5",
+   "a1": "Kendrick Lamar",
+   "a2": "Jimi Hendrix",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1sRMy487QxcLUDL0sRyQNQ?si=92404f67e3194e5b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/56Zz2akc3ie7iHO3ltIgTG?si=d8c0598f5faa44c0"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.725 to 8.650",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 18,
+   "round": "Final Four",
+   "date": "Thursday, May 8",
+   "a1": "Mitski",
+   "a2": "Beastie Boys",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/4K1q7iMUgMcV7i8PyQzM9t?si=048f397a778e4404"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0iAEulq9UakGz7RUzaHdt9?si=7a147127ea9d4ec1"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 20,
+   "round": "Championship",
+   "date": "Wednesday, May 14",
+   "a1": "Jimi Hendrix",
+   "a2": "Beastie Boys",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/1IDrn8BdCjkx89aWmyLqUm?si=1268b1fddfc841dd"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7wYMX5E7s6mmcNmGVhleTy?si=8b5b4522a8b4499e"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "GAME 1: PLAYLISTS",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 21,
+   "round": "Championship",
+   "date": "Monday, May 19",
+   "a1": "Jimi Hendrix (0-1)",
+   "a2": "Beastie Boys (1-0)",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7qHkVBFWBlvdZuwtuejIjy?si=8d2092f0c0834841"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5neuWfPfi64XZPEga1EXnr?si=6d50e89c340c465b"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "GAME 2: BEST-OF-3",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 22,
+   "round": "Championship",
+   "date": "Tuesday, May 20",
+   "a1": "Jimi Hendrix (1-1)",
+   "a2": "Beastie Boys (1-1)",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3Trf9jjGFwW7JRd7mxPmvo?si=03d361cd8a044783"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5Bdk4ALqEtAOiJbVTG0Eny?si=fef8fb52c1c049eb"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "GAME 3: BEST-OF-3",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 23,
+   "round": "Championship",
+   "date": "Wednesday, May 21",
+   "a1": "Jimi Hendrix (2-1)",
+   "a2": "Beastie Boys (1-2)",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/712YIv1Q0WBzYbSyVpUEMp?si=cb8e00a302304e63"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2tak3wy6ICg0Q0pd9vlrqZ?si=a18ef8a7ce464e48"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "GAME 4: BEST-OF-3",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 24,
+   "round": "Championship",
+   "date": "Thursday, May 22",
+   "a1": "Jimi Hendrix (2-2)",
+   "a2": "Beastie Boys (2-2)",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [],
+   "l2": [
+    "https://open.spotify.com/playlist/2vntfvB9tfWJeKI7jRsE4O?si=4ff29832dd4643f4"
+   ],
+   "votes": "4-0 *",
+   "note": "IN TRIPLE OVERTIME",
+   "tb": "GAME 5: BEST-OF-3",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 25,
+   "round": "Championship",
+   "date": "Tuesday, May 27",
+   "a1": "Jimi Hendrix (3-2)",
+   "a2": "Beastie Boys (2-3)",
+   "c1": "red",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/6XwGJZ29EAzy50az084LfN?si=8943ef614f284d6a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/31KFaDSqNLGViNd96opJb0?si=c528da71803846a9"
+   ],
+   "votes": "",
+   "note": null,
+   "tb": "GAME 6: BEST-OF-3",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 29,
+   "round": "Play-In Round",
+   "date": "Monday, August 19",
+   "a1": "Boukman Eksperyans",
+   "a2": "Richard Dawson",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/1t83Ov4lP8G91t4AnbN4oi?si=252c2d7737164d35"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/65H0IcgHnlCFfeS2otvgMv?si=dfca2b86d83a4fca"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "7.950 to 7.825",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 30,
+   "round": "Play-In Round",
+   "date": "Thursday, August 22",
+   "a1": "Clipping",
+   "a2": "The Reigning Monarchs",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4TofU6eHTX2rd57k19Lqww?si=fbb5a928410a409e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6VZsoCL8qkpJMeHQJPhdyU?si=cb2222e73df14fda"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 31,
+   "round": "Play-In Round",
+   "date": "Monday, August 26",
+   "a1": "The Joy Formidable",
+   "a2": "Kevin Ayers",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3swnvgVJGvkmaWibd7TRHD?si=909e334789df4489"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6wNYQpcxY8mrSSeL4latlT?si=9a08b91f764d4285"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 32,
+   "round": "Play-In Round",
+   "date": "Thursday, August 29",
+   "a1": "Vic Chesnutt",
+   "a2": "Saul Williams",
+   "c1": "orange",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/7C2Rd6QpVfozcBLnt2P7Gw?si=f1ec3a997a024ba5"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5iK2xoc5tVmK85p4eVfQeF?si=ec694084d5824210"
+   ],
+   "votes": "2-2 **",
+   "note": null,
+   "tb": "8.050 to 8.050",
+   "matchup": "Bob v. Matt",
+   "win": "Tie",
+   "lose": "Tie"
+  },
+  {
+   "row": 34,
+   "round": "Round 1",
+   "date": "Monday, September 2",
+   "a1": "Jimi Hendrix",
+   "a2": "Richard Dawson",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4ljotYPPSlnKANpdeVOccK?si=131ac6d9566d4385"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4KAblmghTirPJ5vxorXCOB?si=660e7b10d7eb4f6f"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 35,
+   "round": "Round 1",
+   "date": "Thursday, September 5",
+   "a1": "ABBA",
+   "a2": "Steely Dan",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4qELQQjKKfj5JHrLUjBDWv?si=0c0f46e1d9cf4de9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6d5LpF6OPlnpaFdTb3YbST?si=535e7240839449bc"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "7.875 to 7.800",
+   "matchup": "Matt v. Matt",
+   "win": "Matt",
+   "lose": "Matt"
+  },
+  {
+   "row": 36,
+   "round": "Round 1",
+   "date": "Monday, September 9",
+   "a1": "Father John Misty",
+   "a2": "TV on the Radio",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5Y2O0ZmDgFI8lcAbc168wl?si=13bfcaecef60429e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5dnOu4aXaSV0wvFQoz8kAb?si=08f2b70cb0e84191"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 37,
+   "round": "Round 1",
+   "date": "Thursday, September 12",
+   "a1": "PJ Harvey",
+   "a2": "Neil Finn [Crowded House]",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7gdUYJw22beGEilSG4i6wx?si=ab31e3b182414eea"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/34csoFdvGueg9028vnM4SS?si=d7e8b2f8df07404f"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.419 to 8.125",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 38,
+   "round": "Round 1",
+   "date": "Monday, September 16",
+   "a1": "Aerosmith",
+   "a2": "Nick Cave",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/6XjgPShIY5MVYY2TIFvDTK?si=c268db15c37849cd"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0XaS5W7Mn0AR3lujC1fszl?si=18a136436e8248a6"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 39,
+   "round": "Round 1",
+   "date": "Thursday, September 19",
+   "a1": "Kendrick Lamar",
+   "a2": "Feist",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/10xYqmw8EhkqZro0YRcORo?si=ff3bf119145449cc"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/64D4HjDjQ27M8CRZ7O1l1T?si=496ee8e9c26c4ec4"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 40,
+   "round": "Round 1",
+   "date": "Monday, September 23",
+   "a1": "Beastie Boys",
+   "a2": "The Joy Formidable",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1Pd8hje3vWXzMayNLsysYU?si=48bf2df11bcf42be"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3y0UNCl6SgN33B36RCLy4f?si=8c8ed3ef00cb474f"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 41,
+   "round": "Round 1",
+   "date": "Thursday, September 26",
+   "a1": "Joni Mitchell",
+   "a2": "Jason Molina",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/2JV09TMw7rTV3CnsxoGtL8?si=662ff3cd7d684851"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/13zbVVsktTTfE4F5TeGFpz?si=f51847c3a8904620"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.850 to 8.775",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 42,
+   "round": "Round 1",
+   "date": "Monday, September 30",
+   "a1": "CAN",
+   "a2": "100 gecs",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3iMFUp0dZIUbrGscNVyKvZ?si=8fb3fd0d436344a0"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7uSTyBsWdKWtXOyu77zf1K?si=783da19b65994b62"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "6.600 to 5.775 *",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 43,
+   "round": "Round 1",
+   "date": "Thursday, October 3",
+   "a1": "Lucinda Williams",
+   "a2": "Meat Puppets",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/2XuKYEyipmd8MpgGvCw03L?si=2d0f129a897d4519"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1d8J3hZNGCwjEX4jc9OES8?si=Dc_-IYocTwq7XWkDFdT8_g"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 44,
+   "round": "Round 1",
+   "date": "Monday, October 14",
+   "a1": "Sade",
+   "a2": "Sly and the Family Stone",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/5zNeGdKH8e2E7LXkrM0p8b?si=3347f904795e44fe"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3K0unYObGG5VUaEH58F5sw?si=a007ea933327411c"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 45,
+   "round": "Round 1",
+   "date": "Thursday, October 17",
+   "a1": "Aretha Franklin",
+   "a2": "Randy Newman",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7MrrTPa2jl9G0teBLriOSw?si=e9bfcbc31239407a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0g5d7zNxWlg6hsKZq6X8XH?si=7OWcYROgS2uWNZI037TC3w"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 46,
+   "round": "Round 1",
+   "date": "Monday, October 21",
+   "a1": "John Cale",
+   "a2": "The Tragically Hip",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5o7zanuNhq0rS6r1I5RAQv?si=92364b4a75db4de7"
+   ],
+   "l2": [],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 47,
+   "round": "Round 1",
+   "date": "Thursday, October 24",
+   "a1": "Charli XCX",
+   "a2": "Robert Palmer",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0Is21vYpkdxmM1lMLr6drd?si=5b884c2e9b404657"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7qCqvW8mv8b8CptR0NMLRb?si=b6d918c9a0e5409a"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 48,
+   "round": "Round 1",
+   "date": "Monday, October 28",
+   "a1": "Vampire Weekend",
+   "a2": "Butthole Surfers",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/7qBkSi4Qgk8yWLU8zM56Il?si=d458dc883ec74329"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4DYT3dCEGyaFsNE66p6tpV?si=497ed71821ff4ce3"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.350 to 8.075",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 49,
+   "round": "Round 1",
+   "date": "Thursday, October 31",
+   "a1": "Fugazi",
+   "a2": "Chromatics",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6FyVyGIBFVSIJm9sGg2knX?si=664dfa536c1240c8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2InF9fWaWFNtx5qHd9z2hS?si=7adf4b13d16f4d28"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 50,
+   "round": "Round 1",
+   "date": "Monday, November 4",
+   "a1": "Leonard Cohen",
+   "a2": "Curtis Mayfield",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/3z8wejJeuwq7sGMWloVfRs?si=f623826384454a07"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7MyDDk4qjYlfPsgsIEtZEO?si=89b8a5c938884296"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 51,
+   "round": "Round 1",
+   "date": "Thursday, November 7",
+   "a1": "Miles Davis",
+   "a2": "Roxy Music",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/5L0AkWJ4oSpgznEMRVSrRf?si=0ff227102af84bb2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3cD4oGSQMVzRHX43ypDCvr?si=1912805e689743ec"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "7.900 to 7.875",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 52,
+   "round": "Round 1",
+   "date": "Monday, November 11",
+   "a1": "Fiona Apple",
+   "a2": "Scott Walker",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1XI6nDcRdcTdtC1keSA9jZ?si=932a3a9a9ba144ae"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4cEPxj4glVp5TruTOqn5Bh?si=143ba14eb4014709"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.475 to 8.300",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 53,
+   "round": "Round 1",
+   "date": "Thursday, November 14",
+   "a1": "Public Enemy",
+   "a2": "Veruca Salt",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7eFoBnCo4XpOHqXTcfhm0P?si=14c14168aa284917"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0vOLPrawxZbhoKNmTYhndI?si=c7bb1085782f4766"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 54,
+   "round": "Round 1",
+   "date": "Monday, November 18",
+   "a1": "Outkast",
+   "a2": "Bon Iver",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1oENiS0Bt7PPdVwoL1jKU5?si=a366564822b94480"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2izHPt6PEQoYf40k1RTBtG?si=2e70e9c7beb8473d"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.225 to 7.325",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 55,
+   "round": "Round 1",
+   "date": "Thursday, November 21",
+   "a1": "Billie Eilish",
+   "a2": "Joan Armatrading",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/543YFUkonNCVADkZzyMCCe?si=d604f4416d3747d5"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0MmAbeFVBzbCyVtzDtRvHd?si=c4b76bc2d74944af"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.425 to 7.150",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 56,
+   "round": "Round 1",
+   "date": "Monday, November 25",
+   "a1": "Nine Inch Nails",
+   "a2": "Vic/Saul",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5mUElaM80qGfp8IZ0K910v?si=94022d7b8a9a442f"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7zmULFmpaky3SYcSxrbnqK?si=8b7c61e4d4c94baa",
+    "https://open.spotify.com/playlist/6CVTicqCdQJW8PYQCMwN2K?si=b037b29059cf4659"
+   ],
+   "votes": "4-0-0 **",
+   "note": null,
+   "tb": "",
+   "matchup": "",
+   "win": "Tom",
+   "lose": ""
+  },
+  {
+   "row": 57,
+   "round": "Round 1",
+   "date": "Thursday, November 28",
+   "a1": "Mitski",
+   "a2": "Garbage",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4zCtG8C47l2NqrOZQkeG8V?si=83a616fef18b49f1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5kZgLFPKsFQwJdZ4D5rAsl?si=e39d4d01de994518"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 58,
+   "round": "Round 1",
+   "date": "Monday, December 2",
+   "a1": "Radiohead Minus Radiohead",
+   "a2": "Judas Priest",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/5SWGbOPbcEfV1BtCPcMA4u?si=ca5910b550e64e28"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2xUNQB5lFd6Os2MJ6hNERZ?si=6377ef3734674d50"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 59,
+   "round": "Round 1",
+   "date": "Thursday, December 5",
+   "a1": "Dylan 90s",
+   "a2": "Warren Zevon",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/0L911TA7wFYchQvrPEg2Lq?si=6c3efb6051be4d34"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5JFGv2Ukr7EtxW2f8sF3BU?si=a087529ef90c41be"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.475 to 8.375",
+   "matchup": "Matt v. Matt",
+   "win": "Matt",
+   "lose": "Matt"
+  },
+  {
+   "row": 60,
+   "round": "Round 1",
+   "date": "Monday, December 9",
+   "a1": "Dinosaur Jr.",
+   "a2": "Mark Kozelek",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4h32fE6dzwM6LVust2ZhUi?si=da71e44207894afc"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4NErLLI9QIH4cAlEoxuaNi?si=9ac0449c47214947"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.450 to 8.375",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 61,
+   "round": "Round 1",
+   "date": "Thursday, December 12",
+   "a1": "Phoebe Bridgers",
+   "a2": "Cocteau Twins",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/5rj3MuXvCQyTvdkWXlblmY?si=ebe4ba33230543f4"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6rmJEHl5PCTd66zDrrlir2?si=a45804cc61c543ca"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.825 to 7.600",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 62,
+   "round": "Round 1",
+   "date": "Monday, January 13",
+   "a1": "Lady Gaga",
+   "a2": "Clipping",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0MJngEhAkqVqHwDAe9u5jH?si=5fd479701d734fd8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5vySgRBzDjyBhAkybwOref?si=7aed76e875424561"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 63,
+   "round": "Round 1",
+   "date": "Thursday, January 16",
+   "a1": "St. Vincent",
+   "a2": "Carly Rae Jepsen",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/3b0uDjpFjUZ0E48COWDR87?si=a754cd93d9c248a9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4Et4YwmHtC0GxZMwGrBEb9?si=49989f3e32f34251"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 64,
+   "round": "Round 1",
+   "date": "Monday, January 20",
+   "a1": "Big Star",
+   "a2": "Caroline Polachek",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1GCjmhKpNyMzlY0CSgvJvL?si=11a1c24c4ba34e31"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4VElxafGbIDJLzZXLyP2bK?si=85e601929c3e460b"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 65,
+   "round": "Round 1",
+   "date": "Thursday, January 23",
+   "a1": "Patti Smith",
+   "a2": "Bill Callahan",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/3md6sGsppPXLeSb36A8o9I?si=137af21a3df54f85"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2lm0dw4YeFnPMam0SLzfrb?si=22e7ff144bcc46cd"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "7.975 to 7.950",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  },
+  {
+   "row": 67,
+   "round": "Round 2",
+   "date": "Monday, January 27",
+   "a1": "Judas Priest",
+   "a2": "Warren Zevon",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/7cKxyUbA1LMmnQ4TtnUvdL?si=0e7b7000ba704ac4"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2jo4rfBwk46jYR6cTfnBBg?si=6cd725e6bbf14148"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.350 to 7.850",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 68,
+   "round": "Round 2",
+   "date": "Thursday, January 30",
+   "a1": "Fiona Apple",
+   "a2": "Public Enemy",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4ZnmrgfMdlH5ICxbGqeT2R?si=7d33a4c8c50a4e6a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4XSG3YjMV5X7YZWjVSRC2x?si=b37d54bbccea4c4d"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 69,
+   "round": "Round 2",
+   "date": "Monday, February 3",
+   "a1": "John Cale",
+   "a2": "Charli XCX",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6b7He4a2ci6JtTnQa2oNR0?si=ba1ef649643b4dc1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1KGj1OOFfCy1LM6hovvNKQ?si=8542bd910c1d4a6c"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.100 to 7.700",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 70,
+   "round": "Round 2",
+   "date": "Thursday, February 6",
+   "a1": "CAN",
+   "a2": "Jason Molina",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/4BUJkuhU7xBjqyd09Z6QQH?si=01f830728cc745b2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4WMIjNNfxwmxmIyemJpOed?si=bb297959e4274091"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 71,
+   "round": "Round 2",
+   "date": "Monday, February 10",
+   "a1": "Nine Inch Nails",
+   "a2": "Mitski",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/69pZHszxZHZHXvpmDmddF4?si=c17a75354ad54f63"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5Et4i1RIJ6YWGfmvro8jyn?si=7d4adc60a93745cf"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 72,
+   "round": "Round 2",
+   "date": "Thursday, February 13",
+   "a1": "Dinosaur Jr.",
+   "a2": "Cocteau Twins",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2cnTEnFeBCQlE0XfMTSwLt?si=bcd000f2be334cca"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/64ixUsyb3o4YKlbnqdgefL?si=6cc05ea1db154c41"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 73,
+   "round": "Round 2",
+   "date": "Monday, February 17",
+   "a1": "Outkast",
+   "a2": "Billie Eilish",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3zKWHRfn0Hpcpu3l6PxrSE?si=ResCiZ8LSeKOJaKllVpSyA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1EvdAjsVwR5xDR6BjReNNF?si=f4085c05eea14721"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 74,
+   "round": "Round 2",
+   "date": "Thursday, February 20",
+   "a1": "Jimi Hendrix",
+   "a2": "ABBA",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5l8hb0V9im22hBh6kZmjSb?si=19aea817d6164a5d"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7nZGat3gXkfs643aziRTnp?si=06a60f38a17a420d"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 75,
+   "round": "Round 2",
+   "date": "Monday, February 24",
+   "a1": "Curtis Mayfield",
+   "a2": "Roxy Music",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/3hchCvNPHm9LUzfmLJfElZ?si=EtHCrhipS1iaHyjgdthLOA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1MX4HoBlpApjcbEHNS9OEs?si=9qbIJaa4QTy4uAclvBZxQA"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.450 to 8.400",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 76,
+   "round": "Round 2",
+   "date": "Thursday, February 27",
+   "a1": "PJ Harvey",
+   "a2": "Father John Misty",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/45oC4frr69yAlYYCgbsJkF?si=qOi5eSLdRDiwGH4APIIHJA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5MDSmculPKPV3UrTtKpZmH?si=c675faea83bf4d64"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.350 vs. 8.325",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 77,
+   "round": "Round 2",
+   "date": "Monday, March 3",
+   "a1": "Lady Gaga",
+   "a2": "Carly Rae Jepsen",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/4YXxfbCfdWIUC9hNK7VSkS?si=74b23b948dde42c5"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1KZquANVVtxwi6MhX2EZR4?si=a7a66ca3f9374bd7"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 78,
+   "round": "Round 2",
+   "date": "Thursday, March 6",
+   "a1": "Butthole Surfers",
+   "a2": "Fugazi",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2Lw4Rtoe5nrKs3LMytpntU?si=96bb77fc8fa94f0e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/31auOEAkkoZZvQpOtgVob2?si=020690d0909848b4"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 79,
+   "round": "Round 2",
+   "date": "Monday, March 10",
+   "a1": "Aretha Franklin",
+   "a2": "Sly and the Family Stone",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4Bygifztt9CCnD1CVE8wv4?si=KcyKso86QI-dQsq0gZSYiQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1QuYRpsTHnFG1om9zMr79E?si=9ArrkxYaTsGufnUBjS8ikw"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.938 to 8.925",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 80,
+   "round": "Round 2",
+   "date": "Thursday, March 13",
+   "a1": "Beastie Boys",
+   "a2": "Meat Puppets",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0vSrNelDGFk95e8eysQ0fd?si=af4f4f591f384c81"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1MEsBe1LPh3XJcDPmaPaWh?si=t26uoF9qSFyL05DYSElh6Q"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 81,
+   "round": "Round 2",
+   "date": "Monday, March 17",
+   "a1": "Kendrick Lamar",
+   "a2": "Nick Cave",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/04XzusflfLhLXFr9eJz23G?si=284a86616461430c"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3pJ0RqmcMjNw3fojq4quZc?si=5d39660f72b942a7"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 82,
+   "round": "Round 2",
+   "date": "Thursday, March 20",
+   "a1": "Big Star",
+   "a2": "Bill Callahan",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/0v90e8RuPbVgkUWcYhZrx1?si=c1140ee935e3469d"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/25rMbaDRb7s0JSIKySR6kf?si=VLHNrjovSuKEg7lxAh9zyA"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "8.250 to 8.200",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  }
+ ],
+ "Schedule 3": [
+  {
+   "row": 3,
+   "round": "Championship",
+   "date": "Monday, May 4",
+   "a1": "David Bowie",
+   "a2": "John Lennon",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/6OU8KTSWO5YlpduAblSiRj?si=0b28c419fa4d416c"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0mRIkul3wbBpsvHmEcO12H?si=bb9b3c71889b44ca"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "👨🏻‍🎤 vs ✌️",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 5,
+   "round": "Play-In Round",
+   "date": "Monday, August 25",
+   "a1": "Alex G",
+   "a2": "The Donnas",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1D1wRTRD2J4p2iCRsYatuJ?si=J5IBv_KeRlSKWZY8-QWkwg"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3UBFAMZTHIpNf4bjZpy9Cs?si=aadd894584a0480d"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 6,
+   "round": "Play-In Round",
+   "date": "Thursday, August 28",
+   "a1": "Speedy Ortiz",
+   "a2": "Deafheaven",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/66f5w7FoK9jqTcWZZiTxX2?si=803fa90b4dc74ec0"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6jVOkyRxVsBPvNBDlIUbTs?si=267d3444c12e46be"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 7,
+   "round": "Play-In Round",
+   "date": "Monday, September 1",
+   "a1": "Gruff Rhys",
+   "a2": "Shintaro Sakamoto",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3lKSTs7YWixI21Yf1PHCWo?si=IaSevbPZQu-xHe-4By3Tsg"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0YgBMC9PsmzsZjMS5u7uRC?si=_BvzxlKhTVWmh_6TA6ruxA"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.95 to 7.875",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 8,
+   "round": "Play-In Round",
+   "date": "Thursday, September 4",
+   "a1": "Grace Potter",
+   "a2": "John Grant",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/6ipmpcoQBpExbTWvazJNUT?si=edf82af471134107"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/796G2B8xI1xSu2jxUAEcAn?si=fd61e6315fa44c9d"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 10,
+   "round": "Round 1",
+   "date": "Monday, September 8",
+   "a1": "David Bowie",
+   "a2": "Alex G",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0XDO0GsyEz3OPjmZGru7Bd?si=539841a65531460a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/65kVKD85S5LmQqgadnSkRt?si=c9a5e5a3f8ef4872"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "👨🏻‍🎤 vs 𝐆",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 11,
+   "round": "Round 1",
+   "date": "Thursday, September 11",
+   "a1": "Gin Blossoms",
+   "a2": "Primal Scream",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1ttY5VoqOF1IZMokpXitUK?si=f897c2b68f40454b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7jva4fBWscN24fgnswZ1vh?si=218261558ae44393"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🌸 vs 😱",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 12,
+   "round": "Round 1",
+   "date": "Monday, September 15",
+   "a1": "D'Angelo",
+   "a2": "Sinead O'Connor",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1qjidFUPzVQ66TMgS7h09t?si=-HytJTfFQXiI8DnS0Sc15A"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/05jcCxaehCBgDicode4Tpb?si=AlUI635HRXiCYroqEKpILA"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.550 to 8.375",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 13,
+   "round": "Round 1",
+   "date": "Thursday, September 18",
+   "a1": "Tribe Called Quest",
+   "a2": "Public Image Ltd.",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6h5sMeXHWQM8V2Kmq25HGB?si=giJ4FKmrSKmjuL7UolS_cQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2bslxV1Nf6c9ziN9u6funs?si=9zem14kqSqW5E5APuoRqig"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "👂 vs 🪞",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 14,
+   "round": "Round 1",
+   "date": "Monday, September 22",
+   "a1": "CCR",
+   "a2": "Mission of Burma",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1LEYFYdzrjMJMyNUhysSQ7?si=opuyD3hGSSOuCAtBAWRkqA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2i493XUyTCGwmtf6xPOs54?si=kzTNYzPNRh6IZd65Mz48tw"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "💧 vs 🇲🇲",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 15,
+   "round": "Round 1",
+   "date": "Thursday, September 25",
+   "a1": "ZZ Top",
+   "a2": "Deerhunter",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1XBDxy77w7mmBEHgqxYB5h?si=e41def09da79499e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4XczQdtB9rpwZlDkpD3yer?si=zYO-r2J1RKKcMnBad7v1Jg"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.650 to 7.575",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 16,
+   "round": "Round 1",
+   "date": "Monday, September 29",
+   "a1": "Kacey Musgraves",
+   "a2": "Drive-By Truckers",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7icq8Jacfpe53vOQisMDna?si=c25d17e144b747a2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5ynDJ5gj8yIYDQNZy03e5b?si=oyyFyx2DQQCLcniXUTioIw"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.925 to 7.850",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 17,
+   "round": "Round 1",
+   "date": "Thursday, October 2",
+   "a1": "John Lennon",
+   "a2": "Joanna Newsom",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3Gc94USy4vS8fL2NKRA4hf?si=xu12BLRJRmS3sfxjUXsdpQ"
+   ],
+   "l2": [
+    "https://music.youtube.com/playlist?list=PLkqFZXOP82gEEYyUrkQRMORirqpejag32&si=PdHXE8wZ3c09W9pv"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "✌️ vs 𓏢",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 18,
+   "round": "Round 1",
+   "date": "Monday, October 27",
+   "a1": "Janet Jackson",
+   "a2": "Gruff Rhys",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1hS9IZ6UtfxtvZc9sRxsvn?si=OAJ6_zmhRZ-oc9eYL0_WdA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5qhKUY6NVakxMb4elJK3ID?si=EGPlhaoKQZ2AkC2gFDGdIg"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "🎛 vs 🐾",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 19,
+   "round": "Round 1",
+   "date": "Thursday, October 30",
+   "a1": "Aphex Twin",
+   "a2": "Portishead",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/41dXycuPxzXbbLnZ3SlGKw?si=DY2FOjgbQsq6fqDaLeMliw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7pFpNbXsSugF7RMqjtrOYH?si=eTxCpHxoS52B4pqdJKiSDw"
+   ],
+   "votes": "2-2 **",
+   "note": null,
+   "tb": "6.950 to 6.725",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 20,
+   "round": "Round 1",
+   "date": "Monday, November 3",
+   "a1": "The Cranberries",
+   "a2": "Ringo Starr",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/73sinyybQLpoY3LN02E5um?si=3b86b4b5f4a542ee"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3R6gMVoNW25Ee4YjXNNTCS?si=381f8cf51664437a"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "🍇 vs 🥁",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 21,
+   "round": "Round 1",
+   "date": "Thursday, November 6",
+   "a1": "Paul McCartney",
+   "a2": "Dusty Springfield",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2lC9pqboEaSj96Kqfi4x8A?si=wf5Z9bqZRSmJy7Hqr9PEhQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1S57R5Zeytdl3xvTzrP04F?si=8862a64f3fb444bc"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "🇬🇧 vs 💨",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 22,
+   "round": "Round 1",
+   "date": "Monday, November 10",
+   "a1": "RUSH",
+   "a2": "The Jam",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/2eJTLOH7ajFLneLc8cuSbz?si=A1odtWdpTOS331xsnPEpgQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3DrhT3rvDRdFgM2QYtSU6i?si=wF16icJRRw-8zGfRaSUirg"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "7.525 to 6.500",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 23,
+   "round": "Round 1",
+   "date": "Thursday, November 13",
+   "a1": "The Police",
+   "a2": "Manic Street Preachers",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/73JKiJAVleGFXCr7kvBxDl?si=AQYdXrKRSsuDGOsie_r2Rw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/31BLhOuXgAeDfMRH8GrtPd?si=fICN3mmiRhK5h_7t2ArPOQ"
+   ],
+   "votes": "4-0",
+   "note": null,
+   "tb": "🚔 vs 🤪",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 24,
+   "round": "Round 1",
+   "date": "Monday, November 17",
+   "a1": "George Harrison",
+   "a2": "Destroyer",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/0H9dDWZIZldMNsFx3JFCsM?si=5ExeCoCVQryA7aprfJ9nzQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4Y2kil0cNKYzatMl4lyEPq?si=hTOyyAzGTqGzoMMlqY3qFg"
+   ],
+   "votes": "2-2 *",
+   "note": null,
+   "tb": "📿 vs 💥",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 25,
+   "round": "Round 1",
+   "date": "Thursday, November 20",
+   "a1": "Bob Dylan (80s)",
+   "a2": "Beach House",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4Gu0N9sxGSVSjQl0CU4pdC?si=14d8ef56d2344519"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1h477gKZ4C1UIC1Tj7FKZN?si=f2da55e0a1c84381"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "🪕 vs 🏖️",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 26,
+   "round": "Round 1",
+   "date": "Monday, November 24",
+   "a1": "Robyn",
+   "a2": "Jenny Lewis",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/7AiHEiN3odrhR3DZy97Hv9?si=3ea371784cea4543"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4kg2sU85Vsg3NoTPOkdsbF?si=6eb75527e08a4b91"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "🐦 vs 🐇",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 27,
+   "round": "Round 1",
+   "date": "Thursday, November 27",
+   "a1": "Elton John",
+   "a2": "Matthew Sweet",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2xUMJ1h3lKmNwtfIorQlHb?si=7fbe213a6f6544f8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0o2oxOTWeDoF34L6RmPIaG?si=21789e777dfd4d21"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🎹 vs 🍬",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 28,
+   "round": "Round 1",
+   "date": "Monday, December 1",
+   "a1": "Kate Bush",
+   "a2": "Talk Talk",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/2MLvYaX67RkiOcqO76bj6C?si=97f673065d634aea"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6NII4RvSXuHP54WoAxyWdJ?si=ab5c770a4c464bf7"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.075 to 7.975",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 29,
+   "round": "Round 1",
+   "date": "Thursday, December 4",
+   "a1": "De La Soul",
+   "a2": "Stereolab",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/42ElG8zZUQLFj6ACMtbT8K?si=a0ac0d8862dd43c4"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7rY5lKE6JSd1v3n1pBfNcb?si=d312c15d6d314ddf"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "👻 vs 🧪",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 30,
+   "round": "Round 1",
+   "date": "Monday, December 8",
+   "a1": "Captain Beefheart",
+   "a2": "John Spencer",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7vrDHnNLlwiX0UkpqlMClF?si=f631df13713743f1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5TfJolIUenyfrkP6q0qy1b?si=a8b9ec17b4d64db7"
+   ],
+   "votes": "3-1 *",
+   "note": null,
+   "tb": "🥩 vs 🎷",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 31,
+   "round": "Round 1",
+   "date": "Thursday, December 11",
+   "a1": "KISS",
+   "a2": "Camper Van Beethoven",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2jPQJpaavntb3X0EhcyQK3?si=10984d7abdda44c0"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/75p2ONTSjNCF4XQd027FAK?si=turuFJr6RGCP0D5FSNRAkA"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "👅 vs 🚐",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 32,
+   "round": "Round 1",
+   "date": "Monday, December 15",
+   "a1": "R.E.M.",
+   "a2": "John Grant",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7uq0DJsgO1ldT4BsXkHQs0?si=VqcJs3tUQm-oIah0leL8iw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5EvK38vY5uHWttZZnG7Tmc?si=4d25749ced1a4e08"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🛌 vs 🏳‍🌈",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 33,
+   "round": "Round 1",
+   "date": "Thursday, December 18",
+   "a1": "Yo La Tengo",
+   "a2": "Cat Power",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0z5NUD5ZpOcjWxqXX2p1y6?si=vdsHerxyRaGhLYjJak8ODQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5VuE9HWgsp1V7zPshvEQ1T?si=vv6Zt4D9Rf-1FpFEA_e6bA"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "💃🏻 vs 🐈",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 34,
+   "round": "Round 1",
+   "date": "Monday, December 22",
+   "a1": "The B-52's",
+   "a2": "MJ Lenderman",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/4845okJ9X3UbeEb3D3d8Xr?si=NZ0bcX-iRVm7ynikc6agjw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5wVY1164lsIRg0W4UiqxnC?si=2d184925d16b47db"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🦞 vs 🧢",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 35,
+   "round": "Round 1",
+   "date": "Thursday, December 25",
+   "a1": "U2",
+   "a2": "Thompsons",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/6vCPbkJXqAcOZgMVdNwTIE?si=ae0b9e91986347bb"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0qiT2rzaZQN9DQf6VzwCcE?si=WKx3L6x4RDOePsw0Ac59FA"
+   ],
+   "votes": "3-1 **",
+   "note": null,
+   "tb": "😎 vs 👥",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 36,
+   "round": "Round 1",
+   "date": "Monday, December 29",
+   "a1": "Pet Shop Boys",
+   "a2": "Françoise Hardy",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [],
+   "l2": [
+    "https://open.spotify.com/playlist/4kR06miFdg685917Kz3mpt?si=33280978a2694509"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🐶 vs 🇫🇷",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 37,
+   "round": "Round 1",
+   "date": "Thursday, January 1",
+   "a1": "Ice Cube",
+   "a2": "Neneh Cherry",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/1r0G3BRKypw7i51BLhLoOW?si=d961ad052dd34a80"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7KTVlxFx9iPwLrHW1DWaMd?si=7n0eHWOfQZ2adCMPnwtzog"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.050 to 7.975",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 38,
+   "round": "Round 1",
+   "date": "Monday, January 5",
+   "a1": "Led Zeppelin",
+   "a2": "Deafheaven",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4Ie4yIAqYqL7H88TbI4gck?si=ba76662c33c94f5e"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2aIBdkWyiVS2OGe7lKxAG8?si=01b07cc137654652"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🛬 vs 👂",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 39,
+   "round": "Round 1",
+   "date": "Thursday, January 8",
+   "a1": "Mastodon",
+   "a2": "Guided by Voices",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2YVuT2Z6uhdylp8frnFevc?si=89f2132523ff4729"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2GyvNJqCV7An6jlQGMIPQX?si=8vae5aGyQV-wqiyoGhcf4w&pi=MyaXnsRJRM6cH"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🐘 vs 👉",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 40,
+   "round": "Round 1",
+   "date": "Monday, January 12",
+   "a1": "Waylon Jennings",
+   "a2": "Cass McCombs",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/2jEP3lCycw9bexiPLLqlsm?si=a3c2f0b4554046b7"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5mFlpvRwcJqb5gwTCePwLa?si=Gm97aimmTSOj4D4KWcdmlg"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.325 to 8.150",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 41,
+   "round": "Round 1",
+   "date": "Thursday, January 15",
+   "a1": "Willie Nelson",
+   "a2": "Blonde Redhead",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6aR6otRQCaT8WdVpKtaYey?si=19b3896488c44b13"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2xJImAcpaNk8s59gLyDtMP?si=c54ff175b5df449f"
+   ],
+   "votes": "4-0 *",
+   "note": null,
+   "tb": "🚬 vs 👩‍🦳",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 43,
+   "round": "Round 2",
+   "date": "Monday, January 19",
+   "a1": "David Bowie",
+   "a2": "Primal Scream",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/51oXPKWbfx69C9MUw4KdoH?si=6e732d90458c477b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7gFBxsoVe8yYl5GLYPv2Ao?si=93096da6a3e74eed"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "👨🏻‍🎤 vs 😱",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 44,
+   "round": "Round 2",
+   "date": "Thursday, January 22",
+   "a1": "D'Angelo",
+   "a2": "Tribe Called Quest",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6RCdQQ2PgFyKUqHkkQtWwH?si=f15137184fea4fba"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1i0W6CSncLXbDrvhp5q7ag?si=8ab6506b38974088"
+   ],
+   "votes": "2-2*",
+   "note": null,
+   "tb": "8.725 to 8.700",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  },
+  {
+   "row": 45,
+   "round": "Round 2",
+   "date": "Monday, January 26",
+   "a1": "CCR",
+   "a2": "Deerhunter",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/4du9ONEmiUf0LVvsey0iuB?si=pg4h4nG2QOug469SryOc9Q"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3KteFsjrIrb4urspmnkUQq?si=KjoQ9gXKTASzZ1sHeTvx_g"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "💧 vs 🦌",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 46,
+   "round": "Round 2",
+   "date": "Thursday, January 29",
+   "a1": "Kacey Musgraves",
+   "a2": "John Lennon",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/3mfztoVH0PCKdxx0cRGRoy?si=d0d7d8f2a5e34330"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/30g7gpvWh7rXXmbSGLkAX8?si=051cb3f89d35408f"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🌈 vs ✌️",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 47,
+   "round": "Round 2",
+   "date": "Monday, February 2",
+   "a1": "Janet Jackson",
+   "a2": "Aphex Twin",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/4kg9IK40ud0okabv87ff9E?si=869ec8b8c8db4e4a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0VS4g2JRwRzZkcqlEHp6GO?si=c6fe629996624da6"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🎛 vs 👯",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 48,
+   "round": "Round 2",
+   "date": "Thursday, February 5",
+   "a1": "Ringo Starr",
+   "a2": "Paul McCartney",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/2FJCXjWj3jmGgLyGwiRcte?si=8b94199962b649c8"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/68rah6BRiFiOwx3OexoHzw?si=7f6fdb70e9f04bd1"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.250 to 8.175",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 49,
+   "round": "Round 2",
+   "date": "Monday, February 9",
+   "a1": "The Jam",
+   "a2": "The Police",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7g392kRvejPS81fylea5YL?si=863bbd1892cf49e9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2j4heemPCsfpo7u5edUq1D?si=873d932323094acc"
+   ],
+   "votes": "2-2**",
+   "note": null,
+   "tb": "7.675 to 7.550",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 50,
+   "round": "Round 2",
+   "date": "Thursday, February 12",
+   "a1": "Destroyer",
+   "a2": "Bob Dylan (80s)",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/0bDzXKZQZVIknTc4nrkhY5?si=5c7aa6a7a52c4e6b"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2oid8yG0ZwaC8ixFfrKAzY?si=10ee457b883a483e"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "💥 vs 🪕",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 51,
+   "round": "Round 2",
+   "date": "Monday, February 16",
+   "a1": "Jenny Lewis",
+   "a2": "Elton John",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/1tZDbtARHcP6wRNGbe0Dxq?si=c59fe2028a0545df"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2AAcJQFCX3668jmrhos5yI?si=ca2923d906d34d61"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🎹 vs 🐇",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  },
+  {
+   "row": 52,
+   "round": "Round 2",
+   "date": "Thursday, February 19",
+   "a1": "Talk Talk",
+   "a2": "De La Soul",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/2jkwxCJPSD6Jg54WIJwH7M?si=80701c8b3c524d73"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7ywjHGn2tmn0BZ0HRkDYEp?si=db772513a6dd4592"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🗣️ vs 👻",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 53,
+   "round": "Round 2",
+   "date": "Monday, February 23",
+   "a1": "Captain Beefheart",
+   "a2": "KISS",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/6FDWMjWHEy4VUROBTs4jhh?si=8380600efb3c4d2d"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/79vLYorIW5nMvv2daPXz2H?si=493e4da37faf49dd"
+   ],
+   "votes": "2-2*",
+   "note": null,
+   "tb": "7.225 to 7.200",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 54,
+   "round": "Round 2",
+   "date": "Thursday, February 26",
+   "a1": "R.E.M.",
+   "a2": "Yo La Tengo",
+   "c1": "blue",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/57NilysLdSdiD4WgkjHDip?si=6d067d6d9a9e4bcb"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1Gtvi7zM5fZvnvcIggJiNz?si=0dc1d6211c8b45a5"
+   ],
+   "votes": "2-2",
+   "note": null,
+   "tb": "8.825 to 8.825",
+   "matchup": "Bob v. Tom",
+   "win": "Tie",
+   "lose": "Tie"
+  },
+  {
+   "row": 55,
+   "round": "Round 2",
+   "date": "Monday, March 2",
+   "a1": "MJ Lenderman",
+   "a2": "Thompsons",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/3RuYUt4945svpXxMeiFfMV?si=3894d10c1a1042eb"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4etQ2bwwSdWJ7Sdj3TGs0d?si=beb0c37ffb0d49e0"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🧢 vs 👥",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 56,
+   "round": "Round 2",
+   "date": "Thursday, March 5",
+   "a1": "Françoise Hardy",
+   "a2": "Neneh Cherry",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4sisqWoNbj21Nza7HKgOJ2?si=398843a12ce94eb9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2N4thbVG05T3wZpVpsUfLo?si=007a1b64a68d4db6"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🇫🇷 vs 🍒",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 57,
+   "round": "Round 2",
+   "date": "Monday, March 9",
+   "a1": "Led Zeppelin",
+   "a2": "Mastodon",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4glZPIdnGuOutcG9S0TRcz?si=049263428822443c"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6cuKqmCLFLqfptMos3oPZ7?si=zilgdNcgSkicXHpnI2JVYQ&pi=xpjoG-dyQ5ycX"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "🛬 vs 🐘",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 58,
+   "round": "Round 2",
+   "date": "Thursday, March 12",
+   "a1": "Cass McCombs",
+   "a2": "Willie Nelson",
+   "c1": "blue",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/0BHmnc2C9gqMk3PNfjM9da?si=ca01430bba614552"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2gvEJlykY1iiuUsj0TfFlo?si=00f73418e6f640f2"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🪮 vs 🚬",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 60,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 16",
+   "a1": "David Bowie",
+   "a2": "Thompsons",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0vBz81d7auMiAeq8cn6bpw?si=4a15cba9d36c432a"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/54UoAMhB8nsMH7tqBveL4z?si=YEiK0RNET42Eh4pIpQRxbQ"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "👨🏻‍🎤 vs 👥",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 61,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 19",
+   "a1": "D'Angelo",
+   "a2": "Françoise Hardy",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5QpgKdexrsLHZdQvD777VK?si=c8119f0588424f57"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7gtUyiMavh0PpChFiix4hN?si=867beaa36b314bc1"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "🤎 vs 🇫🇷",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 62,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 23",
+   "a1": "Deerhunter",
+   "a2": "Led Zeppelin",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/3cd7DthLK6XdDqycgu0L08?si=3e9add32c7df4504"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3TkcLsPNx8MtUkLSIvLeUc?si=89f0c54c59ab478a"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🦌 vs 🛬",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 63,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 26",
+   "a1": "John Lennon",
+   "a2": "Willie Nelson",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/00GcfeSSCx1LA4C47Uefdi?si=9XgMzf07RvWCRUiJH97oRA&pi=3_zRCxipROu0j"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2PO8NxbAErOpNIrz8TMdNW?si=bff4323615e24fe1"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "✌️ vs 🚬",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 64,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 30",
+   "a1": "Aphex Twin",
+   "a2": "De La Soul",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/40Mht7ogmxxLyYg7Zqwc5E?si=yEm5esqhQ5uK44E41njfUw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7vdcAHiUTiihVIIQF4sxmS?si=0a168241bfc648ba"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "👯 vs 👻",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 65,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, April 2",
+   "a1": "Paul McCartney",
+   "a2": "Elton John",
+   "c1": "rgb(1.00,0.60,0.00)",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/19x6radOIvfq9KsScJQSAh?si=pNeDFNFuQgiBj4lCPOw-pg"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2UWxUB4piHrxg7DU50laDb?si=84edb4b6459243a3"
+   ],
+   "votes": "3-1",
+   "note": null,
+   "tb": "🇬🇧 vs 🎹",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 66,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, April 6",
+   "a1": "The Jam",
+   "a2": "KISS",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/00wQvzB0aMPDjz0R61wU2W?si=5Cs9JSlRSgmamiNg7qFCmA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/4JM1KVBeaCqbfEtlg8zaTB?si=cce004f8276c4b64"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🍓 vs 👅",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 67,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, April 9",
+   "a1": "Bob Dylan (80s)",
+   "a2": "R.E.M./Yo La Tengo",
+   "c1": "orange",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/1guLbCzmTE4yBlb7WtArcK?si=39qlQRx1QoGkG1tes_9ItA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3OqgAhah1989ewTgzSRhfI?si=PoIXSCUvTdSRoZd15_2Jjw",
+    "https://open.spotify.com/playlist/7iVENPLu1ERBHTBzg701Rh?si=_uZSe4SuQ7OiEkEadIVbSQ"
+   ],
+   "votes": "",
+   "note": "We did a ranked choice voting system, and all three artists wound up with exactly 8 points.",
+   "tb": "🪕 vs 🛌 vs 💃🏻",
+   "matchup": "",
+   "win": "Tie",
+   "lose": "Tie"
+  },
+  {
+   "row": 69,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, April 13",
+   "a1": "David Bowie",
+   "a2": "Paul McCartney",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3rOYkUNtPbcvKoi5l53PQO?si=62f5bfd83de248e9"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/01ScS07QOSHGiQFkgaHhZy?si=af4f661019e3422e"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "👨🏻‍🎤 vs 🇬🇧",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 70,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, April 16",
+   "a1": "D'Angelo",
+   "a2": "De La Soul",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1VrkNcBX8n8DZfAvxEBOhe?si=e37c6793d9074c45"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0XCzPo0AndGiCiWXvyfbLs?si=f37f1d618c55497b"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🤎 vs 👻",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  },
+  {
+   "row": 71,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, April 20",
+   "a1": "Led Zeppelin",
+   "a2": "KISS",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6mxg7Wg5eHybqiSozricaU?si=f278a170886940b1"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6OEruSavsBdUuVk8YJoASJ?si=3094fff712b54a72"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🛬 vs 👅",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 72,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, April 23",
+   "a1": "John Lennon",
+   "a2": "Bob Dylan (80s) / R.E.M. / Yo La Tengo",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/43paTNKT1WNxdM6aofb41J?si=7ln1TCzISP2JJfd-C2B2PQ"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1DgRHTKbHb0u4PdF1adMJ5?si=RLQlFcmjQZq57LPVCjaEFQ",
+    "https://open.spotify.com/playlist/08f0rsg826RfokzUIxxYBw?si=BYJoco27RqOvwgPiAhoRrw&pi=_BdJMvfYSlGhk",
+    "https://open.spotify.com/playlist/0PXMeBKEVT6L3I0CWuerFW?si=jsLfTcXfQh6Dz6NEIOKLjA&pi=i_Xxv1jiSPiBB"
+   ],
+   "votes": "",
+   "note": null,
+   "tb": "Lennon (12), REM (11), Dylan (9), Yo La (8)",
+   "matchup": "",
+   "win": "Bob",
+   "lose": "Tie"
+  },
+  {
+   "row": 74,
+   "round": "Final Four",
+   "date": "Monday, April 27",
+   "a1": "David Bowie",
+   "a2": "Led Zeppelin",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/5cF8ScQDv7wV5shhrJlfq2?si=w-u3GyzaQuuh1HiT-jkYWA&pi=0gbrIIFhSkOcN"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2KfDRy1BBofRoDw2FCNCH9?si=3a07babdef564346"
+   ],
+   "votes": "2-2*",
+   "note": null,
+   "tb": "9.025 to 8.850",
+   "matchup": "Tom v. Matt",
+   "win": "Tom",
+   "lose": "Matt"
+  },
+  {
+   "row": 75,
+   "round": "Final Four",
+   "date": "Thursday, April 30",
+   "a1": "D'Angelo",
+   "a2": "John Lennon",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/7jK0iRhzdcZzNnALLOwThB?si=e977fdadc8ec402c"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2V35ijARFIgdMmXBGnPtYs?si=1f265ef2cc00479c"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🤎 vs ✌️",
+   "matchup": "Bob v. Bob",
+   "win": "Bob",
+   "lose": "Bob"
+  }
+ ],
+ "Schedule 4": [
+  {
+   "row": 3,
+   "round": "Round 1",
+   "date": "Monday, September 7",
+   "a1": "Fleetwood Mac",
+   "a2": "Todd Snider",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/631pYtnnma4YPsrwlsUyx2?si=03240607e1bd4159"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2sxZr6KHUdmzaOUTmesaZz?si=c364783dca4c43f8"
+   ],
+   "votes": "2-2",
+   "note": "8.225 to 8.150",
+   "tb": "🍔 vs 😏",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 4,
+   "round": "Round 1",
+   "date": "Thursday, September 10",
+   "a1": "Bob Dylan (2000s)",
+   "a2": "Husker Dü",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/1SQlkmnHGUjOblND4vHMLM?si=7fd43bc289d44820"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7cXOtNTXQU3Z4oBQinWmCu?si=J3iPJd-lRFSXElmTU4o7Hg"
+   ],
+   "votes": "2-2*",
+   "note": "8.050 to 8.025",
+   "tb": "🪕 vs 🧨",
+   "matchup": "Bob v. Matt",
+   "win": "Bob",
+   "lose": "Matt"
+  },
+  {
+   "row": 5,
+   "round": "Round 1",
+   "date": "Monday, September 14",
+   "a1": "Otis Redding",
+   "a2": "Ben Folds",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6Pz8fECoSWtW8wWFN7Redg?si=KCytYqVhRtCGfHuDdg0IKA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6jTT6dgqhQAlSbvX8QG9Vu?si=971d906bd9f54e96"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "⚓ vs 🎹",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 6,
+   "round": "Round 1",
+   "date": "Thursday, September 17",
+   "a1": "New Order",
+   "a2": "Billy Woods",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/3hle0XSpPs2ShfNBJmtsa6?si=CMbjLexQSnq9-75TFlrROA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0uM50DWcZfMwrNdQmL3bD1?si=098095da7e4f4411"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🆕 vs 🌲",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 7,
+   "round": "Round 1",
+   "date": "Monday, September 21",
+   "a1": "Erykah Badu",
+   "a2": "Lil Yachty",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/1Zy1seaUMibXEuMIGID07K?si=3FkxZEyRRFmnmYFNGyVGAA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/03Vw1sbaOUk48LRzyr58wE?si=f95f5d52afd646f2"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "👳🏿 vs ⛵",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 8,
+   "round": "Round 1",
+   "date": "Thursday, September 24",
+   "a1": "Tupac Shakur",
+   "a2": "Weyes Blood",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/6h1kWu0tuCuMGW3VB28Jr8?si=389e9b87bfb54e16"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1LWeByxKfmRWEmLLktjxLg?si=159f4342721c41d9"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🖖🏿 vs 🩸",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 9,
+   "round": "Round 1",
+   "date": "Monday, September 28",
+   "a1": "Todd Rundgren",
+   "a2": "Magnetic Fields",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/3PnZs7MX8ROfmanJZPyKyb?si=PGuD7duLSYqMfjifGWXh_A"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/251wTxosSq3Tbbh9PUM4Qb?si=3II5EqXzQe-lY6axqGVlWw"
+   ],
+   "votes": "2-2",
+   "note": "7.950 to 7.925",
+   "tb": "🐺 vs 🧲",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 10,
+   "round": "Round 1",
+   "date": "Thursday, October 1",
+   "a1": "Pink Floyd",
+   "a2": "Phantogram",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/4rY0N5aiMVcPeEtl5mkBdt?si=95e33bf86ba44f74"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1Mhfl6QzE0zLLfeoO1nSQs?si=7c678ec16e554624"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🌈⃤— vs 👻",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 11,
+   "round": "Round 1",
+   "date": "Monday, October 5",
+   "a1": "Van Morrison",
+   "a2": "Laura Nyro",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/06EfgyUdJdNlaKMJB4G0C1?si=fffcacf1ecfc4762"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0YPNoukjCpzAnmr6Yesbxc?si=f25c4dc2c1664f21"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🚐 vs 🗽",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 12,
+   "round": "Round 1",
+   "date": "Thursday, October 8",
+   "a1": "Grateful Dead",
+   "a2": "Tall Dwarfs",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2danE4jYwYir7pL52XXmph?si=d3ccPzuMQbaOwQImDohAVw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/3CUofoHW7oVPAcSVzQhB6f?si=db1cbbb27a914bad"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🥀 vs 🧙🏻‍♂️",
+   "matchup": "Bob v. Tom",
+   "win": "Tom",
+   "lose": "Bob"
+  },
+  {
+   "row": 13,
+   "round": "Round 1",
+   "date": "Monday, October 12",
+   "a1": "Sheryl Crow",
+   "a2": "Brandi Carlile",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/77FOTjOSIjTGxoRyYI4oaL?si=9d60d434f95b4813"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6BPkXMF1qc1R11Vv6bbl7g?si=c23eddf4f38c426f"
+   ],
+   "votes": "2-2",
+   "note": "6.950 to 6.800",
+   "tb": "🐦‍⬛ vs 🥃",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 14,
+   "round": "Round 1",
+   "date": "Thursday, October 15",
+   "a1": "The Who",
+   "a2": "John Prine",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/4QFQUrJzFllAFVDT8oZBMo?si=gKoSMuq_QbON2ZPYhpZLoA"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/20hNFRs50tduk0hdBCWxmt?si=GzetCY0rRBqD9YS3CranpQ"
+   ],
+   "votes": "2-2*",
+   "note": "8.200 to 8.050",
+   "tb": "🤔 vs 🚽",
+   "matchup": "Matt v. Matt",
+   "win": "Matt",
+   "lose": "Matt"
+  },
+  {
+   "row": 15,
+   "round": "Round 1",
+   "date": "Monday, October 19",
+   "a1": "Ministry",
+   "a2": "Graham Coxon",
+   "c1": "gray",
+   "c2": "blue",
+   "l1": [
+    "https://open.spotify.com/playlist/1lTv5m4KoLcFcOpA8GsX8Z?si=0df8ffd8b94345e6"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5hdlX3sgWqqQWFDUYh2IMn?si=7ea53cec81754887"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "✝️ vs 🎨",
+   "matchup": "Bob v. Tom",
+   "win": "Bob",
+   "lose": "Tom"
+  },
+  {
+   "row": 16,
+   "round": "Round 1",
+   "date": "Thursday, October 22",
+   "a1": "The Beach Boys",
+   "a2": "Shonen Knife",
+   "c1": "red",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0PlEwRWj7FkZ3sLEjrakhN?si=7f4859d35b844459"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6FOSBHtaidapB4pzwCxmWc?si=dcd72d389c0445a7"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🏖️ vs 🔪",
+   "matchup": "Tom v. Joey",
+   "win": "Tom",
+   "lose": "Joey"
+  },
+  {
+   "row": 17,
+   "round": "Round 1",
+   "date": "Monday, October 26",
+   "a1": "Beyonce",
+   "a2": "Clinic",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/2Ytt5DEzF4RfSm6G5mztLO?si=529c2f55bd774456"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6gDnORDeHoDuqgz46TWN2o?si=636dd4d3f2f94eda"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🐝 vs 🏥",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 18,
+   "round": "Round 1",
+   "date": "Thursday, October 29",
+   "a1": "Blur",
+   "a2": "Animal Collective",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/7FDb1G6MA9zNO1pUIH9S5E?si=EZC3J5XITZeaTVHnwHRJzw"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/0zHkkm0a2AYOhjIhuAOxUU?si=e1c5a1b40a0b4f62"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🌫️ vs 🐶",
+   "matchup": "Tom v. Matt",
+   "win": "Matt",
+   "lose": "Tom"
+  },
+  {
+   "row": 19,
+   "round": "Round 1",
+   "date": "Monday, November 2",
+   "a1": "Violent Femmes",
+   "a2": "Sturgill Simpson",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/01q665DwAi3ZfYEOIwvCPw?si=Ah_Z7xLERFC1-pOe5Co2gg"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/7mBAAhf2zpeKsEaOrN7pyu?si=f7898b6db30641ce"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "♀️ vs ☁️",
+   "matchup": "Bob v. Joey",
+   "win": "Joey",
+   "lose": "Bob"
+  },
+  {
+   "row": 20,
+   "round": "Round 1",
+   "date": "Thursday, November 5",
+   "a1": "Alice in Chains",
+   "a2": "The Men",
+   "c1": "gray",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/7E4JjF3FLxNh3j8qzgLqMZ?si=4ec2235540714c69"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/22H1NIfnsruQUsAQNuaUs0?si=609e36de63e6473e"
+   ],
+   "votes": "2-2*",
+   "note": "7.450 to 7.400",
+   "tb": "🔗 vs 🧔🏻🧔🏻",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 21,
+   "round": "Round 1",
+   "date": "Monday, November 9",
+   "a1": "J Dilla",
+   "a2": "Run the Jewels",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/4K1UCcXfqtsOMvGx0IyacT?si=0f3e2114ac754e9d"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2G2uclDGq60PmH7470IRLx?si=a8995512449f41ce"
+   ],
+   "votes": "2-2*",
+   "note": "7.775 to 7.725",
+   "tb": "🍩 vs 💎",
+   "matchup": "Tom v. Joey",
+   "win": "Joey",
+   "lose": "Tom"
+  },
+  {
+   "row": 22,
+   "round": "Round 1",
+   "date": "Thursday, November 12",
+   "a1": "Rihanna",
+   "a2": "Arthur Russell",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/3ZowubIB7XiKFpOFIvPfUo?si=0263d497fb994c53"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6f9mgowKxq8ImQaAAPvxyu?si=6cf98bedbd26456f"
+   ],
+   "votes": "3-1**",
+   "note": null,
+   "tb": "☂️ vs 🎻",
+   "matchup": "Matt v. Joey",
+   "win": "Matt",
+   "lose": "Joey"
+  },
+  {
+   "row": 23,
+   "round": "Round 1",
+   "date": "Monday, November 16",
+   "a1": "The Rolling Stones",
+   "a2": "Lightning Bolt",
+   "c1": "orange",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/6AHb9K46xyQLdzb1O21L15?si=p96bJz_nSZmAcn1bTzGR8A"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2ij6RNpCKjYFvTQ0aNbyI4?si=0fcdab6270ec4922"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "💋 vs ⚡",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 24,
+   "round": "Round 1",
+   "date": "Thursday, November 19",
+   "a1": "Elliott Smith",
+   "a2": "Ty Segall",
+   "c1": "red",
+   "c2": "red",
+   "l1": [
+    "https://open.spotify.com/playlist/1arTCxv0vtJTVgB7PnTTRL?si=031300fad8ee452f"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/204ZHNX2G1yU2CRJNxa2mU?si=cb0655974f0e4983"
+   ],
+   "votes": "",
+   "note": null,
+   "tb": "⚒️ vs 🐦",
+   "matchup": "Tom v. Tom",
+   "win": "Tom",
+   "lose": "Tom"
+  },
+  {
+   "row": 25,
+   "round": "Round 1",
+   "date": "Monday, November 23",
+   "a1": "Gorillaz",
+   "a2": "Gene Clark",
+   "c1": "orange",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🦍 vs 🧬",
+   "matchup": "Matt v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 26,
+   "round": "Round 1",
+   "date": "Thursday, November 26",
+   "a1": "Smashing Pumpkins",
+   "a2": "Anna von Hausswolff",
+   "c1": "red",
+   "c2": "purple",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🎃 vs 🕍",
+   "matchup": "Tom v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 27,
+   "round": "Round 1",
+   "date": "Monday, November 30",
+   "a1": "Tom Waits",
+   "a2": "Joe Jackson",
+   "c1": "blue",
+   "c2": "blue",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "⏳ vs 👟",
+   "matchup": "Bob v. Bob",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 28,
+   "round": "Round 1",
+   "date": "Thursday, December 3",
+   "a1": "Neil Young",
+   "a2": "Andy Shauf",
+   "c1": "blue",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🍁 vs 🦊",
+   "matchup": "Bob v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 29,
+   "round": "Round 1",
+   "date": "Monday, December 7",
+   "a1": "Michael Jackson",
+   "a2": "Christopher Owens",
+   "c1": "purple",
+   "c2": "red",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🕴🏻 vs 👯‍♀️",
+   "matchup": "Tom v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 30,
+   "round": "Round 1",
+   "date": "Thursday, December 10",
+   "a1": "Lee Scratch Perry",
+   "a2": "Fountains of Wayne",
+   "c1": "red",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "彡 vs ⛲",
+   "matchup": "Tom v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 31,
+   "round": "Round 1",
+   "date": "Monday, December 14",
+   "a1": "Sepultura",
+   "a2": "Courtney Barnett",
+   "c1": "orange",
+   "c2": "purple",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🪦 vs 🚜",
+   "matchup": "Matt v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 32,
+   "round": "Round 1",
+   "date": "Thursday, December 17",
+   "a1": "Al Green",
+   "a2": "Lungfish",
+   "c1": "blue",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🟢 vs 🫁",
+   "matchup": "Bob v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 33,
+   "round": "Round 1",
+   "date": "Monday, December 21",
+   "a1": "George Michael",
+   "a2": "Brockhampton",
+   "c1": "purple",
+   "c2": "purple",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "👖 vs 🪨",
+   "matchup": "Joey v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 34,
+   "round": "Round 1",
+   "date": "Thursday, December 24",
+   "a1": "Marvin Gaye",
+   "a2": "Wire",
+   "c1": "orange",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🎙️ vs 🔌",
+   "matchup": "Matt v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 36,
+   "round": "Round 2",
+   "date": "Monday, December 28",
+   "a1": "Fleetwood Mac",
+   "a2": "Husker Dü",
+   "c1": "orange",
+   "c2": "blue",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🍔 vs 🧨",
+   "matchup": "Bob v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 37,
+   "round": "Round 2",
+   "date": "Thursday, December 31",
+   "a1": "Otis Redding",
+   "a2": "New Order",
+   "c1": "red",
+   "c2": "red",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "⚓ vs 🆕",
+   "matchup": "Tom v. Tom",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 38,
+   "round": "Round 2",
+   "date": "Monday, January 4",
+   "a1": "Erykah Badu",
+   "a2": "Weyes Blood",
+   "c1": "blue",
+   "c2": "purple",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "👳🏿 vs 🩸",
+   "matchup": "Bob v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 39,
+   "round": "Round 2",
+   "date": "Thursday, January 7",
+   "a1": "Magnetic Fields",
+   "a2": "Pink Floyd",
+   "c1": "blue",
+   "c2": "blue",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🧲 vs 🌈⃤",
+   "matchup": "Bob v. Bob",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 40,
+   "round": "Round 2",
+   "date": "Monday, January 11",
+   "a1": "Van Morrison",
+   "a2": "Grateful Dead",
+   "c1": "blue",
+   "c2": "red",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🚐 vs 🥀",
+   "matchup": "Bob v. Tom",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 41,
+   "round": "Round 2",
+   "date": "Thursday, January 14",
+   "a1": "Sheryl Crow",
+   "a2": "John Prine",
+   "c1": "orange",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🐦‍⬛ vs 🚽",
+   "matchup": "Matt v. Matt",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 42,
+   "round": "Round 2",
+   "date": "Monday, January 18",
+   "a1": "Graham Coxon",
+   "a2": "The Beach Boys",
+   "c1": "blue",
+   "c2": "red",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🎨 vs 🏖️",
+   "matchup": "Bob v. Tom",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 43,
+   "round": "Round 2",
+   "date": "Thursday, January 21",
+   "a1": "Beyonce",
+   "a2": "Blur",
+   "c1": "purple",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🐝 vs 🌫️",
+   "matchup": "Matt v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 44,
+   "round": "Round 2",
+   "date": "Monday, January 25",
+   "a1": "Sturgill Simpson",
+   "a2": "The Rolling Stones",
+   "c1": "purple",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "☁️ vs 💋",
+   "matchup": "Matt v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 45,
+   "round": "Round 2",
+   "date": "Thursday, January 28",
+   "a1": "The Men",
+   "a2": "",
+   "c1": "red",
+   "c2": null,
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "🧔🏻🧔🏻 vs ",
+   "matchup": "Tom v. Tom",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 46,
+   "round": "Round 2",
+   "date": "Monday, February 1",
+   "a1": "Run the Jewels",
+   "a2": "Arthur Russell",
+   "c1": "purple",
+   "c2": "orange",
+   "l1": [],
+   "l2": [],
+   "votes": "",
+   "note": null,
+   "tb": "💎 vs 🎻",
+   "matchup": "Matt v. Joey",
+   "win": "",
+   "lose": ""
+  },
+  {
+   "row": 47,
+   "round": "Round 2",
+   "date": "Thursday, February 4",
+   "empty": true
+  },
+  {
+   "row": 48,
+   "round": "Round 2",
+   "date": "Monday, February 8",
+   "empty": true
+  },
+  {
+   "row": 49,
+   "round": "Round 2",
+   "date": "Thursday, February 11",
+   "empty": true
+  },
+  {
+   "row": 50,
+   "round": "Round 2",
+   "date": "Monday, February 15",
+   "empty": true
+  },
+  {
+   "row": 51,
+   "round": "Round 2",
+   "date": "Thursday, February 18",
+   "empty": true
+  },
+  {
+   "row": 53,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, February 22",
+   "empty": true
+  },
+  {
+   "row": 54,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, February 25",
+   "empty": true
+  },
+  {
+   "row": 55,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 1",
+   "empty": true
+  },
+  {
+   "row": 56,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 4",
+   "empty": true
+  },
+  {
+   "row": 57,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 8",
+   "empty": true
+  },
+  {
+   "row": 58,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 11",
+   "empty": true
+  },
+  {
+   "row": 59,
+   "round": "Round 3 | Sweet 16",
+   "date": "Monday, March 15",
+   "empty": true
+  },
+  {
+   "row": 60,
+   "round": "Round 3 | Sweet 16",
+   "date": "Thursday, March 18",
+   "empty": true
+  },
+  {
+   "row": 62,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, March 22",
+   "empty": true
+  },
+  {
+   "row": 63,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, March 25",
+   "empty": true
+  },
+  {
+   "row": 64,
+   "round": "Round 4 | Elite 8",
+   "date": "Monday, March 29",
+   "empty": true
+  },
+  {
+   "row": 65,
+   "round": "Round 4 | Elite 8",
+   "date": "Thursday, April 1",
+   "empty": true
+  },
+  {
+   "row": 67,
+   "round": "Final Four",
+   "date": "Monday, April 5",
+   "empty": true
+  },
+  {
+   "row": 68,
+   "round": "Final Four",
+   "date": "Thursday, April 8",
+   "empty": true
+  },
+  {
+   "row": 70,
+   "round": "Championship",
+   "date": "Monday, April 12",
+   "empty": true
+  },
+  {
+   "row": 72,
+   "round": "Play-In Round",
+   "date": "Monday, August 24",
+   "a1": "Tall Dwarfs",
+   "a2": "Amyl and the Sniffers",
+   "c1": "blue",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0gEtJbcOovN19QTrclGKfG?si=VBP8yBGtQgC0GRHS5OPsow"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/1y2IiP1gbmY3ipV2bBwJlP?si=39d9a4d2e8e34a92"
+   ],
+   "votes": "2-2",
+   "note": "7.825 to 7.750",
+   "tb": "🧙🏻‍♂️ vs 🇦🇺",
+   "matchup": "Bob v. Joey",
+   "win": "Bob",
+   "lose": "Joey"
+  },
+  {
+   "row": 73,
+   "round": "Play-In Round",
+   "date": "Thursday, August 27",
+   "a1": "Cate Le Bon",
+   "a2": "Anna von Hausswolff",
+   "c1": "gray",
+   "c2": "purple",
+   "l1": [
+    "https://open.spotify.com/playlist/3SIEEY8VMqZtI4rFYPGBg7?si=6aaaa617b37f4030"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/2wqfBdotXylqnXguZavXJQ?si=d9c81b4710544ac3"
+   ],
+   "votes": "3-1*",
+   "note": null,
+   "tb": "🍬 vs 🕍",
+   "matchup": "Matt v. Joey",
+   "win": "Joey",
+   "lose": "Matt"
+  },
+  {
+   "row": 74,
+   "round": "Play-In Round",
+   "date": "Monday, August 31",
+   "a1": "Mclusky",
+   "a2": "Lungfish",
+   "c1": "gray",
+   "c2": "orange",
+   "l1": [
+    "https://open.spotify.com/playlist/7LZFvRUe2Xf6rlwfxdPrCs?si=7d34028552b147e2"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/6nHuRckqkgSrCww8ySxQII?si=fbb8d5b835ca4324"
+   ],
+   "votes": "2-2",
+   "note": "7.975 to 7.900",
+   "tb": "🥇 vs 🫁",
+   "matchup": "Bob v. Matt",
+   "win": "Matt",
+   "lose": "Bob"
+  },
+  {
+   "row": 75,
+   "round": "Play-In Round",
+   "date": "Thursday, September 3",
+   "a1": "Billy Woods",
+   "a2": "Anri",
+   "c1": "purple",
+   "c2": "gray",
+   "l1": [
+    "https://open.spotify.com/playlist/0ZT8ptLJHG9RLppnMKaEz0?si=d672e8d958054c19"
+   ],
+   "l2": [
+    "https://open.spotify.com/playlist/5PoZc0q1DmLtyIxO1kq5HT?si=33df40db3ae842ee"
+   ],
+   "votes": "4-0*",
+   "note": null,
+   "tb": "🌲 vs 🌆",
+   "matchup": "Joey v. Joey",
+   "win": "Joey",
+   "lose": "Joey"
+  }
+ ]
+}
