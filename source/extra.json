@@ -400,7 +400,11 @@
   "AC/DC"
  ],
  "winnerFix": {},
- "matchFix": {},
+ "matchFix": {
+  "4|Monday, November 9": {
+   "stars": 0
+  }
+ },
  "finalSeries": {
   "1": {
    "a": "Prince",
