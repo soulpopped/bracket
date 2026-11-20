@@ -164,7 +164,7 @@ def build_year(year):
             names = [aliases.get(norm(n), n) for n in names]
             links = m.get('l' + k, [])
             lk = (year, norm(raw), m['date'])
-            if not links and lk in links_extra:
+            if lk in links_extra:
                 links = [links_extra[lk]]
             pl = None; url = None
             for u in links:
