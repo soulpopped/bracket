@@ -363,8 +363,8 @@ function pageHome() {
   return `
   <section class="hero" style="display:flex;flex-direction:column;gap:4px">
     <span class="kick">Tub Talk presents</span>
-    <h1>The Best Songs in History</h1>
-    <span class="muted">(with no exceptions) · ${DATA.years.length} years, ${DATA.years.reduce((a, y) => a + y.matches.length, 0)} matchups</span>
+    <h1>The Best Songs in History <span class="h1-paren">(with no exceptions)</span></h1>
+    <span class="muted">${DATA.years.length} years · ${new Set(allUses().map((u) => u.pid)).size} playlists</span>
   </section>
   <section class="card charcoal" style="display:flex;flex-direction:column;gap:12px">
     <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><span class="kick">Year ${cur.n}${roundNow ? ' · ' + ROUND_NAME[roundNow] : ''}</span>

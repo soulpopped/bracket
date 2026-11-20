@@ -179,3 +179,5 @@ body.searching .sbackdrop { display: block; }
 .now-listen, .now-name { position: relative; z-index: 2; }
 .now-more { color: #C9C6BD; }
 .now:hover .now-more { color: var(--paper); }
+
+.h1-paren { font-family: var(--display); font-weight: 600; font-size: .42em; color: var(--muted); white-space: nowrap; letter-spacing: 0; }
