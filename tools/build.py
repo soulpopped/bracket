@@ -250,6 +250,146 @@ def build_year(year):
 
 D = J('drafts.json')
 SEASON = {1: '2023–24', 2: '2024–25', 3: '2025–26', 4: '2026–27'}
+
+# ---------- live year: results from chat, and the next open matchup ----------
+RES = J('results.json') if os.path.exists(os.path.join(SRC, 'results.json')) else {}
+ROUND_FROM_SHEET = {'Round 2': 'R2', 'Round 3 | Sweet 16': 'S16', 'Round 4 | Elite 8': 'E8', 'Final Four': 'F4', 'Championship': 'F'}
+POS = {}
+for i, sd in enumerate([1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15]):
+    POS[sd] = i // 2
+
+def game_key(r):
+    arts = [a for s in r['sides'] for a in s['artists'] if a.get('name') and a.get('seed') and a.get('region') is not None]
+    if not arts:
+        return None
+    a = arts[0]
+    g = POS[a['seed']]
+    rd = r['round']
+    if rd == 'R1': return ('R1', a['region'], g)
+    if rd == 'R2': return ('R2', a['region'], g // 2)
+    if rd == 'S16': return ('S16', a['region'], g // 4)
+    if rd == 'E8': return ('E8', a['region'], 0)
+    if rd == 'F4': return ('F4', a['region'] // 2, 0)
+    if rd == 'F': return ('F', 0, 0)
+    return None
+
+def children(key):
+    rd, r, g = key
+    if rd == 'R2': return [('R1', r, 2 * g), ('R1', r, 2 * g + 1)]
+    if rd == 'S16': return [('R2', r, 2 * g), ('R2', r, 2 * g + 1)]
+    if rd == 'E8': return [('S16', r, 0), ('S16', r, 1)]
+    if rd == 'F4': return [('E8', 2 * r, 0), ('E8', 2 * r + 1, 0)]
+    if rd == 'F': return [('F4', 0, 0), ('F4', 1, 0)]
+
+def winners(m):
+    if m is None or m.get('winner') is None:
+        return None
+    if isinstance(m['winner'], int):
+        return [dict(a) for a in m['sides'][m['winner']]['artists']]
+    return [dict(a) for s in m['sides'] for a in s['artists']]  # tie: both advance
+
+def apply_result(y, r, own_links):
+    key = f"{y}|{r['date']}"
+    R = RES.get(key)
+    # playlist links for this date (new rounds come from chat)
+    for s in r['sides']:
+        pls = []
+        for a in s['artists']:
+            for u in own_links.get((y, norm(a['name']), r['date']), []):
+                mm = re.search(r'playlist/(\w{22})', u)
+                if mm and mm.group(1) not in pls:
+                    pls.append(mm.group(1))
+                    if len(s['artists']) > 1: a['playlist'] = mm.group(1)
+        if pls and not s.get('playlist'):
+            s['playlist'] = pls[0]
+            if len(pls) > 1: s['playlists'] = pls
+    if not R:
+        return
+    names = [[norm(a['name']) for a in s['artists']] for s in r['sides']]
+    def side_of(artist):
+        n = norm(artist)
+        for i, ns in enumerate(names):
+            if n in ns or any(x.startswith(n[:6]) or n.startswith(x[:6]) for x in ns): return i
+        raise SystemExit(f'results {key}: "{artist}" is not in this matchup')
+    voters = {p: side_of(a) for p, a in R.get('voters', {}).items()}
+    cnt = [0, 0]
+    for i in voters.values(): cnt[i] += 1
+    win = None
+    if cnt[0] != cnt[1]:
+        win = 0 if cnt[0] > cnt[1] else 1
+    elif R.get('tiebreak'):
+        tb = R['tiebreak']
+        tbs = [tb[a] for a in sorted(tb, key=side_of)] if isinstance(tb, dict) else tb
+        r['tiebreak'] = sorted(tbs, reverse=True)
+        win = 0 if tbs[0] > tbs[1] else 1 if tbs[1] > tbs[0] else 'tie'
+    if 'winner' in R:
+        win = R['winner'] if R['winner'] in ('tie', 'both') else side_of(R['winner'])
+    r['winner'] = win
+    w = win if isinstance(win, int) else 0
+    r['votes'] = [cnt[w], cnt[1 - w]]
+    r['voters'] = voters
+    owners = [r['sides'][i]['artists'][0].get('owner') for i in (0, 1)]
+    stars = 0
+    if owners[0] != owners[1]:
+        for i, o in enumerate(owners):
+            if o in voters and voters[o] != i: stars += 1
+    r['stars'] = R.get('stars', stars)
+    if R.get('note'): r['note'] = R['note']
+
+def live_update(y, matches, regions):
+    links = {}
+    for l in O['links']:
+        links.setdefault((l['year'], norm(l['artist']), l['date']), []).extend(l['url'] if isinstance(l['url'], list) else [l['url']])
+    for r in matches:
+        apply_result(y, r, links)
+    open_dates = {}
+    for m in M[TABS[y]]:
+        if m.get('empty') and m['round'] in ROUND_FROM_SHEET:
+            open_dates.setdefault(ROUND_FROM_SHEET[m['round']], []).append(parse_date(m['date'], y))
+    for rd in ('R2', 'S16', 'E8', 'F4', 'F'):
+        by = {}
+        for r in matches:
+            k = game_key(r)
+            if k: by.setdefault(k, r)
+        n = {'R2': 4, 'S16': 2, 'E8': 1, 'F4': 1, 'F': 1}[rd]
+        regs = {'R2': 4, 'S16': 4, 'E8': 4, 'F4': 2, 'F': 1}[rd]
+        todo = []
+        for ri in range(regs):
+            for g in range(n):
+                key = (rd, ri, g)
+                kids = [by.get(c) for c in children(key)]
+                ws = [winners(k) for k in kids]
+                m = by.get(key)
+                if m is None:
+                    # an existing row whose artists are all TBD can't be keyed; skip those
+                    if not any(ws): continue
+                    first = min(k['date'] for k, w in zip(kids, ws) if w)
+                    todo.append((first, key, ws))
+                else:
+                    present = {norm(a['name']) for sd in m['sides'] for a in sd['artists'] if a.get('name')}
+                    for i, sd in enumerate(m['sides']):
+                        if any(a.get('name') for a in sd['artists']):
+                            continue
+                        for w in ws:
+                            if w and not any(norm(a['name']) in present for a in w):
+                                m['sides'][i] = {'artists': w, 'playlist': None, 'url': None}
+                                present |= {norm(a['name']) for a in w}
+                                break
+        used = {r['date'] for r in matches if r['round'] == rd}
+        free = [d for d in open_dates.get(rd, []) if d not in used]
+        for first, key, ws in sorted(todo):
+            if not free:
+                raise SystemExit(f'no open date left in {rd} for {key}')
+            dt = free.pop(0)
+            sides = [{'artists': w or [{'name': '', 'owner': None, 'seed': None, 'emoji': '', 'region': None}], 'playlist': None, 'url': None} for w in ws]
+            r = {'year': y, 'round': rd, 'date': dt, 'sides': sides, 'votes': None, 'stars': 0, 'tiebreak': None, 'note': None, 'winner': None, 'generated': True}
+            matches.append(r)
+        for r in matches:
+            if r['round'] == rd and r.get('generated'):
+                apply_result(y, r, links)
+        matches.sort(key=lambda r: (r['date'] or '9999', r.get('game', 0)))
+LIVE_YEAR = 4
+
 years = []
 for y in (1, 2, 3, 4):
     matches, regions, own, playin = build_year(y)
@@ -263,6 +403,8 @@ for y in (1, 2, 3, 4):
                     for a in s['artists']:
                         if a['seed'] is None:
                             a['seed'] = known[0]['seed']; a['region'] = known[0]['region']
+    if y == LIVE_YEAR:
+        live_update(y, matches, regions)
     cnt = {}
     for r in matches:
         cnt[r['round']] = cnt.get(r['round'], 0) + 1

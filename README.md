@@ -17,11 +17,15 @@ Tub Talk presents: The Best Songs in History (with no exceptions). A public, vie
 
 ## Updating after a matchup
 
-The Google Sheet is the source of truth. At each Monday/Thursday check-in:
+The Google Sheet is retired (Nov 20, 2026); this repo is the record. Matchups start Mondays and Thursdays; votes usually come in the night before. Check-ins are Sunday and Wednesday at 7pm ET in the build chat.
 
-1. Dump the current year's Schedule tab with the Sheets connector (`includeGridData`, fields `formattedValue`, `hyperlink`, `note`, `textFormatRuns`, `effectiveFormat.textFormat.foregroundColorStyle`) and re-run `tools/parse.py` to refresh `source/matches.json`.
-2. Add Joey's corrections and who voted for whom to `source/overrides.json` (`votes`: `{ "<match id>": { "Joey": 0, "Bob": 1, ... } }`, side index 0 or 1).
-3. Read any new playlists (Spotify embed pages, through the Claude app's browser on Joey's Mac) and merge them with `tools/songs.py`.
-4. `python3 tools/songs.py <new tracks file> data/songs.json` also applies `songFixes` in overrides.json (songs added to a list after its matchup). Then `python3 tools/build.py source data`, check its summary line (no missing seeds, drafters or winners), run `python3 tests/shots.py http://127.0.0.1:8765 /tmp/shots`, commit, push. Cloudflare deploys `main` in about a minute.
+1. Joey pastes who voted for whom (and the average ratings when it's 2-2), plus new playlist links. Emoji stay the same for an artist all year.
+2. Add the votes to `source/results.json`, keyed by year and date: `{"4|2026-11-19": {"voters": {"Bob": "Ty Segall", "Joey": "Elliott Smith", ...}, "tiebreak": {"Elliott Smith": 8.2, "Ty Segall": 8.1}}}`. The build works out the count (winner first), the winner, and the asterisks (a list's maker voting for the other list). Optional: `"winner"` (an artist, `"tie"` or `"both"`), `"stars"` (for same-drafter matchups), `"note"`.
+3. Add new playlist links to `links` in `source/overrides.json` (`year`, `date` as written in the old sheet, e.g. "Monday, November 23", `artist`, `url`). For matchups the build creates itself, use the ISO date (e.g. "2027-02-04").
+4. Read the new playlists from Spotify embed pages through the Claude app's browser on Joey's Mac, save them to a JSON file and merge with `python3 tools/songs.py <file> data/songs.json`.
+5. `python3 tools/build.py source data`. When a matchup is decided, the winner goes into the next open matchup: the bracket decides the opponent, and a bracket game takes the next open date in its round as soon as its first artist is known (the open dates are the empty rows that were in the sheet, through the final on Apr 12, 2027).
+6. Test (`python3 tests/shots.py http://127.0.0.1:8765 /tmp/shots`), bump `?v=` in index.html and the cache name in sw.js if app.js or styles.css changed, commit, push, and check the live site.
 
-Colors in the sheet: purple Joey, blue Bob, orange Matt, red Tom, gray eliminated. Votes in the sheet list the winner's count first. `*` means a list's maker voted against it, `**` means both makers did.
+A 2-2 final goes to a best-of-7 category series: add it under `finalSeries` in `source/extra.json` (see year 1).
+
+Next year (draft in April or May 2027): the draft, seeds, regions and schedule will need a new way in, since there's no sheet. Build that when Joey is ready.

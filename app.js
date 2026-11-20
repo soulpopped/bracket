@@ -241,6 +241,10 @@ function legend() {
 }
 function starNote(m) {
   if (!m.stars) return '';
+  if (m.voters && m.sides.length === 2) {
+    const against = [0, 1].map((i) => sideOwner(m.sides[i])).filter((o, i) => o && m.voters[o] !== undefined && m.voters[o] !== i);
+    if (against.length) return `${'*'.repeat(m.stars)} ${against.join(' and ')} voted against ${against.length > 1 ? 'their own lists' : 'his own list'}.`;
+  }
   const wi = winnerIdx(m);
   if (m.stars === 2) return '** Both list makers voted against their own lists.';
   if (m.votes && m.sides.length === 2 && wi !== null) {
