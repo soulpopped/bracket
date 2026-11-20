@@ -132,35 +132,82 @@ function songsFor(pid) { return (SONGS[pid] && SONGS[pid].t) || null; }
 function plMinutes(pid) { const t = songsFor(pid); return t ? t.reduce((a, x) => a + x[3], 0) : null; }
 
 /* ---------- shell ---------- */
-const TABS = [['#/', 'Home', 'home'], ['#/year', 'Years', 'years'], ['#/people', 'Drafters', 'people'], ['#/stats', 'Stats', 'records'], ['#/search', 'Search', 'search']];
+const TABS = [['#/', 'Home', 'home'], ['#/year', 'Years', 'years'], ['#/stats', 'Stats', 'records']];
 function shell(active) {
   $('#nav').innerHTML = TABS.map(([h, t]) => `<a href="${h}" class="${active === t ? 'on' : ''}">${t}</a>`).join('');
-  $('#tabbar').innerHTML = TABS.map(([h, t, i]) => `<a href="${h}" class="${active === t ? 'on' : ''}">${svg(i)}${t}</a>`).join('');
+  $('#tabbar').innerHTML = TABS.map(([h, t, i]) => `<a href="${h}" class="${active === t ? 'on' : ''}">${svg(i)}${t}</a>`).join('') + `<button type="button" class="tb-search" data-open-search>${svg('search')}Search</button>`;
 }
-
+let lastPage = '#/';
 function route() {
   if (!DATA) return;
   const h = location.hash.replace(/^#/, '') || '/';
   const [path, qs] = h.split('?');
   const q = new URLSearchParams(qs || '');
   const p = path.split('/').filter(Boolean);
+  if (p[0] === 'search') { // search is a dropdown over the last page
+    openSearch(q.get('q') || '', q.get('f') || 'all');
+    if ($('#app').dataset.drawn) return;
+    history.replaceState(null, '', lastPage);
+    return route();
+  }
+  closeSearch(true);
+  lastPage = location.hash || '#/';
   let html = '', tab = 'Home', title = 'The Best Songs in History';
   try {
     if (!p.length) { html = pageHome(); }
     else if (p[0] === 'year') { tab = 'Years'; const y = +(p[1] || DATA.years[DATA.years.length - 1].n); html = pageYear(y, q.get('view')); title = `Year ${y}`; }
     else if (p[0] === 'match') { tab = 'Years'; html = pageMatch(decodeURIComponent(p[1])); title = 'Matchup'; }
     else if (p[0] === 'artist') { tab = ''; html = pageArtist(p[1]); title = (IDX.artists[p[1]] || {}).name || 'Artist'; }
-    else if (p[0] === 'people') { tab = 'Drafters'; html = p[1] ? pagePerson(decodeURIComponent(p[1])) : pagePeople(); title = p[1] ? decodeURIComponent(p[1]) : 'Drafters'; }
-    else if (p[0] === 'records' || p[0] === 'stats') { tab = 'Stats'; html = pageStats(); title = 'Stats'; }
-    else if (p[0] === 'search') { tab = 'Search'; html = pageSearch(q.get('q') || '', q.get('f') || 'all'); title = 'Search'; }
+    else if (p[0] === 'people' && p[1]) { tab = 'Stats'; html = pagePerson(decodeURIComponent(p[1])); title = decodeURIComponent(p[1]); }
+    else if (p[0] === 'people' || p[0] === 'records' || p[0] === 'stats') { tab = 'Stats'; html = pageStats(); title = 'Stats'; }
     else html = notFound();
   } catch (e) { console.error(e); html = `<div class="card">Something went wrong drawing this page. <a href="#/">Go home</a></div>`; }
   shell(tab);
   $('#app').innerHTML = html;
+  $('#app').dataset.drawn = '1';
   document.title = title === 'The Best Songs in History' ? title : `${title} · The Best Songs in History`;
-  if (!route.keepScroll) window.scrollTo(0, 0);
-  route.keepScroll = false;
-  if (p[0] === 'search') wireSearch();
+  window.scrollTo(0, 0);
+}
+
+/* search dropdown */
+let searchF = 'all', searchTimer = null;
+function openSearch(q, f) {
+  searchF = f || searchF || 'all';
+  const box = $('#search'), inp = $('#sq');
+  box.hidden = false;
+  document.body.classList.add('searching');
+  document.documentElement.style.setProperty('--hdr', $('.top').getBoundingClientRect().bottom + 'px');
+  if (q !== undefined && q !== null) inp.value = q;
+  drawSearch();
+  if (document.activeElement !== inp) inp.focus({ preventScroll: true });
+}
+function closeSearch(keepText) {
+  const box = $('#search'); if (!box || box.hidden) return;
+  box.hidden = true; document.body.classList.remove('searching');
+  if (!keepText) $('#sq').value = '';
+}
+function drawSearch() {
+  const q = $('#sq').value;
+  const filters = [['all', 'All'], ['artists', 'Drafted artists'], ['songs', 'Songs'], ['never', 'Never drafted']];
+  $('#search-pills').innerHTML = filters.map(([k, tt]) => `<button type="button" class="pill ${searchF === k ? 'on' : ''}" data-f="${k}" aria-pressed="${searchF === k}">${tt}</button>`).join('');
+  $('#search-results').innerHTML = searchResults(q, searchF);
+}
+function wireSearchUI() {
+  const inp = $('#sq');
+  inp.addEventListener('focus', () => { if ($('#search').hidden) openSearch(); });
+  inp.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(drawSearch, 120); });
+  inp.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeSearch(); inp.blur(); } });
+  $('#search-pills').addEventListener('click', (e) => { const b = e.target.closest('[data-f]'); if (!b) return; searchF = b.dataset.f; drawSearch(); });
+  $('#search-results').addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#/search"]');
+    if (a) { e.preventDefault(); const qs = new URLSearchParams(a.getAttribute('href').split('?')[1]); inp.value = qs.get('q') || ''; searchF = qs.get('f') || 'all'; drawSearch(); $('#search').scrollTop = 0; return; }
+    if (e.target.closest('a')) closeSearch(true);
+  });
+  $('#search-close').addEventListener('click', () => closeSearch());
+  $('#search-backdrop').addEventListener('click', () => closeSearch(true));
+  document.addEventListener('click', (e) => { if (e.target.closest('[data-open-search]')) { e.preventDefault(); openSearch(); } });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('#search').hidden) { closeSearch(); $('#sq').blur(); } });
+  document.addEventListener('keydown', (e) => { if (e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); } });
 }
 const notFound = () => `<div class="card">That page doesn't exist. <a href="#/">Go home</a></div>`;
 
@@ -204,39 +251,125 @@ function starNote(m) {
   return '* One list maker voted against his own list.';
 }
 
+
+/* ---------- shared stats helpers ---------- */
+function allUses() { // one entry per playlist per matchup, with the artist it belongs to
+  if (allUses.c) return allUses.c;
+  const out = [];
+  for (const yr of DATA.years) for (const m of yr.matches) m.sides.forEach((s, si) => {
+    for (const pid of sidePls(s)) { const a = s.artists.find((x) => artistPl(s, x) === pid) || s.artists[0]; if (songsFor(pid)) out.push({ yr: yr.n, m, si, pid, name: a.name, owner: a.owner, n: songsFor(pid).length, sec: plMinutes(pid) }); }
+  });
+  return (allUses.c = out);
+}
+const hm = (s) => { const h = Math.floor(s / 3600), m2 = Math.round((s % 3600) / 60); return h ? `${h}h ${m2}m` : `${m2}m`; };
+function statTiles(list) {
+  return `<div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px">${list.map(([n, k]) => `<div class="stat"><span class="big" style="font-size:24px">${n}</span><span class="small muted">${k}</span></div>`).join('')}</div>`;
+}
+function yearStatsCard(yr) {
+  const U = allUses().filter((u) => u.yr === yr.n && !(u.m.game > 1));
+  const secs = U.reduce((a, u) => a + u.sec, 0), songs = U.reduce((a, u) => a + u.n, 0);
+  const M = yr.matches.filter((m) => m.votes);
+  const two = yr.matches.filter((m) => m.sides.length === 2 && winnerIdx(m) !== null && m.round !== 'PI');
+  const up = two.map((m) => { const w = winnerIdx(m); return { m, d: (sideSeed(m.sides[w]) || 0) - (sideSeed(m.sides[1 - w]) || 0) }; }).sort((a, b) => b.d - a.d)[0];
+  const tb = yr.matches.filter((m) => m.tiebreak).sort((a, b) => Math.abs(a.tiebreak[0] - a.tiebreak[1]) - Math.abs(b.tiebreak[0] - b.tiebreak[1]))[0];
+  const longest = U.slice().sort((a, b) => b.sec - a.sec)[0];
+  return `<section class="card"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap"><h2>Year ${yr.n} stats</h2><a class="small" href="#/stats" style="font-weight:600">All stats →</a></div>
+    ${statTiles([[songs.toLocaleString(), 'songs'], [hm(secs), 'of music'], [U.length, 'playlists'], [mins(secs / Math.max(1, U.length)), 'average list'], [M.filter((m) => m.votes[0] === 4).length, '4-0 sweeps'], [M.filter((m) => m.votes[0] === 2 && m.votes[1] === 2).length, '2-2 tiebreaks']])}
+    <div style="display:flex;flex-direction:column;gap:4px;margin-top:10px" class="small">
+      ${up && up.d > 0 ? `<span><strong>Biggest upset:</strong> <a href="#/match/${up.m.id}">(${sideSeed(up.m.sides[winnerIdx(up.m)])}) ${esc(sideName(up.m.sides[winnerIdx(up.m)]))} over (${sideSeed(up.m.sides[1 - winnerIdx(up.m)])}) ${esc(sideName(up.m.sides[1 - winnerIdx(up.m)]))}</a></span>` : ''}
+      ${tb ? `<span><strong>Closest tiebreak:</strong> <a href="#/match/${tb.id}">${esc(sideName(tb.sides[0]))} vs ${esc(sideName(tb.sides[1]))}</a>, ${tb.tiebreak[0].toFixed(3)} to ${tb.tiebreak[1].toFixed(3)}</span>` : ''}
+      ${longest ? `<span><strong>Longest list:</strong> <a href="#/match/${longest.m.id}">${esc(longest.name)}</a>, ${mins(longest.sec)}</span>` : ''}
+    </div></section>`;
+}
+function personStatsCard(p) {
+  const U = allUses().filter((u) => u.owner === p && !(u.m.game > 1));
+  const secs = U.reduce((a, u) => a + u.sec, 0), songs = U.reduce((a, u) => a + u.n, 0);
+  const longest = U.slice().sort((a, b) => b.sec - a.sec)[0];
+  let run = null;
+  for (const A of Object.values(IDX.artists)) for (const [y, Y] of Object.entries(A.years)) {
+    if (Y.owner !== p || !Y.seed) continue;
+    const r = Y.champion ? 9 : ROUNDS.indexOf(Y.best);
+    const score = r * 100 + Y.seed;
+    if (Y.seed >= 5 && (!run || score > run.score)) run = { A, y, Y, score };
+  }
+  const s = personStats(p);
+  const drafted = Object.values(IDX.artists).reduce((a, A) => a + Object.values(A.years).filter((Y) => Y.owner === p).length, 0);
+  return `<section class="card"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap"><h2>${esc(p)}'s stats</h2><a class="small" href="#/stats" style="font-weight:600">All stats →</a></div>
+    ${statTiles([[drafted, 'artists used'], [songs.toLocaleString(), 'songs'], [hm(secs), 'of music'], [U.length, 'playlists'], [mins(secs / Math.max(1, U.length)), 'average list'], [s.self, 'matchups vs himself']])}
+    <div style="display:flex;flex-direction:column;gap:4px;margin-top:10px" class="small">
+      ${longest ? `<span><strong>Longest list:</strong> <a href="#/match/${longest.m.id}">${esc(longest.name)}</a>, Year ${longest.yr}, ${mins(longest.sec)}</span>` : ''}
+      ${run ? `<span><strong>Best run by a lower seed:</strong> <a href="#/artist/${run.A.slug}">(${run.Y.seed}) ${esc(run.A.name)}</a>, Year ${run.y}, ${run.Y.champion ? 'champion' : ROUND_NAME[run.Y.best]}</span>` : ''}
+    </div></section>`;
+}
+function h2hGrid() {
+  const S = {}; for (const P of DATA.people) S[P.name] = personStats(P.name);
+  return `<section class="card"><h2>Head to head</h2><div class="scroll"><table class="h2h"><thead><tr><th></th>${DATA.people.map((P) => `<th>vs ${esc(P.name)}</th>`).join('')}<th>Total</th></tr></thead><tbody>
+    ${DATA.people.map((P) => `<tr><td class="me"><a href="#/people/${P.name}" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">${dot(P.name)}${esc(P.name)}</a></td>${DATA.people.map((O) => { if (O.name === P.name) return `<td class="self">${S[P.name].self} self</td>`; const h = S[P.name].h2h[O.name] || { w: 0, l: 0 }; return `<td class="num" style="${h.w > h.l ? 'font-weight:700' : ''}">${h.w}-${h.l}</td>`; }).join('')}<td class="num"><strong>${S[P.name].w}-${S[P.name].l}</strong></td></tr>`).join('')}
+  </tbody></table></div><p class="tiny muted" style="margin:6px 0 0">Read across: each row's record against each column. "Self" is matchups between two of the same person's artists.</p></section>`;
+}
+
 /* ---------- home ---------- */
+function weekCard(m) {
+  return `<a class="mcard" href="#/match/${m.id}">
+    <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]}</span>
+    ${m.sides.map((s) => `<span style="display:flex;align-items:center;gap:10px;min-width:0">
+      <span class="seed" style="color:#C9C6BD">${sideSeed(s) || ''}</span>
+      <span style="font-size:22px;line-height:1">${esc(s.artists.map((a) => a.emoji).join(''))}</span>
+      <span style="flex:1;min-width:0;font-family:var(--display);font-weight:700;font-size:20px;line-height:1.1">${esc(sideName(s))}</span>
+      ${dot(sideOwner(s))}<span class="small" style="color:#C9C6BD;min-width:34px">${esc(sideOwner(s) || '')}</span></span>`).join('')}
+    <span class="tiny" style="color:#C9C6BD">${m.sides.every((s) => sidePls(s).length) ? 'Playlists are up' : 'Playlists not posted yet'}</span>
+  </a>`;
+}
+function drafterCards() {
+  return `<div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">${DATA.people.map((P) => {
+    const s = personStats(P.name);
+    return `<a class="card pcard" href="#/people/${P.name}" style="border-top:4px solid ${P.color}">
+      ${chev()}
+      <span class="pname">${esc(P.name)}</span>
+      <span style="font-size:15px"><strong class="num">${s.w}-${s.l}</strong> <span class="muted">· ${s.w + s.l ? Math.round(100 * s.w / (s.w + s.l)) : 0}%</span></span>
+      <span class="small">${s.titles.length ? s.titles.map((x) => `${esc(x.A.emoji)} ${esc(x.A.name)} <span class="muted">Y${x.y}</span>`).join('<br>') : '<span class="muted">No titles yet</span>'}</span>
+    </a>`;
+  }).join('')}</div>`;
+}
 function pageHome() {
   const cur = DATA.years[DATA.years.length - 1];
   const t = today();
-  const upcoming = cur.matches.filter((m) => !decided(m) && m.date && m.date >= t && m.sides.every((s) => s.artists.some((a) => a.name))).slice(0, 2);
-  const pending = cur.matches.filter((m) => !decided(m) && m.date && m.date < t && m.sides.every((s) => s.artists.some((a) => a.name)));
-  const recent = cur.matches.filter(decided).slice(-4).reverse();
-  const played = cur.matches.filter((m) => decided(m) && m.round !== 'PI').length;
-  const total = 63;
+  const ready = (m) => m.sides.every((s) => s.artists.some((a) => a.name));
+  const upcoming = cur.matches.filter((m) => !decided(m) && m.date && m.date >= t && ready(m));
+  const pending = cur.matches.filter((m) => !decided(m) && m.date && m.date < t && ready(m));
+  const recent = cur.matches.filter(decided).slice(-5).reverse();
+  const played = cur.matches.filter((m) => decided(m) && m.round !== 'PI' && !(m.game > 1)).length;
   const roundNow = (upcoming[0] || pending[0] || recent[0] || {}).round;
-  const next = upcoming[0];
+  const week = upcoming.slice(0, 2);
+  const later = upcoming.slice(2, 8);
+  const alive = DATA.people.map((P) => ({ P, n: Object.values(IDX.artists).filter((A) => A.years[cur.n] && A.years[cur.n].owner === P.name && A.years[cur.n].alive).length }));
   return `
   <section class="hero" style="display:flex;flex-direction:column;gap:4px">
     <span class="kick">Tub Talk presents</span>
     <h1>The Best Songs in History</h1>
     <span class="muted">(with no exceptions) · ${DATA.years.length} years, ${DATA.years.reduce((a, y) => a + y.matches.length, 0)} matchups</span>
   </section>
+  <section class="card charcoal" style="display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><span class="kick">This week · Year ${cur.n}${roundNow ? ' · ' + ROUND_NAME[roundNow] : ''}</span>
+      <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="small" style="color:var(--paper);font-weight:600" href="#/year/${cur.n}">Year ${cur.n} bracket</a><a class="small" style="color:var(--paper);font-weight:600" href="https://open.spotify.com/playlist/${cur.allSongs}" target="_blank" rel="noopener">All Songs #${cur.n} ${svg('ext', 13)}</a></span></div>
+    ${week.length ? `<div class="grid2" style="gap:12px">${week.map(weekCard).join('')}</div>` : '<span>No matchups scheduled.</span>'}
+    <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center">
+      <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:6px">
+        <span class="small muted">${played} of 63 matchups played</span>
+        <div class="bar" style="background:#45444C"><span style="width:${100 * played / 63}%;background:var(--paper)"></span></div>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap" class="small">${alive.map(({ P, n }) => `<span style="display:inline-flex;align-items:center;gap:6px">${dot(P.name)}${P.name} <strong>${n}</strong> <span class="muted">alive</span></span>`).join('')}</div>
+    </div>
+  </section>
   <div class="grid2">
-    <section class="card dark" style="display:flex;flex-direction:column;gap:10px">
-      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><span class="kick">Next up · Year ${cur.n}${roundNow ? ' · ' + ROUND_NAME[roundNow] : ''}</span><span class="small muted">${next ? esc(d(next.date)) : ''}</span></div>
-      ${next ? next.sides.map((s) => `<a href="#/match/${next.id}" style="text-decoration:none;display:flex;align-items:center;gap:10px">
-          <span class="seed" style="color:#C9C6BD">${sideSeed(s) ? '(' + sideSeed(s) + ')' : ''}</span>
-          <span class="emoji" style="font-size:22px">${esc(s.artists[0].emoji || '')}</span>
-          <span style="flex:1;font-family:var(--display);font-weight:700;font-size:22px">${esc(sideName(s))}</span>
-          ${dot(sideOwner(s))}<span class="small" style="color:#C9C6BD;min-width:34px">${esc(sideOwner(s) || '')}</span></a>`).join('') : '<span>No matchups scheduled.</span>'}
-      ${upcoming[1] ? `<a href="#/match/${upcoming[1].id}" class="small" style="color:#C9C6BD">Then ${esc(d(upcoming[1].date))}: ${esc(sideName(upcoming[1].sides[0]))} vs ${esc(sideName(upcoming[1].sides[1]))}</a>` : ''}
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px"><a class="btn light" href="#/year/${cur.n}">Year ${cur.n} bracket</a><a class="btn light" href="https://open.spotify.com/playlist/${cur.allSongs}" target="_blank" rel="noopener">All Songs #${cur.n}</a></div>
-      <div class="small muted">${played} of ${total} matchups played this year</div>
-    </section>
     <section class="card">
       <h2>Latest</h2>
       ${pending.map((m) => matchCard(m, { kicker: `${d(m.date)} · ${ROUND_NAME[m.round]} · votes not in yet` })).join('')}
       ${recent.map((m) => matchCard(m, { kicker: `${d(m.date)} · ${ROUND_NAME[m.round]}` }) + (m.stars ? `<div class="tiny muted" style="padding:0 2px 6px">${esc(starNote(m))}</div>` : '')).join('')}
+    </section>
+    <section class="card">
+      <h2>Coming up</h2>
+      ${later.map((m) => matchCard(m, { kicker: `${d(m.date)} · ${ROUND_NAME[m.round]}` })).join('') || '<p class="small muted" style="margin:0">Nothing else scheduled yet.</p>'}
     </section>
   </div>
   <section style="display:flex;flex-direction:column;gap:8px">
@@ -247,10 +380,13 @@ function pageHome() {
       return `<a class="card" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}" style="text-decoration:none;border-top:4px solid ${o ? color(o) : 'var(--line)'};display:flex;flex-direction:column;gap:2px">
         <span class="tiny muted">Year ${y.n} · ${esc(y.season)}</span>
         <span style="font-family:var(--display);font-weight:700;font-size:20px">${A ? esc(A.emoji + ' ' + A.name) : 'In progress'}</span>
-        <span class="tiny muted">${o ? esc(o) + "'s pick" : 'Final on ' + esc(d((y.matches.find((m) => m.round === 'F') || {}).date) || 'TBD')}</span></a>`;
+        ${o ? `<span class="tiny muted">${esc(o)}'s pick</span>` : ''}</a>`;
     }).join('')}</div>
   </section>
-  <section class="card"><h2>Drafters</h2>${pagePeopleTable()}</section>`;
+  <section style="display:flex;flex-direction:column;gap:8px">
+    <span class="kick">Drafters · All-time</span>
+    ${drafterCards()}
+  </section>`;
 }
 
 /* ---------- year ---------- */
@@ -282,8 +418,8 @@ function pageYear(y, view) {
     </div>
   </section>
   <div class="pills" role="group" aria-label="View">${views.map(([k, t]) => `<a class="pill ${v === k ? 'on' : ''}" href="#/year/${y}?view=${k}" aria-pressed="${v === k}">${t}</a>`).join('')}</div>
-  ${yr.note ? `<div class="note">${esc(yr.note)}</div>` : ''}
   ${body}
+  ${yearStatsCard(yr)}
   ${yearFinals(yr)}
   ${yearDraft(yr)}`;
 }
@@ -404,11 +540,12 @@ function yearFinals(yr) {
 }
 function yearDraft(yr) {
   if (!yr.draft) return `<section class="card"><h2>Draft board</h2><p class="muted small" style="margin:0">Not recorded for Year ${yr.n}.</p></section>`;
-  const P = yr.draft.people;
+  const order = yr.draft.people.map((p, i) => [p, i]).sort((a, b) => a[0].localeCompare(b[0]));
+  const P = order.map((x) => x[0]);
   return `<section class="card"><h2>Draft board</h2>
     <p class="small muted" style="margin:0 0 8px">Struck through: swapped out. Gray italic: drafted but never played.</p>
     <div class="scroll"><table class="t" style="min-width:720px"><thead><tr><th class="n">#</th>${P.map((p) => `<th style="border-bottom:3px solid ${color(p)}">${esc(p)}</th>`).join('')}</tr></thead><tbody>
-    ${yr.draft.rows.map((row, i) => `<tr><td class="n muted">${i + 1}</td>${row.map((c) => `<td>${(c.old || []).map((o) => `<s class="faint">${esc(o)}</s> `).join('')}${c.unused ? `<em class="faint">${esc(c.name)}</em>` : (c.artist ? `<a href="#/artist/${slug(c.artist)}">${esc(c.name)}</a>` : esc(c.name))}</td>`).join('')}</tr>`).join('')}
+    ${yr.draft.rows.map((row, i) => `<tr><td class="n muted">${i + 1}</td>${order.map((o) => row[o[1]]).map((c) => `<td>${(c.old || []).map((o) => `<s class="faint">${esc(o)}</s> `).join('')}${c.unused ? `<em class="faint">${esc(c.name)}</em>` : (c.artist ? `<a href="#/artist/${slug(c.artist)}">${esc(c.name)}</a>` : esc(c.name))}</td>`).join('')}</tr>`).join('')}
     </tbody></table></div>
     ${yr.unused.length ? `<p class="small" style="margin:10px 0 0"><strong>Drafted, never used:</strong> ${yr.unused.map((u) => `${esc(u.name)} (${esc(u.owner)})`).join(', ')}</p>` : ''}
   </section>`;
@@ -549,16 +686,6 @@ function personStats(p) {
   }
   return st;
 }
-function pagePeopleTable() {
-  const rows = DATA.people.map((p) => ({ p, s: personStats(p.name) }));
-  return `<div class="scroll"><table class="t"><thead><tr><th>Drafter</th><th class="n">W</th><th class="n">L</th><th class="n">Win %</th><th>Titles</th></tr></thead><tbody>
-  ${rows.map(({ p, s }) => `<tr><td><a href="#/people/${p.name}" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px">${dot(p.name)}<strong>${p.name}</strong></a></td><td class="n">${s.w}</td><td class="n">${s.l}</td><td class="n">${s.w + s.l ? Math.round(100 * s.w / (s.w + s.l)) + '%' : ''}</td><td>${s.titles.map((t) => `<a href="#/artist/${t.A.slug}">${esc(t.A.name)}</a> <span class="muted small">Y${t.y}</span>`).join(', ')}</td></tr>`).join('')}
-  </tbody></table></div><p class="tiny muted" style="margin:6px 0 0">Matchups between two of the same person's artists don't count.</p>`;
-}
-function pagePeople() {
-  return `<h1 style="font-weight:800;font-size:clamp(30px,5vw,44px)">Drafters</h1><section class="card">${pagePeopleTable()}</section>
-  <div class="grid2">${DATA.people.map((p) => `<a class="card" href="#/people/${p.name}" style="text-decoration:none;border-top:4px solid ${p.color}"><h2>${p.name}</h2><span class="small muted">Every artist, year by year, and head to head.</span></a>`).join('')}</div>`;
-}
 function pagePerson(p) {
   const P = DATA.people.find((x) => x.name === p);
   if (!P) return notFound();
@@ -567,9 +694,11 @@ function pagePerson(p) {
   <section style="display:flex;flex-direction:column;gap:6px"><span class="kick">Drafter</span><h1 style="font-weight:800;font-size:clamp(34px,6vw,52px);display:flex;align-items:center;gap:12px"><span class="dot" style="width:22px;height:22px;background:${P.color}"></span>${esc(p)}</h1></section>
   <div class="grid3">
     <div class="card stat"><span class="kick">All-time</span><span class="big">${s.w}-${s.l}</span><span class="small muted">${s.w + s.l ? Math.round(100 * s.w / (s.w + s.l)) : 0}% · ${s.self} vs himself</span></div>
-    <div class="card stat"><span class="kick">Titles</span><span class="big">${s.titles.length}</span><span class="small muted">${s.titles.map((t) => `${esc(t.A.name)} (Y${t.y})`).join(', ') || '—'}</span></div>
-    <div class="card"><span class="kick">Head to head</span>${Object.entries(s.h2h).map(([o, h]) => `<div class="mline small" style="padding:3px 0">${dot(o, 'sm')}<span style="flex:1">vs ${esc(o)}</span><span class="num"><strong>${h.w}-${h.l}</strong></span></div>`).join('')}</div>
+    <div class="card stat"><span class="kick">Titles</span><span class="big">${s.titles.length}</span><span class="small muted">${s.titles.map((t) => `${esc(t.A.emoji)} ${esc(t.A.name)} (Y${t.y})`).join(', ') || 'None yet'}</span></div>
+    <div class="card"><span class="kick">Head to head</span>${DATA.people.filter((o) => o.name !== p).map((o) => { const h = s.h2h[o.name] || { w: 0, l: 0 }; return `<a href="#/people/${o.name}" class="mline small" style="padding:4px 0;text-decoration:none">${dot(o.name, 'sm')}<span style="flex:1">vs ${esc(o.name)}</span><span class="num"><strong>${h.w}-${h.l}</strong></span></a>`; }).join('')}</div>
   </div>
+  <div class="pills">${DATA.people.map((o) => `<a class="pill ${o.name === p ? 'on' : ''}" href="#/people/${o.name}">${dot(o.name, 'sm')}${esc(o.name)}</a>`).join('')}</div>
+  ${personStatsCard(p)}
   ${DATA.years.slice().reverse().map((yr) => {
     const list = Object.values(IDX.artists).filter((A) => A.years[yr.n] && A.years[yr.n].owner === p).sort((a, b) => (a.years[yr.n].seed || 99) - (b.years[yr.n].seed || 99));
     const Y = s.years[yr.n];
@@ -607,7 +736,6 @@ function recordsHtml() {
   <h2 style="font-size:28px;font-weight:800;margin-top:8px">Records</h2>
   <div class="grid2">
     <section class="card"><h2>Champions</h2>${DATA.years.map((y) => { const A = y.champion && IDX.artists[slug(y.champion)]; const o = A && A.years[y.n].owner; return `<a class="row-link" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}">${dot(o)}<span style="flex:1"><strong>Year ${y.n}:</strong> ${A ? esc(A.name) + ' <span class="muted small">(' + esc(o) + ', ' + A.years[y.n].seed + ' seed)</span>' : '<span class="muted">in progress</span>'}</span>${chev()}</a>`; }).join('')}</section>
-    <section class="card"><h2>Drafters</h2>${pagePeopleTable()}</section>
     <section class="card"><h2>Biggest upsets</h2><div class="scroll"><table class="t"><thead><tr><th>Winner</th><th>Over</th><th>When</th></tr></thead><tbody>${upsets.map((x) => { const w = winnerIdx(x.m); return `<tr><td><a href="#/match/${x.m.id}">(${x.ws}) ${esc(sideName(x.m.sides[w]))}</a></td><td>(${x.ls}) ${esc(sideName(x.m.sides[1 - w]))}</td><td class="small muted nowrap">Y${x.m.year} ${ROUND_NAME[x.m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
     <section class="card"><h2>Closest tiebreaks</h2><div class="scroll"><table class="t"><thead><tr><th>Matchup</th><th class="n">Ratings</th><th>When</th></tr></thead><tbody>${close.map((m) => { const w = winnerIdx(m); return `<tr><td><a href="#/match/${m.id}">${w !== null ? esc(sideName(m.sides[w])) + ' over ' + esc(sideName(m.sides[1 - w])) : esc(sideName(m.sides[0])) + ' / ' + esc(sideName(m.sides[1]))}</a></td><td class="n nowrap">${m.tiebreak[0].toFixed(3)} to ${m.tiebreak[1].toFixed(3)}</td><td class="small muted nowrap">Y${m.year} ${ROUND_NAME[m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
     <section class="card"><h2>Playlist length by year</h2>${noSongs || byYear.map((x) => `<div style="padding:6px 0"><div class="small" style="display:flex;justify-content:space-between"><span>Year ${x.y}</span><span class="muted">${x.n ? mins(x.avg) + ' avg · ' + x.songs.toFixed(1) + ' songs' : 'not loaded'}</span></div><div class="bar"><span style="width:${100 * x.avg / maxAvg}%;background:var(--ink)"></span></div></div>`).join('')}</section>
@@ -657,7 +785,7 @@ function pageStats() {
     [(secs / 3600).toFixed(1), 'hours of music', `about ${(secs / 86400).toFixed(1)} days straight`],
     [lists.length, 'playlists', `${(secs / 60 / Math.max(1, lists.length)).toFixed(0)} minutes on average`],
     [tot('drafted'), 'artists drafted', `${tot('swaps')} swapped out, ${tot('unused')} never used`],
-    [tot('used'), 'artists used', `${distinctUsed} different names across 4 years`],
+    [tot('used'), 'artists used', distinctUsed === tot('used') ? 'no artist has been used twice' : `${distinctUsed} different names across 4 years`],
     [Object.keys(credited).length, 'artists credited', 'features, covers and side projects included'],
     [DATA.years.reduce((a, y) => a + y.matches.length, 0), 'matchups', `${votesCast} votes cast`],
     [(secs / tracks.length / 60).toFixed(2).replace(/\.(\d\d)$/, (m0, d2) => ':' + String(Math.round(+('0.' + d2) * 60)).padStart(2, '0')), 'average song length', 'minutes:seconds'],
@@ -698,9 +826,10 @@ function pageStats() {
   for (const A of Object.values(IDX.artists)) for (const [y, Y] of Object.entries(A.years)) if (Y.seed >= 9 && (Y.champion || ROUNDS.indexOf(Y.best) >= ROUNDS.indexOf('S16'))) cinderella.push({ A, y: +y, Y });
   cinderella.sort((a, b) => (b.Y.champion - a.Y.champion) || ROUNDS.indexOf(b.Y.best) - ROUNDS.indexOf(a.Y.best) || b.Y.seed - a.Y.seed);
   const names = DATA.years.map((y) => ({ y: y.n, L: uses.filter((u) => u.yr === y.n && SONGS[u.pid]).filter((u, i, arr) => arr.findIndex((v) => v.pid === u.pid) === i) }));
-  const hm = (s) => { const h = Math.floor(s / 3600), m2 = Math.round((s % 3600) / 60); return h ? `${h}h ${m2}m` : `${m2}m`; };
   return `
   <h1 style="font-weight:800;font-size:clamp(30px,5vw,44px)">Stats</h1>
+  <section style="display:flex;flex-direction:column;gap:8px"><span class="kick">Drafters · All-time</span>${drafterCards()}</section>
+  ${h2hGrid()}
   <section class="grid3">${big.map(([n, k, s]) => `<div class="card stat"><span class="big">${esc(n)}</span><span style="font-weight:600">${esc(k)}</span><span class="small muted">${esc(s)}</span></div>`).join('')}</section>
   <section class="card"><h2>By year</h2><div class="scroll"><table class="t" style="min-width:760px"><thead><tr><th>Year</th><th class="n">Drafted</th><th class="n">Swaps</th><th class="n">Never used</th><th class="n">Used</th><th class="n">Playlists</th><th class="n">Songs</th><th class="n">Music</th><th class="n">Avg list</th><th class="n">Avg song</th></tr></thead><tbody>
     ${perYear.map((y) => `<tr><td><a href="#/year/${y.y}">Year ${y.y}</a></td><td class="n">${y.drafted}</td><td class="n">${y.board ? y.swaps : '<span class="faint">n/a</span>'}</td><td class="n">${y.board ? y.unused : '<span class="faint">n/a</span>'}</td><td class="n">${y.used}</td><td class="n">${y.lists}</td><td class="n">${y.songs.toLocaleString()}</td><td class="n">${hm(y.secs)}</td><td class="n">${mins(y.avgList)}</td><td class="n">${mmss(Math.round(y.avgSong))}</td></tr>`).join('')}
@@ -726,14 +855,6 @@ function pageStats() {
 }
 
 /* ---------- search ---------- */
-function pageSearch(q, f) {
-  const filters = [['all', 'All'], ['artists', 'Drafted artists'], ['songs', 'Songs'], ['never', 'Never drafted']];
-  return `<h1 style="font-weight:800;font-size:clamp(30px,5vw,44px)">Search</h1>
-  <label class="sr" for="q">Search artists and songs</label>
-  <div class="searchbox">${svg('search', 18)}<input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Artist or song" value="${esc(q)}"></div>
-  <div class="pills" role="group" aria-label="Show">${filters.map(([k, t]) => `<button type="button" class="pill ${f === k ? 'on' : ''}" data-f="${k}" aria-pressed="${f === k}">${t}</button>`).join('')}</div>
-  <div id="results">${searchResults(q, f)}</div>`;
-}
 function searchResults(q, f) {
   const qq = fold(q.trim());
   const terms = qq.split(/\s+/).filter(Boolean);
@@ -771,23 +892,6 @@ function searchResults(q, f) {
   }
   return out;
 }
-function wireSearch() {
-  const inp = $('#q');
-  const state = () => { const qs = new URLSearchParams((location.hash.split('?')[1]) || ''); return { q: qs.get('q') || '', f: qs.get('f') || 'all' }; };
-  let t = null;
-  const update = (q, f) => {
-    $('#results').innerHTML = searchResults(q, f);
-    const nh = `#/search?q=${encodeURIComponent(q)}&f=${f}`;
-    history.replaceState(null, '', nh);
-  };
-  inp.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => update(inp.value, state().f), 120); });
-  document.querySelectorAll('[data-f]').forEach((b) => b.addEventListener('click', () => {
-    document.querySelectorAll('[data-f]').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
-    update(inp.value, b.dataset.f);
-  }));
-  if (!inp.value && matchMedia('(hover:hover)').matches) inp.focus();
-}
-
 /* ---------- boot ---------- */
 async function getJSON(url) {
   const r = await fetch(url, { cache: 'no-cache' });
@@ -803,7 +907,11 @@ async function boot() {
     return;
   }
   try { SONGS = await getJSON('data/songs.json'); } catch (e) { SONGS = {}; }
+  DATA.people.sort((a, b) => a.name.localeCompare(b.name));
   buildIndex();
+  wireSearchUI();
+  const hdr = () => document.documentElement.style.setProperty('--hdr', $('.top').getBoundingClientRect().bottom + 'px');
+  hdr(); window.addEventListener('resize', hdr);
   if (FROM_CACHE) { const o = $('#offline'); o.hidden = false; o.textContent = `No connection. Showing your saved copy from ${new Date(+FROM_CACHE).toLocaleDateString()}.`; }
   route();
 }

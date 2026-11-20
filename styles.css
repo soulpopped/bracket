@@ -36,6 +36,7 @@ h1, h2, h3 { font-family: var(--display); margin: 0; }
 .brand .k { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #C9C6BD; }
 .brand .t { font-family: var(--display); font-weight: 800; font-size: 18px; }
 .nav { display: flex; gap: 2px; margin-left: auto; flex-wrap: wrap; }
+.top-in { position: relative; }
 .nav a { min-height: 40px; padding: 0 12px; display: flex; align-items: center; color: #D9D5CA; text-decoration: none; font-size: 14px; border-bottom: 2px solid transparent; }
 .nav a.on { color: var(--paper); font-weight: 600; border-bottom-color: var(--paper); }
 .offline { background: #F2C14E; color: var(--ink); font-size: 13px; text-align: center; padding: 6px 12px; }
@@ -122,3 +123,42 @@ mark { background: #F6E7A8; color: inherit; border-radius: 2px; }
 
 .side-name a { text-decoration: none; }
 .side-name a:hover { text-decoration: underline; }
+
+/* header search */
+.hsearch { display: flex; align-items: center; gap: 8px; background: #2B2A30; color: #C9C6BD; border-radius: 10px; padding: 0 6px 0 10px; min-height: 40px; width: 260px; }
+.hsearch input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--paper); font: inherit; font-size: 15px; }
+.hsearch input::placeholder { color: #9A978E; }
+.hsearch input::-webkit-search-cancel-button { display: none; }
+.hs-close { display: none; border: 0; background: transparent; color: #C9C6BD; width: 32px; height: 32px; border-radius: 16px; cursor: pointer; font-size: 14px; }
+body.searching .hs-close { display: inline-block; }
+.hs-icon { display: none; border: 0; background: transparent; color: var(--paper); width: 44px; height: 44px; margin-left: auto; cursor: pointer; }
+.sbackdrop { display: none; position: fixed; inset: 0; background: rgba(22,22,26,.35); z-index: 18; }
+body.searching .sbackdrop { display: block; }
+.spanel { position: fixed; z-index: 19; left: 0; right: 0; top: var(--hdr, 60px); max-height: calc(100vh - var(--hdr, 60px) - 20px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.spanel-in { max-width: 860px; margin: 0 auto; background: var(--paper); border-radius: 0 0 16px 16px; box-shadow: 0 18px 40px rgba(0,0,0,.25); padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+@media (min-width: 701px) { .spanel-in { margin-right: max(16px, calc((100vw - 1240px) / 2 + 16px)); } }
+@media (max-width: 700px) {
+  .hsearch { display: none; width: 100%; order: 5; }
+  body.searching .hsearch { display: flex; }
+  body.searching .hs-icon { display: none; }
+  .hs-icon { display: inline-flex; align-items: center; justify-content: center; }
+  .spanel { bottom: 0; max-height: none; }
+  .spanel-in { border-radius: 0; min-height: 100%; box-shadow: none; padding-bottom: calc(90px + var(--safe-bottom)); }
+  .tabbar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tabbar .tb-search { border: 0; background: transparent; min-height: 46px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 11px; color: var(--muted); }
+}
+.tb-search { display: none; }
+@media (max-width: 700px) { .tb-search { display: flex; } }
+.pcard { text-decoration: none; display: flex; flex-direction: column; gap: 4px; position: relative; }
+.pcard .pname { font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1.05; }
+.pcard .chev { position: absolute; right: 14px; top: 16px; }
+.pcard:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.h2h { border-collapse: collapse; width: 100%; font-size: 14px; }
+.h2h th, .h2h td { padding: 8px; text-align: center; border-top: 1px solid var(--line2); }
+.h2h th { font-size: 12px; color: var(--muted); font-weight: 600; }
+.h2h td.me { text-align: left; font-weight: 600; white-space: nowrap; }
+.h2h td.self { color: var(--faint); }
+.mcard { background: #3A3940; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--paper); min-width: 0; }
+.mcard:hover { background: #45444C; }
+.card.charcoal { background: #2B2A30; color: var(--paper); border-color: #2B2A30; }
+.card.charcoal .kick, .card.charcoal .muted { color: #C9C6BD; }

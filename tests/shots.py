@@ -3,7 +3,7 @@ Usage: python3 tests/shots.py http://127.0.0.1:8765 /tmp/shots"""
 import sys, os
 from playwright.sync_api import sync_playwright
 BASE = sys.argv[1]; OUT = sys.argv[2]; os.makedirs(OUT, exist_ok=True)
-PAGES = sys.argv[3].split(',') if len(sys.argv) > 3 else ['', 'year/4', 'year/4?view=schedule', 'year/4?view=drafters', 'year/3', 'year/1', 'match/4-r1-24', 'match/2-f-1', 'artist/ween', 'people/Joey', 'records', 'search?q=dylan&f=all', 'search?q=&f=never']
+PAGES = sys.argv[3].split(',') if len(sys.argv) > 3 else ['', 'year/4', 'year/4?view=schedule', 'year/4?view=drafters', 'year/3', 'year/1', 'match/4-r1-24', 'match/2-f-1', 'artist/ween', 'people/Joey', 'stats', 'search?q=dylan&f=all', 'search?q=&f=never']
 errs = []
 with sync_playwright() as p:
     b = p.chromium.launch()
@@ -15,6 +15,7 @@ with sync_playwright() as p:
         pg.route('**/*', lambda r: r.abort() if not (r.request.url.startswith(BASE)) else r.continue_())
         for path in PAGES:
             pg.goto(f'{BASE}/#/{path}')
+            if path.startswith('search'): pg.wait_for_timeout(300)
             pg.wait_for_timeout(400)
             sw = pg.evaluate('document.documentElement.scrollWidth'); cw = pg.evaluate('document.documentElement.clientWidth')
             if sw > cw + 1: errs.append(f'{name} {path}: page wider than screen ({sw} > {cw})')
