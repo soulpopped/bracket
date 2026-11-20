@@ -172,3 +172,10 @@ body.searching .sbackdrop { display: block; }
 .now-vs { color: #C9C6BD; font-size: 13px; flex: none; }
 .now-listen { margin-top: 2px; color: var(--paper); font-weight: 600; text-decoration: none; border-bottom: 1px solid #77757E; white-space: nowrap; }
 .now-listen:hover { border-bottom-color: var(--paper); }
+
+.now { position: relative; cursor: pointer; }
+.now:hover { background: #42414A; }
+.now-cover { position: absolute; inset: 0; border-radius: 12px; z-index: 1; }
+.now-listen, .now-name { position: relative; z-index: 2; }
+.now-more { color: #C9C6BD; }
+.now:hover .now-more { color: var(--paper); }
