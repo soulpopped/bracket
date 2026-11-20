@@ -320,6 +320,21 @@ function weekCard(m) {
     <span class="tiny" style="color:#C9C6BD">${m.sides.every((s) => sidePls(s).length) ? 'Playlists are up' : 'Playlists not posted yet'}</span>
   </a>`;
 }
+function nowCard(m) {
+  const lists = m.sides.map((s) => sidePls(s)[0]).filter(Boolean);
+  return `<div class="mcard" style="background:#45444C;padding:16px;gap:12px">
+    <a href="#/match/${m.id}" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px">
+      <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]} · votes not in yet</span>
+      <span class="vs" style="gap:12px">
+        ${m.sides.map((s, i) => `<span style="display:flex;flex-direction:column;gap:4px;${i ? 'align-items:flex-end;text-align:right;grid-column:3' : ''}">
+          <span style="font-size:34px;line-height:1">${esc(s.artists.map((a) => a.emoji).join(''))}</span>
+          <span class="small" style="color:#C9C6BD">${i ? '' : '(' + (sideSeed(s) || '') + ') · '}${dot(sideOwner(s), 'sm')} ${esc(sideOwner(s) || '')}${i ? ' · (' + (sideSeed(s) || '') + ')' : ''}</span>
+          <span style="font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,34px);line-height:1.05">${esc(sideName(s))}</span></span>`).join('<span class="small" style="color:#C9C6BD;grid-column:2;grid-row:1;align-self:center">vs</span>')}
+      </span>
+    </a>
+    ${lists.length ? `<span style="display:flex;gap:8px;flex-wrap:wrap">${m.sides.map((s) => sidePls(s)[0] ? `<a class="btn light" style="min-height:40px" href="https://open.spotify.com/playlist/${sidePls(s)[0]}" target="_blank" rel="noopener">${esc(sideName(s))} on Spotify</a>` : '').join('')}</span>` : ''}
+  </div>`;
+}
 function drafterCards() {
   return `<div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">${DATA.people.map((P) => {
     const s = personStats(P.name);
@@ -335,8 +350,8 @@ function pageHome() {
   const cur = DATA.years[DATA.years.length - 1];
   const t = today();
   const ready = (m) => m.sides.every((s) => s.artists.some((a) => a.name));
-  const upcoming = cur.matches.filter((m) => !decided(m) && m.date && m.date >= t && ready(m));
-  const pending = cur.matches.filter((m) => !decided(m) && m.date && m.date < t && ready(m));
+  const upcoming = cur.matches.filter((m) => !decided(m) && m.date && m.date > t && ready(m));
+  const pending = cur.matches.filter((m) => !decided(m) && m.date && m.date <= t && ready(m));
   const recent = cur.matches.filter(decided).slice(-5).reverse();
   const played = cur.matches.filter((m) => decided(m) && m.round !== 'PI' && !(m.game > 1)).length;
   const roundNow = (upcoming[0] || pending[0] || recent[0] || {}).round;
@@ -350,9 +365,10 @@ function pageHome() {
     <span class="muted">(with no exceptions) · ${DATA.years.length} years, ${DATA.years.reduce((a, y) => a + y.matches.length, 0)} matchups</span>
   </section>
   <section class="card charcoal" style="display:flex;flex-direction:column;gap:12px">
-    <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><span class="kick">This week · Year ${cur.n}${roundNow ? ' · ' + ROUND_NAME[roundNow] : ''}</span>
+    <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><span class="kick">Year ${cur.n}${roundNow ? ' · ' + ROUND_NAME[roundNow] : ''}</span>
       <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="small" style="color:var(--paper);font-weight:600" href="#/year/${cur.n}">Year ${cur.n} bracket</a><a class="small" style="color:var(--paper);font-weight:600" href="https://open.spotify.com/playlist/${cur.allSongs}" target="_blank" rel="noopener">All Songs #${cur.n} ${svg('ext', 13)}</a></span></div>
-    ${week.length ? `<div class="grid2" style="gap:12px">${week.map(weekCard).join('')}</div>` : '<span>No matchups scheduled.</span>'}
+    ${pending.length ? `<span class="kick" style="margin-top:2px">Voting now</span>${pending.map((m) => nowCard(m)).join('')}` : ''}
+    ${week.length ? `<span class="kick" style="margin-top:2px">Up next</span><div class="grid2" style="gap:12px">${week.map(weekCard).join('')}</div>` : '<span>No more matchups scheduled.</span>'}
     <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center">
       <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:6px">
         <span class="small muted">${played} of 63 matchups played</span>
@@ -364,7 +380,6 @@ function pageHome() {
   <div class="grid2">
     <section class="card">
       <h2>Latest</h2>
-      ${pending.map((m) => matchCard(m, { kicker: `${d(m.date)} · ${ROUND_NAME[m.round]} · votes not in yet` })).join('')}
       ${recent.map((m) => matchCard(m, { kicker: `${d(m.date)} · ${ROUND_NAME[m.round]}` }) + (m.stars ? `<div class="tiny muted" style="padding:0 2px 6px">${esc(starNote(m))}</div>` : '')).join('')}
     </section>
     <section class="card">
