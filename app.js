@@ -395,14 +395,7 @@ function pageHome() {
   </div>
   <section style="display:flex;flex-direction:column;gap:8px">
     <span class="kick">Champions</span>
-    <div class="grid3">${DATA.years.map((y) => {
-      const A = y.champion ? IDX.artists[slug(y.champion)] : null;
-      const o = A && A.years[y.n] ? A.years[y.n].owner : null;
-      return `<a class="card" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}" style="text-decoration:none;border-top:4px solid ${o ? color(o) : 'var(--line)'};display:flex;flex-direction:column;gap:2px">
-        <span class="tiny muted">Year ${y.n} · ${esc(y.season)}</span>
-        <span style="font-family:var(--display);font-weight:700;font-size:20px">${A ? esc(A.emoji + ' ' + A.name) : 'In progress'}</span>
-        ${o ? `<span class="tiny muted">${esc(o)}'s pick</span>` : ''}</a>`;
-    }).join('')}</div>
+    ${championCards()}
   </section>
   <section style="display:flex;flex-direction:column;gap:8px">
     <span class="kick">Drafters · All-time</span>
@@ -734,6 +727,17 @@ function pagePerson(p) {
 }
 
 /* ---------- records ---------- */
+function championCards() {
+  return `<div class="grid3">${DATA.years.map((y) => {
+      const A = y.champion ? IDX.artists[slug(y.champion)] : null;
+      const o = A && A.years[y.n] ? A.years[y.n].owner : null;
+      return `<a class="card" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}" style="text-decoration:none;border-top:4px solid ${o ? color(o) : 'var(--line)'};display:flex;flex-direction:column;gap:2px">
+        <span class="tiny muted">Year ${y.n} · ${esc(y.season)}</span>
+        <span style="font-family:var(--display);font-weight:700;font-size:20px">${A ? esc(A.emoji + ' ' + A.name) : 'In progress'}</span>
+        ${o ? `<span class="tiny muted">${esc(o)}'s pick</span>` : ''}</a>`;
+    }).join('')}</div>`;
+}
+
 function recordsHtml() {
   const all = DATA.years.flatMap((y) => y.matches);
   const two = all.filter((m) => m.sides.length === 2 && winnerIdx(m) !== null);
@@ -756,13 +760,12 @@ function recordsHtml() {
   return `
   <h2 style="font-size:28px;font-weight:800;margin-top:8px">Records</h2>
   <div class="grid2" style="align-items:start">
-    <section class="card"><h2>Champions</h2>${DATA.years.map((y) => { const A = y.champion && IDX.artists[slug(y.champion)]; const o = A && A.years[y.n].owner; return `<a class="row-link" href="${A ? '#/artist/' + A.slug : '#/year/' + y.n}">${dot(o)}<span style="flex:1"><strong>Year ${y.n}:</strong> ${A ? esc(A.name) + ' <span class="muted small">(' + esc(o) + ', ' + A.years[y.n].seed + ' seed)</span>' : '<span class="muted">in progress</span>'}</span>${chev()}</a>`; }).join('')}</section>
     <section class="card"><h2>Biggest upsets</h2><div class="scroll"><table class="t"><thead><tr><th>Winner</th><th>Over</th><th>When</th></tr></thead><tbody>${upsets.map((x) => { const w = winnerIdx(x.m); return `<tr><td><a href="#/match/${x.m.id}">(${x.ws}) ${esc(sideName(x.m.sides[w]))}</a></td><td>(${x.ls}) ${esc(sideName(x.m.sides[1 - w]))}</td><td class="small muted nowrap">Y${x.m.year} ${ROUND_NAME[x.m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
     <section class="card"><h2>Closest tiebreaks</h2><div class="scroll"><table class="t"><thead><tr><th>Matchup</th><th class="n">Ratings</th><th>When</th></tr></thead><tbody>${close.map((m) => { const w = winnerIdx(m); return `<tr><td><a href="#/match/${m.id}">${w !== null ? esc(sideName(m.sides[w])) + ' over ' + esc(sideName(m.sides[1 - w])) : esc(sideName(m.sides[0])) + ' / ' + esc(sideName(m.sides[1]))}</a></td><td class="n nowrap">${m.tiebreak[0].toFixed(3)} to ${m.tiebreak[1].toFixed(3)}</td><td class="small muted nowrap">Y${m.year} ${ROUND_NAME[m.round]}</td></tr>`; }).join('')}</tbody></table></div></section>
-    <section class="card"><h2>Songs used more than once</h2>${noSongs || (repeats.length ? `<table class="t"><tbody>${repeats.map((r) => `<tr><td>${esc(r.t.title)}<br><span class="tiny muted">${esc(r.t.artists.join(', '))}</span></td><td class="n">${r.lists.size} lists</td></tr>`).join('')}</tbody></table>` : '<p class="small muted">None yet.</p>')}</section>
     <section class="card"><h2>Most songs on a playlist</h2>${noSongs || `<table class="t"><tbody>${most.map((x) => plRow(x, x.n + ' songs')).join('')}</tbody></table>`}<p class="tiny muted" style="margin:6px 0 0">Leaves out the best-of-3 lists from Year 2's final series.</p></section>
     <section class="card"><h2>Fewest songs on a playlist</h2>${noSongs || `<table class="t"><tbody>${fewest.map((x) => plRow(x, x.n + ' songs')).join('')}</tbody></table>`}<p class="tiny muted" style="margin:6px 0 0">Leaves out the best-of-3 lists from Year 2's final series.</p></section>
-  </div>`;
+  </div>
+  <section class="card"><h2>Songs used more than once</h2>${noSongs || (repeats.length ? `<div class="scroll"><table class="t"><thead><tr><th>Song</th><th>Artist</th><th class="n">Lists</th></tr></thead><tbody>${repeats.map((r) => `<tr><td>${esc(r.t.title)}</td><td class="muted">${esc(r.t.artists.join(', '))}</td><td class="n nowrap">${r.lists.size}</td></tr>`).join('')}</tbody></table></div>` : '<p class="small muted">None yet.</p>')}</section>`;
 }
 
 
@@ -868,6 +871,8 @@ function pageStats() {
   <section class="card"><h2>Playlist names</h2><p class="tiny muted" style="margin:0 0 8px">Every title we've given a list.</p>
     ${names.map(({ y, L }) => `<details ${y === DATA.years[DATA.years.length - 1].n ? 'open' : ''} style="margin-top:6px"><summary style="cursor:pointer;min-height:36px;display:flex;align-items:center"><strong>Year ${y}</strong>&nbsp;<span class="small muted">${L.length} lists</span></summary><div style="display:flex;flex-wrap:wrap;gap:6px;padding:6px 0">${L.map((u) => `<a href="#/match/${u.m.id}" title="${esc(u.name)} · ${ROUND_NAME[u.m.round]}" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:5px 10px;font-size:13px">${dot(u.owner, 'sm')}${esc(SONGS[u.pid].n)}</a>`).join('')}</div></details>`).join('')}
   </section>
+  <h2 style="font-size:28px;font-weight:800;margin-top:8px">Champions</h2>
+  ${championCards()}
   ${recordsHtml()}`;
 }
 
