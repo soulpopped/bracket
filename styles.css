@@ -181,3 +181,33 @@ body.searching .sbackdrop { display: block; }
 .now:hover .now-more { color: var(--paper); }
 
 .h1-paren { font-family: var(--display); font-weight: 600; font-size: .42em; color: var(--muted); white-space: nowrap; letter-spacing: 0; }
+
+/* playlist rows: artist page + search */
+.mrows { display: flex; flex-direction: column; }
+.mrow { border-top: 1px solid var(--line2); }
+.mrow:first-child { border-top: 0; }
+.mr-sum { list-style: none; display: grid; grid-template-columns: 112px minmax(0, 1.1fr) 76px minmax(0, 1.2fr) auto 22px; grid-template-areas: "when opp res pl sp chev"; gap: 4px 14px; align-items: center; padding: 10px 2px; }
+details.mrow > summary { cursor: pointer; }
+details.mrow > summary::-webkit-details-marker { display: none; }
+details.mrow > summary:hover { background: #FBFAF6; }
+.mr-when { grid-area: when; display: flex; flex-direction: column; }
+.mr-opp { grid-area: opp; min-width: 0; }
+.mr-res { grid-area: res; text-align: right; white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
+.mr-res.L { color: var(--muted); font-weight: 500; }
+.mr-pl { grid-area: pl; display: flex; flex-direction: column; min-width: 0; }
+.mr-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mr-sp { grid-area: sp; }
+.sp-link { font-size: 13px; white-space: nowrap; color: #1A7F45; font-weight: 600; text-decoration: none; border: 1px solid #CFE6D8; border-radius: 999px; padding: 4px 10px; display: inline-block; }
+.sp-link:hover { background: #EEF7F1; }
+.mr-chev { grid-area: chev; display: flex; justify-content: flex-end; color: var(--muted); transition: transform .15s; }
+details.mrow[open] > summary .mr-chev { transform: rotate(90deg); }
+.mr-tracks { padding: 2px 2px 14px 2px; }
+@media (max-width: 680px) {
+  .mr-sum { grid-template-columns: minmax(0, 1fr) auto 22px; grid-template-areas: "when res chev" "opp opp opp" "pl sp sp"; }
+  .mr-when { flex-direction: row; gap: 8px; align-items: baseline; }
+}
+details.songs-more > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; min-height: 32px; }
+details.songs-more > summary::-webkit-details-marker { display: none; }
+details.songs-more[open] .sm-hint { display: none; }
+details.songs-more[open] > summary { margin-bottom: 6px; }
+.mr-sp { justify-self: end; }

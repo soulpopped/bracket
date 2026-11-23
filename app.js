@@ -636,6 +636,26 @@ function pageMatch(id) {
 }
 
 /* ---------- artist ---------- */
+function resultText(m, si) {
+  const wi = winnerIdx(m);
+  const res = wi === null ? (m.winner === 'both' || m.winner === 'tie' ? 'Tie' : '') : (wi === si ? 'W' : 'L');
+  return { res, text: m.votes && m.sides.length === 2 ? `${res} ${scoreFor(m, si)}-${scoreFor(m, 1 - si)}${'*'.repeat(m.stars || 0)}` : res };
+}
+function plRow(m, si, pid, showArtist, hl) {
+  const side = m.sides[si];
+  const opp = m.sides.filter((x, i) => i !== si);
+  const r = resultText(m, si);
+  const H = hl || esc;
+  const S = pid && SONGS[pid];
+  const who = showArtist ? side.artists.map((a) => `${esc(a.emoji || '')} ${H(a.name)}`).join(' / ') : '';
+  const sum = `<span class="mr-when"><a href="#/match/${m.id}">${showArtist ? 'Y' + m.year + ' ' : ''}${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''}</a><span class="tiny muted">${esc(d(m.date))}</span></span>
+    <span class="mr-opp">${showArtist ? `<strong>${who}</strong><br>` : ''}<span class="muted small">vs</span> ${opp.map((o) => o.artists.map((a) => (a.seed ? `<span class="muted small">(${a.seed})</span> ` : '') + artistLink(a)).join(' / ')).join(', ') || 'TBD'}</span>
+    <span class="mr-res ${r.res}">${esc(r.text || (decided(m) ? '' : (m.date && m.date <= today() ? 'Voting now' : 'Upcoming')))}</span>
+    <span class="mr-pl">${S ? `<span class="mr-name">“${H(S.n)}”</span><span class="tiny muted">${S.t.length} songs · ${mins(plMinutes(pid))}</span>` : (pid ? '<span class="tiny muted">Track list not loaded</span>' : '')}</span>
+    <span class="mr-sp">${pid ? `<a class="sp-link" href="https://open.spotify.com/playlist/${pid}" target="_blank" rel="noopener">Spotify ↗</a>` : ''}</span>`;
+  if (!S) return `<div class="mrow"><div class="mr-sum">${sum}<span class="mr-chev"></span></div></div>`;
+  return `<details class="mrow"><summary class="mr-sum">${sum}<span class="mr-chev" title="Show tracks">${chev()}</span></summary><div class="mr-tracks">${trackList(pid)}</div></details>`;
+}
 function pageArtist(s) {
   const A = IDX.artists[s];
   if (!A) return notFound();
@@ -656,18 +676,8 @@ function pageArtist(s) {
   ${yrs.map((y) => {
     const Y = A.years[y];
     return `<section class="card"><h2>Year ${y}: ${Y.champion ? 'Champion' : Y.alive ? 'Still in' : 'Out in ' + ROUND_NAME[(Y.out || {}).round || Y.best]}</h2>
-      <div class="scroll"><table class="t" style="min-width:560px"><thead><tr><th>Round</th><th>Date</th><th>Opponent</th><th class="n">Votes</th><th>Playlist</th></tr></thead><tbody>
-      ${Y.matches.map(({ m, si }) => {
-        const opp = m.sides.filter((x, i) => i !== si);
-        const wi = winnerIdx(m);
-        const res = wi === null ? (m.winner === 'both' || m.winner === 'tie' ? 'Tie' : '') : (wi === si ? 'W' : 'L');
-        const sc = m.votes && m.sides.length === 2 ? `${res} ${scoreFor(m, si)}-${scoreFor(m, 1 - si)}${'*'.repeat(m.stars || 0)}` : res;
-        const side = m.sides[si];
-        const apl = artistPl(side, side.artists.find((a) => base(a.name) === b) || side.artists[0]);
-        return `<tr><td class="nowrap"><a href="#/match/${m.id}">${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''}</a></td><td class="nowrap muted">${esc(d(m.date))}</td><td>${opp.map((o) => o.artists.map((a) => (a.seed ? `(${a.seed}) ` : '') + artistLink(a)).join(' / ')).join(', ')}</td><td class="n nowrap">${esc(sc)}</td><td class="small">${apl ? `${songsFor(apl) ? songsFor(apl).length + ' songs, ' + mins(plMinutes(apl)) : ''} <a href="https://open.spotify.com/playlist/${apl}" target="_blank" rel="noopener">Spotify</a>` : ''}</td></tr>`;
-      }).join('')}
-      </tbody></table></div>
-      ${Y.matches.map(({ m, si }) => ({ m, pid: artistPl(m.sides[si], m.sides[si].artists.find((a) => base(a.name) === b) || m.sides[si].artists[0]) })).filter(({ pid }) => pid && songsFor(pid)).map(({ m, pid }) => `<details style="margin-top:8px"><summary style="cursor:pointer;min-height:36px;display:flex;align-items:center" class="small"><strong>${ROUND_NAME[m.round]}${m.game ? ' G' + m.game : ''} playlist</strong>&nbsp;<span class="muted">· “${esc(SONGS[pid].n)}” · ${songsFor(pid).length} songs</span></summary>${trackList(pid)}</details>`).join('')}
+      <div class="mrows">${Y.matches.map(({ m, si }) => plRow(m, si, artistPl(m.sides[si], m.sides[si].artists.find((a) => base(a.name) === b) || m.sides[si].artists[0]))).join('')}</div>
+      <p class="tiny muted" style="margin:6px 0 0">Tap a row to see its songs.</p>
     </section>`;
   }).join('')}
   <section class="card"><h2>Shows up on other lists</h2>
@@ -898,6 +908,17 @@ function searchResults(q, f) {
       return `<a class="row-link" href="#/artist/${A.slug}">${dot(A.years[ys[0]].owner)}<span style="flex:1;min-width:0"><strong>${esc(A.emoji)} ${hl(A.name)}</strong><br><span class="tiny muted">${ys.map((y) => { const Y = A.years[y]; return `Year ${y} · ${Y.owner} · ${Y.champion ? 'Champion' : Y.alive ? 'Still in' : 'Out in ' + ROUND_NAME[(Y.out || {}).round || Y.best]}`; }).join(' · ')}</span></span>${chev()}</a>`;
     }).join('') || '<p class="muted small" style="margin:0">None.</p>'}</section>`;
   }
+  if (f === 'all' || f === 'artists') {
+    const seen = new Set();
+    const pls = [];
+    for (const [pid, uses] of Object.entries(IDX.playlistUse)) {
+      const u = uses[0];
+      if (seen.has(pid)) continue;
+      if (match(u.name) || (SONGS[pid] && match(SONGS[pid].n))) { seen.add(pid); pls.push({ pid, ...u }); }
+    }
+    pls.sort((a, b) => a.m.year - b.m.year || (a.m.date || '').localeCompare(b.m.date || '') || (a.m.game || 0) - (b.m.game || 0));
+    if (pls.length) out += `<section class="card"><h2>Playlists <span class="small muted">${pls.length}</span></h2><div class="mrows">${pls.slice(0, 80).map((x) => plRow(x.m, x.si, x.pid, true, hl)).join('')}</div>${pls.length > 80 ? '<p class="tiny muted">Showing 80. Narrow the search for more.</p>' : ''}</section>`;
+  }
   if (f === 'all' || f === 'songs') {
     if (noSongs) out += `<section class="card"><h2>Songs</h2><p class="small muted" style="margin:0">Appears once the track lists are loaded.</p></section>`;
     else {
@@ -905,7 +926,7 @@ function searchResults(q, f) {
       const byKey = {};
       for (const t of hits) { const k = t.id; (byKey[k] = byKey[k] || { t, pls: [] }).pls.push(t.pl); }
       const list = Object.values(byKey).sort((a, b) => b.pls.length - a.pls.length);
-      out += `<section class="card"><h2>Songs <span class="small muted">${list.length}</span></h2>${list.slice(0, 120).map(({ t, pls }) => `<div class="row-link" style="align-items:flex-start;flex-direction:column;gap:2px"><span><strong>${hl(t.title)}</strong> <span class="tiny muted">${mmss(t.dur)}</span></span><span class="small muted">${hl(t.artists.join(', '))}</span><span class="tiny">${pls.map(listRef).join(' · ')}</span></div>`).join('') || '<p class="muted small" style="margin:0">None.</p>'}${list.length > 120 ? '<p class="tiny muted">Showing 120. Narrow the search for more.</p>' : ''}</section>`;
+      out += `<section class="card">${f === 'songs' ? `<h2>Songs <span class="small muted">${list.length}</span></h2>` : `<details class="songs-more"${list.length && list.length <= 8 ? ' open' : ''}><summary><h2 style="margin:0">Songs <span class="small muted">${list.length}</span></h2><span class="small muted sm-hint">${list.length ? 'Show' : ''}</span></summary>`}${list.slice(0, 120).map(({ t, pls }) => `<div class="row-link" style="align-items:flex-start;flex-direction:column;gap:2px"><span><strong>${hl(t.title)}</strong> <span class="tiny muted">${mmss(t.dur)}</span></span><span class="small muted">${hl(t.artists.join(', '))}</span><span class="tiny">${pls.map(listRef).join(' · ')}</span></div>`).join('') || '<p class="muted small" style="margin:0">None.</p>'}${list.length > 120 ? '<p class="tiny muted">Showing 120. Narrow the search for more.</p>' : ''}${f === 'songs' ? '' : '</details>'}</section>`;
       if (f === 'all') {
         const cred = Object.values(IDX.credited).filter((c) => !IDX.drafted.has_(c.name) && match(c.name));
         if (cred.length) out += `<section class="card"><h2>Credited, never drafted</h2>${cred.slice(0, 30).map((c) => `<a class="row-link" href="#/search?q=${encodeURIComponent(c.name)}&f=songs"><span style="flex:1"><strong>${hl(c.name)}</strong></span><span class="small muted">${c.lists.size} list${c.lists.size > 1 ? 's' : ''}</span>${chev()}</a>`).join('')}</section>`;
