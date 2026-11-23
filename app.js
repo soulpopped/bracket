@@ -359,7 +359,8 @@ function pageHome() {
   const upcoming = cur.matches.filter((m) => !decided(m) && m.date && m.date > t && ready(m));
   const pending = cur.matches.filter((m) => !decided(m) && m.date && m.date <= t && ready(m));
   const recent = cur.matches.filter(decided).slice(-5).reverse();
-  const played = cur.matches.filter((m) => decided(m) && m.round !== 'PI' && !(m.game > 1)).length;
+  const played = cur.matches.filter((m) => decided(m) && !(m.game > 1)).length;
+  const total = 63 + cur.matches.filter((m) => m.round === 'PI' && !(m.game > 1)).length;
   const roundNow = (upcoming[0] || pending[0] || recent[0] || {}).round;
   const week = upcoming.slice(0, 2);
   const later = upcoming.slice(2, 8);
@@ -377,8 +378,8 @@ function pageHome() {
     ${week.length ? `<span class="kick" style="margin-top:2px">Up next</span><div class="grid2" style="gap:12px">${week.map(weekCard).join('')}</div>` : '<span>No more matchups scheduled.</span>'}
     <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center">
       <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:6px">
-        <span class="small muted">${played} of 63 matchups played</span>
-        <div class="bar" style="background:#45444C"><span style="width:${100 * played / 63}%;background:var(--paper)"></span></div>
+        <span class="small muted">${played} of ${total} matchups played</span>
+        <div class="bar" style="background:#45444C"><span style="width:${100 * played / total}%;background:var(--paper)"></span></div>
       </div>
       <div style="display:flex;gap:16px;flex-wrap:wrap" class="small">${alive.map(({ P, n }) => `<span style="display:inline-flex;align-items:center;gap:6px">${dot(P.name)}${P.name} <strong>${n}</strong> <span class="muted">alive</span></span>`).join('')}</div>
     </div>
@@ -411,8 +412,9 @@ function pageYear(y, view) {
   if (!v) { try { v = localStorage.getItem('yearView') || 'bracket'; } catch (e) { v = 'bracket'; } }
   else { try { localStorage.setItem('yearView', v); } catch (e) { /* private mode */ } }
   const first = yr.matches.find((m) => m.date), last = [...yr.matches].reverse().find((m) => m.date);
-  const nonPI = yr.matches.filter((m) => m.round !== 'PI' && !m.game || m.game === 1);
-  const status = yr.champion ? `Champion: ${yr.champion}` : `${nonPI.filter(decided).length} of 63 played`;
+  const nonPI = yr.matches.filter((m) => !m.game || m.game === 1);
+  const totalG = 63 + yr.matches.filter((m) => m.round === 'PI' && !(m.game > 1)).length;
+  const status = yr.champion ? `Champion: ${yr.champion}` : `${nonPI.filter(decided).length} of ${totalG} played`;
   const views = [['bracket', 'Bracket'], ['schedule', 'Schedule'], ['both', 'Both'], ['drafters', 'By drafter']];
   let body = '';
   if (v === 'schedule') body = yearSchedule(yr);
