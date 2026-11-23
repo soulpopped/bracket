@@ -336,7 +336,7 @@ function nowCard(m) {
   };
   return `<div class="now">
     <a class="now-cover" href="#/match/${m.id}" aria-label="${esc(sideName(m.sides[0]))} vs ${esc(sideName(m.sides[1]))}: track lists and details"></a>
-    <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]} · votes not in yet</span>
+    <span class="tiny" style="color:#C9C6BD">${esc(d(m.date))} · ${ROUND_NAME[m.round]}</span>
     <div class="now-row">${side(m.sides[0])}<span class="now-vs">vs</span>${side(m.sides[1])}</div>
     <span class="tiny now-more">Track lists and details →</span>
   </div>`;
@@ -607,7 +607,7 @@ function pageMatch(id) {
     <span class="small muted">${ROUND_NAME[m.round]}${m.game ? ' · Game ' + m.game : ''}${regionName ? ' · ' + esc(regionName) : ''} · ${esc(d(m.date, true))}</span>
   </div>
   <section class="card">
-    ${two ? `<div class="vs">${sideBlock(m.sides[0], 0)}<div style="display:flex;flex-direction:column;align-items:center">${m.votes ? `<span class="score">${scoreFor(m, 0)}-${scoreFor(m, 1)}</span><span class="tiny muted">votes${m.stars ? ' ' + '*'.repeat(m.stars) : ''}</span>` : `<span class="small muted" style="text-align:center">${decided(m) ? '' : (m.date && m.date <= today() ? '<strong style="color:var(--ink)">Voting now</strong><br>votes not in yet' : 'Coming up ' + esc(d(m.date)))}</span>`}</div>${sideBlock(m.sides[1], 1)}</div>` : m.sides.map((s, i) => sideBlock(s, 0)).join('')}
+    ${two ? `<div class="vs">${sideBlock(m.sides[0], 0)}<div style="display:flex;flex-direction:column;align-items:center">${m.votes ? `<span class="score">${scoreFor(m, 0)}-${scoreFor(m, 1)}</span><span class="tiny muted">votes${m.stars ? ' ' + '*'.repeat(m.stars) : ''}</span>` : `<span class="small muted" style="text-align:center">${decided(m) ? '' : (m.date && m.date <= today() ? '<strong style="color:var(--ink)">Voting now</strong>' : 'Coming up ' + esc(d(m.date)))}</span>`}</div>${sideBlock(m.sides[1], 1)}</div>` : m.sides.map((s, i) => sideBlock(s, 0)).join('')}
   </section>
   ${notes.length ? `<div class="note">${notes.join('')}</div>` : ''}
   ${series}
