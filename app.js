@@ -321,7 +321,7 @@ function weekCard(m) {
       <span style="font-size:22px;line-height:1">${esc(s.artists.map((a) => a.emoji).join(''))}</span>
       <span style="flex:1;min-width:0;font-family:var(--display);font-weight:700;font-size:20px;line-height:1.1">${esc(sideName(s))}</span>
       ${dot(sideOwner(s))}<span class="small" style="color:#C9C6BD;min-width:34px">${esc(sideOwner(s) || '')}</span></span>`).join('')}
-    <span class="tiny" style="color:#C9C6BD">${m.sides.every((s) => sidePls(s).length) ? 'Playlists are up' : 'Playlists not posted yet'}</span>
+    ${m.sides.every((s) => sidePls(s).length) ? '<span class="tiny" style="color:#C9C6BD">Playlists are up</span>' : ''}
   </a>`;
 }
 function nowCard(m) {
