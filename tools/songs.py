@@ -10,7 +10,7 @@ try:
 except Exception:
     pass
 for k, v in D.items():
-    old[k] = {'n': v['n'], 'c': v.get('c', ''), 't': v['t']}
+    old[k] = {'n': v['n'], 'c': v.get('c', ''), 't': [[x[0], x[1], ', '.join(x[2]) if isinstance(x[2], list) else x[2], x[3]] for x in v['t']]}
 # corrections: songs that ended up on a list after its matchup
 try:
     fixes = json.load(open(sys.argv[3] if len(sys.argv) > 3 else 'source/overrides.json')).get('songFixes', {})
