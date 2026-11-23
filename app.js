@@ -900,7 +900,7 @@ function searchResults(q, f) {
       ${noSongs ? '<p class="small muted">Appears once the track lists are loaded.</p>' : list.slice(0, 150).map((c) => `<a class="row-link" href="#/search?q=${encodeURIComponent(c.name)}&f=songs"><span style="flex:1"><strong>${hl(c.name)}</strong></span><span class="small muted">${c.lists.size} list${c.lists.size > 1 ? 's' : ''} · ${c.songs} song${c.songs > 1 ? 's' : ''}</span>${chev()}</a>`).join('') || '<p class="muted small">No matches.</p>'}</section>`;
     return out;
   }
-  if (!terms.length) return `<p class="muted small">Search every artist we've drafted and every song on every playlist. Try a band, a song title, or someone who only shows up as a feature.</p>`;
+  if (!terms.length) return `<p class="muted small">Search artists, songs, or playlists.</p>`;
   if (f === 'all' || f === 'artists') {
     const arts = Object.values(IDX.artists).filter((A) => match(A.name)).sort((a, b) => a.name.localeCompare(b.name));
     out += `<section class="card"><h2>Drafted artists <span class="small muted">${arts.length}</span></h2>${arts.slice(0, 60).map((A) => {
