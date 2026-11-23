@@ -1,6 +1,6 @@
 /* Offline copy: network first, saved copy when there's no connection. */
-const CACHE = 'bracket-v16';
-const CORE = ['./', 'index.html', 'app.js?v=16', 'styles.css?v=16', 'data/bracket.json', 'data/songs.json', 'manifest.json', 'icon.svg', 'icon-180.png'];
+const CACHE = 'bracket-v17';
+const CORE = ['./', 'index.html', 'app.js?v=17', 'styles.css?v=17', 'data/bracket.json', 'data/songs.json', 'manifest.json', 'icon.svg', 'icon-180.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => Promise.all(CORE.map((u) => fetch(u, { cache: 'no-cache' }).then((r) => r.ok && c.put(u, stamp(r))).catch(() => {})))).then(() => self.skipWaiting()));
