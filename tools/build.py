@@ -333,6 +333,8 @@ def apply_result(y, r, own_links):
     if owners[0] != owners[1]:
         for i, o in enumerate(owners):
             if o in voters and voters[o] != i: stars += 1
+    elif owners[0] in voters:
+        stars = 1  # same owner: he had to vote against one of his own lists
     r['stars'] = R.get('stars', stars)
     if R.get('note'): r['note'] = R['note']
 
