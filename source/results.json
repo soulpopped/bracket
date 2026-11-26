@@ -7,5 +7,18 @@
    "Tom": "Ty Segall"
   },
   "stars": 0
+ },
+ "4|2026-11-23": {
+  "voters": {
+   "Bob": "Gorillaz",
+   "Joey": "Gene Clark",
+   "Matt": "Gene Clark",
+   "Tom": "Gorillaz"
+  },
+  "tiebreak": {
+   "Gorillaz": 7.575,
+   "Gene Clark": 7.55
+  },
+  "stars": 0
  }
 }
