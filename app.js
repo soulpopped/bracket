@@ -241,6 +241,7 @@ function legend() {
 }
 function starNote(m) {
   if (!m.stars) return '';
+  if (m.sides.length === 2 && sideOwner(m.sides[0]) && sideOwner(m.sides[0]) === sideOwner(m.sides[1])) return `* ${sideOwner(m.sides[0])} voted against one of his own lists.`;
   if (m.voters && m.sides.length === 2) {
     const against = [0, 1].map((i) => sideOwner(m.sides[i])).filter((o, i) => o && m.voters[o] !== undefined && m.voters[o] !== i);
     if (against.length) return `${'*'.repeat(m.stars)} ${against.join(' and ')} voted against ${against.length > 1 ? 'their own lists' : 'his own list'}.`;
